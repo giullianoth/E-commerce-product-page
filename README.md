@@ -1,61 +1,19 @@
-# Frontend Mentor - E-commerce product page solution
+# Frontend Mentor - E-commerce product page
 
-This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+Este projeto é um desafio da plataforma [Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6), que consiste numa página de apresentação de produtos de um e-commerce. A página é responsiva: se adapta a diferenres tamanhos de tela conforme o dispositivo em que é visualizado.
 
-## Table of contents
+Nesta página consta informações do produto, como imagens navegáveis, descrição do produto, informações de preço e ação para compra.
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+Além disso, a página apresenta elementos de cabeçalho, como área do logo, menu e links que direcionam para área de perfil e de compras.
 
-## Overview
+## Layout do projeto construído
 
-### The challenge
+*Aqui constará as capturas de tela do projeto, em diferentes resoluções (desktop e Mobile).*
 
-Users should be able to:
+## Ferramentas e tecnologias utilizadas
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Open a lightbox gallery by clicking on the large product image
-- Switch the large product image by clicking on the small thumbnail images
-- Add items to the cart
-- View the cart and remove items from it
-
-### Screenshot
-
-![](./screenshot.jpg)
-
-### Links
-
-## My process
-
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Sass
-- Flexbox
-- Mobile-first workflow
-
-### What I learned
-
-### Continued development
-
-### Useful resources
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-## Acknowledgments
-
+Para este projeto foi utilizado as seguintes ferramentas:
+ - HTML 5 com estrutura semântica
+ - CSS 3
+ - Sass
+ - Javascript
