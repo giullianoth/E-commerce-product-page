@@ -1,0 +1,19 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+body {    
+    font-family: $font-kumbh-sans-family;
+}
+
+a {
+    text-decoration: none;
+}
+
+// img {
+//     width: 100%;
+//     max-width: 100%;
+// }
