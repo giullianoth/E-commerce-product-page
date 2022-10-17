@@ -4,10 +4,12 @@
     &_content {
         @include container;
         @include flex(space-between, center, nowrap);
-        gap: 80px;
+        gap: 40px;
+
+        border-bottom: 1px solid $color-grayish-blue;
 
         &_logo {
-            @include flexBasis(200px, 80px);
+            @include flexBasis(200px, 40px);
 
             h1 {
                 display: none;
@@ -15,7 +17,7 @@
         }
 
         &_menu {
-            @include flexBasis(100%, 440px);
+            @include flexBasis(100%, calc(80px + 400px));
 
             .menu {
                 @include flex(flex-start, stretch, nowrap);
@@ -27,10 +29,20 @@
                         display: block;
                     }
 
+                    &.menu_item {
+                        border-bottom: 3px solid transparent;
+
+                        &:hover {
+                            border-color: $color-orange;
+                        }
+                    }
+
                     a {
+                        display: inline-block;
                         font-size: 1.1em;
                         margin-right: 20px;
                         color: $color-dark-grayish-blue;
+                        padding: 40px 0;
 
                         &:hover {
                             text-decoration: underline;
@@ -38,23 +50,14 @@
                     }
 
                     .submenu {
-                        display: none;
-
-                        @include absolute(100%);
-
-                        width: 400px;
-                        background-color: $color-white;
-                        padding: 20px;
-
-                        @include borderRadius;
-
-                        @include boxShadow(0, 10px, 50px);
+                        @include dropDown;
 
                         li {
                             padding: 10px 0;
 
                             a {
                                 font-size: 1.2em;
+                                padding: 12px 0;
                             }
                         }
                     }
@@ -67,11 +70,22 @@
         }
 
         &_purchase {
-            @include flexBasis(100px, 80px);
+            @include flexBasis(100px, 40px);
+            @include relative;
+
+            &:hover &_list {
+                display: block;
+            }
+
+            &_list {
+                @include dropDown;
+                left: unset;
+                right: 0;
+            }
         }
         
         &_account {
-            @include flexBasis(100px, 80px);
+            @include flexBasis(100px, 40px);
         }
     }
 }

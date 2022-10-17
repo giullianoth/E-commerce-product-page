@@ -69,3 +69,15 @@
 @mixin boxShadow($xOffset: 0, $yOffset: 0, $blur: 0, $spread: 0, $color: $color-shadow) {
     box-shadow: $xOffset $yOffset $blur $spread $color;
 }
+
+// DROP DOWN
+@mixin dropDown() {
+    display: none;
+    width: 600px;
+    background-color: $color-white;
+    padding: 20px;
+
+    @include absolute(100%);
+    @include borderRadius;
+    @include boxShadow(0, 10px, 50px);
+}
