@@ -1,0 +1,39 @@
+// CONTAINER WIDTH
+@mixin container($max-width: $container-max-width) {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+@mixin containerFull() {
+    width: 100%;
+}
+
+// FLEXBOX
+@mixin flex($justifyContent: center, $alignitems: center, $flexWrap: wrap) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignitems;
+    flex-wrap: $flexWrap;
+}
+
+@mixin flexBasis($basis, $gap: 0) {
+    @if $gap != 0 {
+        flex-basis: calc($basis - $gap);
+    }
+
+    @else {
+        flex-basis: $basis;
+    }
+}
+
+@mixin flex1($gap: 0) {
+    @include flexBasis(100%, $gap);
+}
+
+@mixin flex2($gap: 0) {
+    @include flexBasis(50%, $gap);
+}
+
+@mixin flex4($gap: 0) {
+    @include flexBasis(25%, $gap);
+}

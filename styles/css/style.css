@@ -8,8 +8,30 @@
 
 body {
   font-family: "Kumbh Sans", sans-serif;
+  color: hsl(220deg, 13%, 13%);
 }
 
 a {
   text-decoration: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+p {
+  font-size: 16px;
+}
+
+.main_header {
+  width: 100%;
+}
+.main_header_content {
+  max-width: 1260px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 }

@@ -9,7 +9,6 @@
   <title>Frontend Mentor | E-commerce product page</title>
 
   <script src="https://kit.fontawesome.com/fe0ca3f893.js" crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="styles/css/style.css">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -20,87 +19,89 @@
 </head>
 <body>
   <header class="main_header">
-    <div class="main_header_logo">
-      <a href="#">
-        <h1 style="display: none">Sneakers</h1>
-        <img src="images/logo.svg" alt="Sneakers">
-      </a>
-    </div>
-
-    <nav class="main_header_menu">
-      <ul class="menu">
-        <li>
-          <a href="#">Collections</a>
-          <ul class="submenu">
-            <li><a href="#">Collections Category 1</a></li>
-            <li><a href="#">Collections Category 2</a></li>
-            <li><a href="#">Collections Category 3</a></li>
-            <li><a href="#">Collections Category 4</a></li>
-            <li><a href="#">Collections Category 5</a></li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="#">Men</a>
-          <ul class="submenu">
-            <li><a href="#">Men Category 1</a></li>
-            <li><a href="#">Men Category 2</a></li>
-            <li><a href="#">Men Category 3</a></li>
-            <li><a href="#">Men Category 4</a></li>
-            <li><a href="#">Men Category 5</a></li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="#">Women</a>
-          <ul class="submenu">
-            <li><a href="#">Women Category 1</a></li>
-            <li><a href="#">Women Category 2</a></li>
-            <li><a href="#">Women Category 3</a></li>
-            <li><a href="#">Women Category 4</a></li>
-            <li><a href="#">Women Category 5</a></li>
-          </ul>
-        </li>
-
-        <li><a href="#">About</a></li>
-
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="main_header_purchase">
-      <div title="Your cart" class="main_header_purchase_cart">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span>3</span>
+    <div class="main_header_content">
+      <div class="main_header_content_logo">
+        <a href="#">
+          <h1>Sneakers</h1>
+          <img src="images/logo.svg" alt="Sneakers">
+        </a>
       </div>
-
-      <div class="main_header_purchase_list">
-        <p class="main_header_purchase_list_title">Cart</p>
-        <div class="main_header_purchase_list_product">
-          <div class="main_header_purchase_list_product_img">
-            <img src="images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition Sneakers">
+  
+      <nav class="main_header_content_menu">
+        <ul class="menu">
+          <li>
+            <a href="#">Collections</a>
+            <ul class="submenu">
+              <li><a href="#">Collections Category 1</a></li>
+              <li><a href="#">Collections Category 2</a></li>
+              <li><a href="#">Collections Category 3</a></li>
+              <li><a href="#">Collections Category 4</a></li>
+              <li><a href="#">Collections Category 5</a></li>
+            </ul>
+          </li>
+  
+          <li>
+            <a href="#">Men</a>
+            <ul class="submenu">
+              <li><a href="#">Men Category 1</a></li>
+              <li><a href="#">Men Category 2</a></li>
+              <li><a href="#">Men Category 3</a></li>
+              <li><a href="#">Men Category 4</a></li>
+              <li><a href="#">Men Category 5</a></li>
+            </ul>
+          </li>
+  
+          <li>
+            <a href="#">Women</a>
+            <ul class="submenu">
+              <li><a href="#">Women Category 1</a></li>
+              <li><a href="#">Women Category 2</a></li>
+              <li><a href="#">Women Category 3</a></li>
+              <li><a href="#">Women Category 4</a></li>
+              <li><a href="#">Women Category 5</a></li>
+            </ul>
+          </li>
+  
+          <li><a href="#">About</a></li>
+  
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+  
+      <div class="main_header_content_purchase">
+        <div title="Your cart" class="main_header_content_purchase_cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>3</span>
+        </div>
+  
+        <div class="main_header_content_purchase_list">
+          <p class="main_header_content_purchase_list_title">Cart</p>
+          <div class="main_header_content_purchase_list_product">
+            <div class="main_header_content_purchase_list_product_img">
+              <img src="images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition Sneakers">
+            </div>
+  
+            <div class="main_header_content_purchaset_list_product_desc">
+              <p>Fall Limited Edition Sneakers</p>
+              <p>$125.00 x 3 <strong>$375.00</strong></p>
+            </div>
+  
+            <div class="main_header_content_purchase_list_product_delete">
+              <i class="fa-solid fa-trash-can" title="Delete this item"></i>
+            </div>
           </div>
-
-          <div class="main_header_purchaset_list_product_desc">
-            <p>Fall Limited Edition Sneakers</p>
-            <p>$125.00 x 3 <strong>$375.00</strong></p>
-          </div>
-
-          <div class="main_header_purchase_list_product_delete">
-            <i class="fa-solid fa-trash-can" title="Delete this item"></i>
+  
+          <div class="main_header_content_purchase_list_checkout">
+            <a href="#">Checkout</a>
           </div>
         </div>
-
-        <div class="main_header_purchase_list_checkout">
-          <a href="#">Checkout</a>
-        </div>
       </div>
-    </div>
-
-    <div class="main_header_account">
-      <a href="#" class="avatar">
-        <img src="images/image-avatar.png" alt="Avatar">
-      </a>
+  
+      <div class="main_header_content_account">
+        <a href="#" class="avatar">
+          <img src="images/image-avatar.png" alt="Avatar">
+        </a>
+      </div>
     </div>
   </header>
 

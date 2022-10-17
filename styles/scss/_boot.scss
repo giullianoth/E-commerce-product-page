@@ -7,13 +7,18 @@
 
 body {    
     font-family: $font-kumbh-sans-family;
+    color: $color-very-dark-blue;
 }
 
 a {
     text-decoration: none;
 }
 
-// img {
-//     width: 100%;
-//     max-width: 100%;
-// }
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+p {
+    font-size: $font-size-paragraph;
+}

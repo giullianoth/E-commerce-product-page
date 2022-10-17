@@ -1,0 +1,8 @@
+.main_header {
+    @include containerFull;
+
+    &_content {
+        @include container;
+        @include flex(space-between, center, nowrap);
+    }
+}
