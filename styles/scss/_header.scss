@@ -48,7 +48,7 @@
 
                         @include borderRadius;
 
-                        box-shadow: 10px 10px 30px rgba($color: #000000, $alpha: 0.1), -10px 0 30px rgba($color: #000000, $alpha: 0.1);
+                        @include boxShadow(0, 10px, 50px);
 
                         li {
                             padding: 10px 0;

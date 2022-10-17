@@ -66,6 +66,6 @@
 }
 
 // BOX SHADOW
-@mixin boxShadow($color: rgba(0, 0, 0, 0.1)) {
-    
+@mixin boxShadow($xOffset: 0, $yOffset: 0, $blur: 0, $spread: 0, $color: $color-shadow) {
+    box-shadow: $xOffset $yOffset $blur $spread $color;
 }
