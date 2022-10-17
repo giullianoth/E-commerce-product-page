@@ -4,5 +4,74 @@
     &_content {
         @include container;
         @include flex(space-between, center, nowrap);
+        gap: 80px;
+
+        &_logo {
+            @include flexBasis(200px, 80px);
+
+            h1 {
+                display: none;
+            }
+        }
+
+        &_menu {
+            @include flexBasis(100%, 440px);
+
+            .menu {
+                @include flex(flex-start, stretch, nowrap);
+
+                li {
+                    @include relative;
+
+                    &:hover .submenu {
+                        display: block;
+                    }
+
+                    a {
+                        font-size: 1.1em;
+                        margin-right: 20px;
+                        color: $color-dark-grayish-blue;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .submenu {
+                        display: none;
+
+                        @include absolute(100%);
+
+                        width: 400px;
+                        background-color: $color-white;
+                        padding: 20px;
+
+                        @include borderRadius;
+
+                        box-shadow: 10px 10px 30px rgba($color: #000000, $alpha: 0.1), -10px 0 30px rgba($color: #000000, $alpha: 0.1);
+
+                        li {
+                            padding: 10px 0;
+
+                            a {
+                                font-size: 1.2em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            li {
+                list-style: none;
+            }
+        }
+
+        &_purchase {
+            @include flexBasis(100px, 80px);
+        }
+        
+        &_account {
+            @include flexBasis(100px, 80px);
+        }
     }
 }

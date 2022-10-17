@@ -1,11 +1,25 @@
 // CONTAINER WIDTH
-@mixin container($max-width: $container-max-width) {
-    max-width: $max-width;
+@mixin container($maxWidth: $container-max-width) {
+    max-width: $maxWidth;
     margin: 0 auto;
 }
 
 @mixin containerFull() {
     width: 100%;
+}
+
+// BROWSERS
+@mixin setBrowsers($attr, $value, $browsers: $browsers-default) {
+    #{$attr}: #{$value};
+
+    @each $browser in $browsers {
+        -#{$browser}-#{$attr}: #{$value};
+    }
+}
+
+// BORDER RADIUS
+@mixin borderRadius($radius: $radius-default) {
+    @include setBrowsers(border-radius, $radius);
 }
 
 // FLEXBOX
@@ -36,4 +50,22 @@
 
 @mixin flex4($gap: 0) {
     @include flexBasis(25%, $gap);
+}
+
+// POSITION
+// Relative
+@mixin relative() {
+    position: relative;
+}
+
+// Absolute
+@mixin absolute($top: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+// BOX SHADOW
+@mixin boxShadow($color: rgba(0, 0, 0, 0.1)) {
+    
 }

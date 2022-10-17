@@ -23,4 +23,12 @@ $font-size-paragraph: 16px;
 $font-kumbh-sans-family: 'Kumbh Sans', sans-serif;
 
 // CONTAINER PAGE WIDTH
-$container-max-width: 1260px;
+$container-max-width: 1200px;
+
+// BROWSER CORES
+$browsers-default: ("moz", "webkit");
+
+// BORDER RADIUS
+$radius-default: 10px;
+$radius-small:   6px;
+$radius-big:     14px;

@@ -2,13 +2,15 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-size: 1em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 body {
   font-family: "Kumbh Sans", sans-serif;
-  color: hsl(220deg, 13%, 13%);
+  color: hsl(219deg, 9%, 45%);
 }
 
 a {
@@ -28,10 +30,68 @@ p {
   width: 100%;
 }
 .main_header_content {
-  max-width: 1260px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+  gap: 80px;
+}
+.main_header_content_logo {
+  flex-basis: 120px;
+}
+.main_header_content_logo h1 {
+  display: none;
+}
+.main_header_content_menu {
+  flex-basis: calc(100% - 440px);
+}
+.main_header_content_menu .menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.main_header_content_menu .menu li {
+  position: relative;
+}
+.main_header_content_menu .menu li:hover .submenu {
+  display: block;
+}
+.main_header_content_menu .menu li a {
+  font-size: 1.1em;
+  margin-right: 20px;
+  color: hsl(219deg, 9%, 45%);
+}
+.main_header_content_menu .menu li a:hover {
+  text-decoration: underline;
+}
+.main_header_content_menu .menu li .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 400px;
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 20px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1), -10px 0 30px rgba(0, 0, 0, 0.1);
+}
+.main_header_content_menu .menu li .submenu li {
+  padding: 10px 0;
+}
+.main_header_content_menu .menu li .submenu li a {
+  font-size: 1.2em;
+}
+.main_header_content_menu li {
+  list-style: none;
+}
+.main_header_content_purchase {
+  flex-basis: 20px;
+}
+.main_header_content_account {
+  flex-basis: 20px;
 }

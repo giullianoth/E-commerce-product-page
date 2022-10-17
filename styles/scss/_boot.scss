@@ -1,13 +1,14 @@
 *, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-size: 1em;
+
+    @include setBrowsers(box-sizing, border-box);
 }
 
 body {    
     font-family: $font-kumbh-sans-family;
-    color: $color-very-dark-blue;
+    color: $color-dark-grayish-blue;
 }
 
 a {
@@ -15,7 +16,7 @@ a {
 }
 
 img {
-    width: 100%;
+    @include containerFull;
     max-width: 100%;
 }
 
