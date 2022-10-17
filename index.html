@@ -19,19 +19,19 @@
   </style>
 </head>
 <body>
-  <header>
-    <div>
+  <header class="main_header">
+    <div class="main_header_logo">
       <a href="#">
         <h1 style="display: none">Sneakers</h1>
         <img src="images/logo.svg" alt="Sneakers">
       </a>
     </div>
 
-    <nav>
-      <ul>
+    <nav class="main_header_menu">
+      <ul class="menu">
         <li>
           <a href="#">Collections</a>
-          <ul>
+          <ul class="submenu">
             <li><a href="#">Collections Category 1</a></li>
             <li><a href="#">Collections Category 2</a></li>
             <li><a href="#">Collections Category 3</a></li>
@@ -42,7 +42,7 @@
 
         <li>
           <a href="#">Men</a>
-          <ul>
+          <ul class="submenu">
             <li><a href="#">Men Category 1</a></li>
             <li><a href="#">Men Category 2</a></li>
             <li><a href="#">Men Category 3</a></li>
@@ -53,7 +53,7 @@
 
         <li>
           <a href="#">Women</a>
-          <ul>
+          <ul class="submenu">
             <li><a href="#">Women Category 1</a></li>
             <li><a href="#">Women Category 2</a></li>
             <li><a href="#">Women Category 3</a></li>
@@ -68,77 +68,79 @@
       </ul>
     </nav>
 
-    <div>
-      <div title="Your cart">
+    <div class="main_header_purchase">
+      <div title="Your cart" class="main_header_purchase_cart">
         <i class="fa-solid fa-cart-shopping"></i>
         <span>3</span>
       </div>
 
-      <div>
-        <p>Cart</p>
-        <div>
-          <div>
+      <div class="main_header_purchase_list">
+        <p class="main_header_purchase_list_title">Cart</p>
+        <div class="main_header_purchase_list_product">
+          <div class="main_header_purchase_list_product_img">
             <img src="images/image-product-1-thumbnail.jpg" alt="Fall Limited Edition Sneakers">
           </div>
 
-          <div>
+          <div class="main_header_purchaset_list_product_desc">
             <p>Fall Limited Edition Sneakers</p>
             <p>$125.00 x 3 <strong>$375.00</strong></p>
           </div>
 
-          <div>
+          <div class="main_header_purchase_list_product_delete">
             <i class="fa-solid fa-trash-can" title="Delete this item"></i>
           </div>
         </div>
 
-        <div>
+        <div class="main_header_purchase_list_checkout">
           <a href="#">Checkout</a>
         </div>
       </div>
     </div>
 
-    <div>
-      <a href="#">
+    <div class="main_header_account">
+      <a href="#" class="avatar">
         <img src="images/image-avatar.png" alt="Avatar">
       </a>
     </div>
   </header>
 
-  <main>
-    <section>
-      <div>
-        <div>
+  <main class="main_product">
+    <section class="main_product_content">
+      <div class="main_product_content_images">
+        <div class="main_product_content_images_featured">
           <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers">
         </div>
 
-        <div>
-          <div><img src="images/image-product-1-thumbnail.jpg" alt="Thumbnail 1"></div>
-          <div><img src="images/image-product-2-thumbnail.jpg" alt="Thumbnail 2"></div>
-          <div><img src="images/image-product-3-thumbnail.jpg" alt="Thumbnail 3"></div>
-          <div><img src="images/image-product-4-thumbnail.jpg" alt="Thumbnail 4"></div>
+        <div class="main_product_content_images_thumbs">
+          <div class="thumb"><img src="images/image-product-1-thumbnail.jpg" alt="Thumbnail 1"></div>
+          <div class="thumb"><img src="images/image-product-2-thumbnail.jpg" alt="Thumbnail 2"></div>
+          <div class="thumb"><img src="images/image-product-3-thumbnail.jpg" alt="Thumbnail 3"></div>
+          <div class="thumb"><img src="images/image-product-4-thumbnail.jpg" alt="Thumbnail 4"></div>
         </div>
       </div>
 
-      <div>
-        <header>
+      <div class="main_product_content_info">
+        <header class="main_product_content_info_title">
           <p>Sneaker Company</p>
           <h2>Fall Limited Edition Sneakers</h2>
         </header>
 
-        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        <p class="main_product_content_info_desc">These low-profile sneakers are your perfect casual wear companion. Featuring a 
           durable rubber outer sole, they'll withstand everything the weather can offer.</p>
 
-          <p>$125.00 <span>50%</span></p>
-          <p>$250.00</p>
+          <p class="main_product_content_info_discount_price">$125.00 <span>50%</span></p>
+          <p class="main_product_content_info_current_price">$250.00</p>
 
-          <div>
-            <div>
-              <div><i class="fa-solid fa-plus"></i></div>
-              <div>0</div>
-              <div><i class="fa-solid fa-minus"></i></div>
+          <div class="main_product_content_info_action">
+            <div class="main_product_content_info_action_qt">
+              <div class="main_product_content_info_action_qt_minus"><i class="fa-solid fa-minus"></i></div>
+              <div class="main_product_content_info_action_qt_value">0</div>
+              <div class="main_product_content_info_action_qt_plus"><i class="fa-solid fa-plus"></i></div>
             </div>
 
-            <div><a href="#"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a></div>
+            <div class="main_product_content_info_action_purchase">
+              <a href="#"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+            </div>
           </div>
       </div>
     </section>
