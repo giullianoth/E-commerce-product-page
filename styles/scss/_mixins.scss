@@ -129,7 +129,6 @@
 
 // IMAGE GALLERY
 @mixin gallery() {
-    @include flex2(120px);
     @include flex;
     gap: 40px;
 
@@ -159,12 +158,15 @@
             @include transition;
 
             &:hover, &.active {
-                border-color: $color-orange;
                 background-color: $color-white;
 
                 img {
                     opacity: 0.3;
                 }
+            }
+
+            &.active {
+                border-color: $color-orange;
             }
                     
             img {

@@ -42,7 +42,6 @@ p {
 .main_lightbox_gallery {
   flex-basis: 600px;
   max-width: 600px;
-  flex-basis: calc(50% - 120px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,11 +81,13 @@ p {
   transition: all 0.3s ease 0s;
 }
 .main_lightbox_gallery .thumbs .thumb:hover, .main_lightbox_gallery .thumbs .thumb.active {
-  border-color: hsl(26deg, 100%, 55%);
   background-color: hsl(0deg, 0%, 100%);
 }
 .main_lightbox_gallery .thumbs .thumb:hover img, .main_lightbox_gallery .thumbs .thumb.active img {
   opacity: 0.3;
+}
+.main_lightbox_gallery .thumbs .thumb.active {
+  border-color: hsl(26deg, 100%, 55%);
 }
 .main_lightbox_gallery .thumbs .thumb img {
   transition: all 0.3s ease 0s;
@@ -411,11 +412,13 @@ p {
   transition: all 0.3s ease 0s;
 }
 .main_product_content_images .thumbs .thumb:hover, .main_product_content_images .thumbs .thumb.active {
-  border-color: hsl(26deg, 100%, 55%);
   background-color: hsl(0deg, 0%, 100%);
 }
 .main_product_content_images .thumbs .thumb:hover img, .main_product_content_images .thumbs .thumb.active img {
   opacity: 0.3;
+}
+.main_product_content_images .thumbs .thumb.active {
+  border-color: hsl(26deg, 100%, 55%);
 }
 .main_product_content_images .thumbs .thumb img {
   transition: all 0.3s ease 0s;
