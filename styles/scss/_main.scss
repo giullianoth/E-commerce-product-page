@@ -8,48 +8,7 @@
         gap: 120px;
 
         &_images {
-            @include flex2(120px);
-            @include flex;
-            gap: 40px;
-
-            &_featured {
-                @include flex1;
-                cursor: pointer;
-
-                img {
-                    @include borderRadius($radius-big);
-                }
-            }
-
-            &_thumbs {
-                @include flex1;
-                @include flex(space-between, center, nowrap);
-                gap: 40px;
-
-                .thumb {
-                    @include flex4;
-                    cursor: pointer;
-                    border: 2px solid transparent;
-                    overflow: hidden;
-
-                    @include flex;
-                    
-                    @include borderRadius;
-                    @include transition;
-
-                    &:hover, &.active {
-                        border-color: $color-orange;
-
-                        img {
-                            opacity: 0.3;
-                        }
-                    }
-                    
-                    img {
-                        @include transition;
-                    }
-                }
-            }
+            @include gallery;
         }
 
         &_info {

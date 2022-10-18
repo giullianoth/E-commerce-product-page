@@ -26,6 +26,123 @@ p {
   font-size: 16px;
 }
 
+.main_lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: hsla(0deg, 0%, 0%, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main_lightbox_gallery {
+  flex-basis: 600px;
+  max-width: 600px;
+  flex-basis: calc(50% - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  position: relative;
+}
+.main_lightbox_gallery .featured {
+  flex-basis: 100%;
+  cursor: pointer;
+}
+.main_lightbox_gallery .featured img {
+  border-radius: 14px;
+  -moz-border-radius: 14px;
+  -webkit-border-radius: 14px;
+}
+.main_lightbox_gallery .thumbs {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 40px;
+}
+.main_lightbox_gallery .thumbs .thumb {
+  flex-basis: 25%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
+.main_lightbox_gallery .thumbs .thumb:hover, .main_lightbox_gallery .thumbs .thumb.active {
+  border-color: hsl(26deg, 100%, 55%);
+  background-color: hsl(0deg, 0%, 100%);
+}
+.main_lightbox_gallery .thumbs .thumb:hover img, .main_lightbox_gallery .thumbs .thumb.active img {
+  opacity: 0.3;
+}
+.main_lightbox_gallery .thumbs .thumb img {
+  transition: all 0.3s ease 0s;
+}
+.main_lightbox_gallery .close {
+  position: absolute;
+  top: -50px;
+  left: unset;
+  right: 0;
+  font-size: 1.8em;
+  color: hsl(0deg, 0%, 100%);
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.main_lightbox_gallery .close:hover {
+  color: hsl(26deg, 100%, 55%);
+}
+.main_lightbox_gallery .featured {
+  position: relative;
+}
+.main_lightbox_gallery .featured .navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  transform: translateY(-50%);
+}
+.main_lightbox_gallery .featured .navigation .nav {
+  width: 60px;
+  height: 60px;
+  background-color: hsl(0deg, 0%, 100%);
+  font-size: 1.6em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  transition: all 0.3s ease 0s;
+}
+.main_lightbox_gallery .featured .navigation .nav:hover {
+  color: hsl(26deg, 100%, 55%);
+}
+.main_lightbox_gallery .featured .navigation .nav.prev {
+  transform: translateX(-50%);
+}
+.main_lightbox_gallery .featured .navigation .nav.next {
+  transform: translateX(50%);
+}
+
 .main_header {
   width: 100%;
 }
@@ -262,16 +379,16 @@ p {
   flex-wrap: wrap;
   gap: 40px;
 }
-.main_product_content_images_featured {
+.main_product_content_images .featured {
   flex-basis: 100%;
   cursor: pointer;
 }
-.main_product_content_images_featured img {
+.main_product_content_images .featured img {
   border-radius: 14px;
   -moz-border-radius: 14px;
   -webkit-border-radius: 14px;
 }
-.main_product_content_images_thumbs {
+.main_product_content_images .thumbs {
   flex-basis: 100%;
   display: flex;
   justify-content: space-between;
@@ -279,7 +396,7 @@ p {
   flex-wrap: nowrap;
   gap: 40px;
 }
-.main_product_content_images_thumbs .thumb {
+.main_product_content_images .thumbs .thumb {
   flex-basis: 25%;
   cursor: pointer;
   border: 2px solid transparent;
@@ -293,13 +410,14 @@ p {
   -webkit-border-radius: 10px;
   transition: all 0.3s ease 0s;
 }
-.main_product_content_images_thumbs .thumb:hover, .main_product_content_images_thumbs .thumb.active {
+.main_product_content_images .thumbs .thumb:hover, .main_product_content_images .thumbs .thumb.active {
   border-color: hsl(26deg, 100%, 55%);
+  background-color: hsl(0deg, 0%, 100%);
 }
-.main_product_content_images_thumbs .thumb:hover img, .main_product_content_images_thumbs .thumb.active img {
+.main_product_content_images .thumbs .thumb:hover img, .main_product_content_images .thumbs .thumb.active img {
   opacity: 0.3;
 }
-.main_product_content_images_thumbs .thumb img {
+.main_product_content_images .thumbs .thumb img {
   transition: all 0.3s ease 0s;
 }
 .main_product_content_info {
