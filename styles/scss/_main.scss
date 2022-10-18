@@ -1,0 +1,58 @@
+.main_product {
+    @include containerFull;
+    margin: 80px 0;
+
+    &_content {
+        @include container;
+        @include flex(center, center, nowrap);
+        gap: 120px;
+
+        &_images {
+            @include flex2(120px);
+            @include flex;
+            gap: 40px;
+
+            &_featured {
+                @include flex1;
+                cursor: pointer;
+
+                img {
+                    @include borderRadius($radius-big);
+                }
+            }
+
+            &_thumbs {
+                @include flex1;
+                @include flex(center, center, nowrap);
+                column-gap: 40px;
+
+                .thumb {
+                    @include flex4;
+                    cursor: pointer;
+                    border: 2px solid transparent;
+                    overflow: hidden;
+                    
+                    @include borderRadius;
+                    @include transition;
+
+                    &:hover {
+                        border-color: $color-orange;
+
+                        img {
+                            opacity: 0.6;
+                        }
+                    }
+                    
+                    img {
+                        height: 100%;
+                        @include transition;
+                    }
+                }
+            }
+        }
+
+        &_info {
+            @include flex2(120px);
+        }
+    }
+}
