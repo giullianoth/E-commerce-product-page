@@ -1,0 +1,12 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+
+    a {
+        color: $color-very-dark-blue;
+
+        &:hover {
+            text-decoration: underline;
+        }
+      }
+  }

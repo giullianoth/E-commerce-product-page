@@ -224,6 +224,9 @@ p {
 .main_header_content_purchase_list_checkout a:hover {
   background-color: hsl(27deg, 100%, 71%);
 }
+.main_header_content_purchase_list_checkout a i {
+  margin-right: 10px;
+}
 .main_header_content_account {
   flex-basis: 60px;
 }
@@ -379,6 +382,9 @@ p {
 .main_product_content_info_action_qt:hover {
   background-color: hsl(27deg, 100%, 71%);
 }
+.main_product_content_info_action_qt i {
+  margin-right: 10px;
+}
 .main_product_content_info_action_qt:hover {
   background-color: hsl(223deg, 64%, 98%);
 }
@@ -419,4 +425,18 @@ p {
 }
 .main_product_content_info_action_purchase a:hover {
   background-color: hsl(27deg, 100%, 71%);
+}
+.main_product_content_info_action_purchase a i {
+  margin-right: 10px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(220deg, 13%, 13%);
+}
+.attribution a:hover {
+  text-decoration: underline;
 }
