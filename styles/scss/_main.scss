@@ -23,14 +23,16 @@
 
             &_thumbs {
                 @include flex1;
-                @include flex(center, center, nowrap);
-                column-gap: 40px;
+                @include flex(space-between, center, nowrap);
+                gap: 40px;
 
                 .thumb {
                     @include flex4;
                     cursor: pointer;
                     border: 2px solid transparent;
                     overflow: hidden;
+
+                    @include flex;
                     
                     @include borderRadius;
                     @include transition;
@@ -44,7 +46,6 @@
                     }
                     
                     img {
-                        height: 100%;
                         @include transition;
                     }
                 }
@@ -53,6 +54,105 @@
 
         &_info {
             @include flex2(120px);
+
+            &_title {
+                margin-bottom: 40px;
+
+                p {
+                    text-transform: uppercase;
+                    color: $color-orange;
+                    font-size: 0.9em;
+                    font-weight: 700;
+                    letter-spacing: 0.2em;
+                    margin-bottom: 20px;
+                }
+
+                h2 {
+                    font-size: 3em;
+                    color: $color-very-dark-blue;
+                }
+            }
+
+            &_desc {
+                line-height: 1.6em;
+                margin-bottom: 40px;
+            }
+
+            &_discount_price {
+                font-size: 1.8em;
+                font-weight: 700;
+                color: $color-very-dark-blue;
+
+                margin-bottom: 10px;
+
+                @include flex(flex-start, center, nowrap);
+
+                span {
+                    display: inline-block;
+                    padding: 4px 10px;
+                    background-color: $color-pale-orange;
+                    color: $color-orange;
+                    font-size: 0.6em;
+                    margin-left: 20px;
+
+                    @include borderRadius($radius-small);
+                }
+            }
+
+            &_current_price {
+                color: $color-grayish-blue;
+                font-weight: 700;
+                text-decoration: line-through;
+                margin-bottom: 40px;
+            }
+
+            &_action {
+                @include flex(flex-start, center, nowrap);
+                column-gap: 20px;
+
+                &_qt {             
+                    @include flex3;
+                    
+                    @include btn;
+                    @include flex(center, center, nowrap);
+                    padding: 0;
+
+                    background-color: $color-light-grayish-blue;
+                    color: $color-very-dark-blue;
+
+                    &:hover {
+                        background-color: $color-light-grayish-blue;
+                    }
+
+                    &_minus, &_plus {
+                        @include flex3;
+                        padding: 20px;
+                        cursor: pointer;
+                        color: $color-orange;
+
+                        @include transition;
+
+                        &:hover {
+                            color: $color-orange-hover;
+                        }
+                    }
+
+                    &_value {
+                        @include flex3;
+                        padding: 20px;
+                    }
+                }
+
+                &_purchase {
+                    @include flexBasis(66.66%);
+                    @include flex;
+
+                    a {
+                        @include flex1;
+                        @include btn;
+                    }
+                }
+            }
         }
     }
 }

@@ -52,6 +52,10 @@
     @include flexBasis(50%, $gap);
 }
 
+@mixin flex3($gap: 0) {
+    @include flexBasis(33.33%, $gap);
+}
+
 @mixin flex4($gap: 0) {
     @include flexBasis(25%, $gap);
 }
