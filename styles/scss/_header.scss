@@ -25,12 +25,17 @@
                 li {
                     @include relative;
 
+                    list-style: none;
+
                     &:hover .submenu {
                         display: block;
                     }
 
                     &.menu_item {
-                        border-bottom: 3px solid transparent;
+                        border-bottom: 5px solid transparent;
+                        margin: 0 20px;
+
+                        @include transition;
 
                         &:hover {
                             border-color: $color-orange;
@@ -40,17 +45,21 @@
                     a {
                         display: inline-block;
                         font-size: 1.1em;
-                        margin-right: 20px;
                         color: $color-dark-grayish-blue;
                         padding: 40px 0;
 
+                        @include transition;
+
                         &:hover {
-                            text-decoration: underline;
+                            color: $color-very-dark-blue;
                         }
                     }
 
                     .submenu {
                         @include dropDown;
+                        top: calc(100% + 5px);
+
+                        @include setBrowsers(border-top-left-radius, 0);
 
                         li {
                             padding: 10px 0;
@@ -58,14 +67,14 @@
                             a {
                                 font-size: 1.2em;
                                 padding: 12px 0;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
                             }
                         }
                     }
                 }
-            }
-
-            li {
-                list-style: none;
             }
         }
 
@@ -77,15 +86,108 @@
                 display: block;
             }
 
+            &_cart {
+                @include relative;
+                @include flex;
+
+                i {
+                    font-size: 1.4em;
+                    color: $color-very-dark-blue;
+                    cursor: pointer;
+                }
+
+                span {
+                    @include absolute(0, unset);
+                    right: 0;
+                    transform: translate(-25%, -50%);
+
+                    display: inline-block;
+                    background-color: $color-orange;
+                    color: $color-white;
+                    font-size: 0.6em;
+
+                    padding: 2px 8px;
+                    pointer-events: none;
+
+                    @include borderRadius;
+                }
+            }
+
             &_list {
                 @include dropDown;
                 left: unset;
                 right: 0;
+                margin-top: 20px;
+
+                padding: {
+                    left: 0;
+                    right: 0;
+                }
+
+                &_title {
+                    padding: 0 20px 20px 20px;
+                    font-weight: 700;
+                    color: $color-very-dark-blue;
+                    border-bottom: 1px solid $color-grayish-blue;
+                }
+
+                &_product {
+                    @include flex(space-between, center, nowrap);
+
+                    padding: 20px;
+
+                    &_img {
+                        @include flexBasis(60px);
+                        cursor: pointer;
+
+                        img {
+                            @include borderRadius($radius-small);
+                        }
+                    }
+
+                    &_desc {
+                        cursor: pointer;
+                        line-height: 1.8em;
+
+                        p {
+                            @include flex1;
+                        }
+                    }
+
+                    &_delete {
+                        @include flexBasis(20px);
+                        @include flex;
+                        color: $color-grayish-blue;
+                        cursor: pointer;
+                    }
+                }
+
+                &_checkout {
+                    padding: 20px;
+                    @include flex;
+
+                    a {
+                        @include btn;
+                        @include flex1;
+                    }
+                }
             }
         }
         
         &_account {
             @include flexBasis(100px, 40px);
+
+            .avatar {
+                img {
+                    border: 2px solid transparent;
+                    @include rounded;
+                    @include transition;
+
+                    &:hover {
+                        border-color: $color-orange;
+                    }
+                }
+            }
         }
     }
 }

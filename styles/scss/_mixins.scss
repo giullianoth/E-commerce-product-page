@@ -22,6 +22,10 @@
     @include setBrowsers(border-radius, $radius);
 }
 
+@mixin rounded() {
+    @include borderRadius(50%);
+}
+
 // FLEXBOX
 @mixin flex($justifyContent: center, $alignitems: center, $flexWrap: wrap) {
     display: flex;
@@ -70,14 +74,33 @@
     box-shadow: $xOffset $yOffset $blur $spread $color;
 }
 
+// TRANSITION
+@mixin transition($property: all, $duration: 0.3s, $timingFunction: ease, $delay: 0s) {
+    transition: $property $duration $timingFunction $delay;
+}
+
 // DROP DOWN
 @mixin dropDown() {
     display: none;
-    width: 600px;
+    width: 400px;
     background-color: $color-white;
     padding: 20px;
 
     @include absolute(100%);
     @include borderRadius;
     @include boxShadow(0, 10px, 50px);
+    @include transition;
+}
+
+// BUTTON
+@mixin btn() {
+    display: inline-block;
+    background-color: $color-orange;
+    color: $color-white;
+    border: none;
+    text-align: center;
+    font-weight: 700;
+    padding: 20px 46px;
+
+    @include borderRadius;
 }
