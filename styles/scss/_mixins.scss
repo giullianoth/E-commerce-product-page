@@ -103,4 +103,9 @@
     padding: 20px 46px;
 
     @include borderRadius;
+    @include transition;
+
+    &:hover {
+        background-color: $color-orange-hover;
+    }
 }

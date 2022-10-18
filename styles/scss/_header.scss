@@ -117,7 +117,6 @@
                 @include dropDown;
                 left: unset;
                 right: 0;
-                margin-top: 20px;
 
                 padding: {
                     left: 0;
@@ -149,8 +148,8 @@
                         cursor: pointer;
                         line-height: 1.8em;
 
-                        p {
-                            @include flex1;
+                        strong {
+                            color: $color-very-dark-blue;
                         }
                     }
 
@@ -163,7 +162,7 @@
                 }
 
                 &_checkout {
-                    padding: 20px;
+                    padding: 20px 20px 0 20px;
                     @include flex;
 
                     a {
