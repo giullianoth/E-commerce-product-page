@@ -35,7 +35,7 @@
                     @include borderRadius;
                     @include transition;
 
-                    &:hover {
+                    &:hover, &.active {
                         border-color: $color-orange;
 
                         img {

@@ -88,7 +88,7 @@
 
     @include absolute(100%);
     @include borderRadius;
-    @include boxShadow(0, 10px, 50px);
+    @include boxShadow(0, 10px, 20px);
     @include transition;
 }
 

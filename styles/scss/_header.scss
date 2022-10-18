@@ -81,6 +81,8 @@
         &_purchase {
             @include flexBasis(100px, 40px);
             @include relative;
+                
+            padding: 40px 0;
 
             &:hover &_list {
                 display: block;
@@ -117,6 +119,7 @@
                 @include dropDown;
                 left: unset;
                 right: 0;
+                top: 75%;
 
                 padding: {
                     left: 0;
