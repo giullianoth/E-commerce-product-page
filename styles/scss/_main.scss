@@ -33,6 +33,29 @@
             }
 
             .featured {
+                .navigation {
+                    display: none;
+
+                    @include setResponsiveDesign(890px) {
+                        display: flex;
+                    }
+
+                    .nav {
+                        @include setResponsiveDesign(600px) {
+                            width: 40px;
+                            height: 40px;
+                        }
+                        
+                        &.prev {
+                            transform: translateX(20px);
+                        }
+
+                        &.next {
+                            transform: translateX(-20px);
+                        }
+                    }
+                }  
+
                 img {
                     @include setResponsiveDesign(890px) {
                         @include borderRadius(0);

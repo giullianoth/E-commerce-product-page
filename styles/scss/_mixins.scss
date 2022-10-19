@@ -136,9 +136,55 @@
     .featured {
         @include flex1;
         cursor: pointer;
+        @include relative;
 
         img {
             @include borderRadius($radius-big);
+        }
+
+        .navigation {
+            @include absolute(50%);
+            @include containerFull;
+            @include flex(space-between, center, nowrap);
+
+            transform: translateY(-50%);
+
+            .nav {
+                width: 60px;
+                height: 60px;
+                background-color: $color-white;
+                font-size: 1.6em;
+                cursor: pointer;
+
+                @include flex;
+                @include rounded;
+                @include transition;
+
+                @include setResponsiveDesign(600px) {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                &:hover {
+                    color: $color-orange;
+                }
+
+                &.prev {
+                    transform: translateX(-50%);
+
+                    @include setResponsiveDesign(600px) {
+                        transform: translateX(10px);
+                    }
+                }
+
+                &.next {
+                    transform: translateX(50%);
+
+                    @include setResponsiveDesign(600px) {
+                        transform: translateX(-10px);
+                    }
+                }
+            }
         }
     }
 

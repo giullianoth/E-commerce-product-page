@@ -2,15 +2,21 @@
     @include fixed;
     z-index: 20;
     background-color: $color-black-lightbox;
+    overflow-x: auto;
 
     @include flex;
+    display: none;
 
     &_gallery {
         @include flexBasis(600px);
-        max-width: 600px;
+        @include container(600px);
 
         @include gallery;
         @include relative;
+
+        @include setResponsiveDesign(600px) {
+            gap: 20px;
+        }
 
         .close {
             @include absolute(-50px, unset);
@@ -21,44 +27,18 @@
 
             @include transition;
 
+            @include setResponsiveDesign(600px) {
+                right: 20px;
+            }
+
             &:hover {
                 color: $color-orange;
             }
         }
 
-        .featured {
-            @include relative;
-
-            .navigation {
-                @include absolute(50%);
-                @include containerFull;
-                @include flex(space-between, center, nowrap);
-    
-                transform: translateY(-50%);
-
-                .nav {
-                    width: 60px;
-                    height: 60px;
-                    background-color: $color-white;
-                    font-size: 1.6em;
-                    cursor: pointer;
-
-                    @include flex;
-                    @include rounded;
-                    @include transition;
-
-                    &:hover {
-                        color: $color-orange;
-                    }
-
-                    &.prev {
-                        transform: translateX(-50%);
-                    }
-
-                    &.next {
-                        transform: translateX(50%);
-                    }
-                }
+        .thumbs {
+            @include setResponsiveDesign(600px) {
+                gap: 20px;
             }
         }
     }
