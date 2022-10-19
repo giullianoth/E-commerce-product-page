@@ -282,6 +282,7 @@ p {
   flex-wrap: nowrap;
   transition: left 0.3s ease 0s;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 @media screen and (max-width: 890px) {
   .main_header_content_menu .menu {
@@ -366,6 +367,7 @@ p {
     position: static;
     display: block;
     box-shadow: none;
+    background: none;
     padding-top: 0;
     padding-bottom: 0;
     overflow: hidden;

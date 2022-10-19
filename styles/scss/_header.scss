@@ -87,6 +87,7 @@
                 @include flex(flex-start, stretch, nowrap);
                 @include transition(left);
                 overflow-y: auto;
+                overflow-x: hidden;
 
                 @include setResponsiveDesign(890px) {
                     flex-direction: column;
@@ -160,6 +161,7 @@
                             position: static;
                             display: block;
                             box-shadow: none;
+                            background: none;
                             padding: {
                                 top: 0;
                                 bottom: 0;
