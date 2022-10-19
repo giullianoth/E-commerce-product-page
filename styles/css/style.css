@@ -150,6 +150,7 @@ p {
 .main_header_content {
   max-width: 1300px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -157,14 +158,29 @@ p {
   gap: 40px;
   border-bottom: 1px solid hsl(220deg, 14%, 75%);
 }
+@media screen and (max-width: 1200px) {
+  .main_header_content {
+    gap: 20px;
+  }
+}
 .main_header_content_logo {
   flex-basis: 160px;
+}
+@media screen and (max-width: 1200px) {
+  .main_header_content_logo {
+    flex-basis: 180px;
+  }
 }
 .main_header_content_logo h1 {
   display: none;
 }
 .main_header_content_menu {
   flex-basis: calc(100% - 480px);
+}
+@media screen and (max-width: 1200px) {
+  .main_header_content_menu {
+    flex-basis: calc(100% - 460px);
+  }
 }
 .main_header_content_menu .menu {
   display: flex;
@@ -363,14 +379,31 @@ p {
   width: 100%;
   margin: 80px 0;
 }
+@media screen and (max-width: 890px) {
+  .main_product {
+    margin-top: 0;
+  }
+}
 .main_product_content {
   max-width: 1300px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   gap: 120px;
+}
+@media screen and (max-width: 1100px) {
+  .main_product_content {
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 890px) {
+  .main_product_content {
+    padding: 0;
+    flex-wrap: wrap;
+  }
 }
 .main_product_content_images {
   flex-basis: calc(50% - 120px);
@@ -423,12 +456,47 @@ p {
 .main_product_content_images .thumbs .thumb img {
   transition: all 0.3s ease 0s;
 }
+@media screen and (max-width: 1100px) {
+  .main_product_content_images {
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 890px) {
+  .main_product_content_images {
+    flex-basis: 100%;
+  }
+}
+@media screen and (max-width: 890px) {
+  .main_product_content_images .featured img {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+  }
+}
+@media screen and (max-width: 890px) {
+  .main_product_content_images .thumbs {
+    display: none;
+  }
+}
 .main_product_content_info {
   flex-basis: calc(50% - 120px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+@media screen and (max-width: 1100px) {
+  .main_product_content_info {
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 890px) {
+  .main_product_content_info {
+    flex-basis: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 }
 .main_product_content_info_title {
   margin-bottom: 40px;
@@ -462,6 +530,12 @@ p {
   align-items: center;
   flex-wrap: nowrap;
 }
+@media screen and (max-width: 890px) {
+  .main_product_content_info_discount_price {
+    margin-bottom: 40px;
+    flex-basis: 50%;
+  }
+}
 .main_product_content_info_discount_price span {
   display: inline-block;
   padding: 4px 10px;
@@ -480,13 +554,24 @@ p {
   margin-bottom: 40px;
   flex-basis: 100%;
 }
+@media screen and (max-width: 890px) {
+  .main_product_content_info_current_price {
+    flex-basis: 50%;
+    text-align: right;
+  }
+}
 .main_product_content_info_action {
   flex-basis: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  column-gap: 20px;
+  gap: 20px;
+}
+@media screen and (max-width: 890px) {
+  .main_product_content_info_action {
+    flex-wrap: wrap;
+  }
 }
 .main_product_content_info_action_qt {
   flex-basis: 33.33%;
@@ -515,6 +600,11 @@ p {
 .main_product_content_info_action_qt i {
   margin-right: 10px;
 }
+@media screen and (max-width: 890px) {
+  .main_product_content_info_action_qt {
+    flex-basis: 100%;
+  }
+}
 .main_product_content_info_action_qt:hover {
   background-color: hsl(223deg, 64%, 98%);
 }
@@ -541,6 +631,11 @@ p {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+@media screen and (max-width: 890px) {
+  .main_product_content_info_action_purchase {
+    flex-basis: 100%;
+  }
 }
 .main_product_content_info_action_purchase a {
   flex-basis: 100%;
@@ -573,3 +668,5 @@ p {
 .attribution a:hover {
   text-decoration: underline;
 }
+
+/*# sourceMappingURL=style.css.map */

@@ -8,8 +8,16 @@
 
         border-bottom: 1px solid $color-grayish-blue;
 
+        @include setResponsiveDesign(1200px) {
+            gap: 20px;
+        }
+
         &_logo {
             @include flexBasis(200px, 40px);
+
+            @include setResponsiveDesign(1200px) {
+                @include flexBasis(200px, 20px);
+            }
 
             h1 {
                 display: none;
@@ -18,6 +26,10 @@
 
         &_menu {
             @include flexBasis(100%, calc(80px + 400px));
+
+            @include setResponsiveDesign(1200px) {
+                @include flexBasis(100%, calc(80px + 380px));
+            }
 
             .menu {
                 @include flex(flex-start, stretch, nowrap);

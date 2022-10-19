@@ -2,20 +2,64 @@
     @include containerFull;
     margin: 80px 0;
 
+    @include setResponsiveDesign(890px) {
+        margin-top: 0;
+    }
+
     &_content {
         @include container;
         @include flex(center, center, nowrap);
         gap: 120px;
 
+        @include setResponsiveDesign(1100px) {
+            gap: 40px;
+        }
+
+        @include setResponsiveDesign(890px) {
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
         &_images {
             @include flex2(120px);
             @include gallery;
+
+            @include setResponsiveDesign(1100px) {
+                @include flex2;
+            }
+
+            @include setResponsiveDesign(890px) {
+                @include flex1;
+            }
+
+            .featured {
+                img {
+                    @include setResponsiveDesign(890px) {
+                        @include borderRadius(0);
+                    }
+                }
+            }
+
+            .thumbs {
+                @include setResponsiveDesign(890px) {
+                    display: none;
+                }
+            }
         }
 
         &_info {
             @include flex2(120px);
 
             @include flex(space-between, center, wrap);
+
+            @include setResponsiveDesign(1100px) {
+                @include flex2;
+            }
+
+            @include setResponsiveDesign(890px) {
+                @include flex1;
+                @include container(500px);
+            }
 
             &_title {
                 margin-bottom: 40px;
@@ -55,6 +99,11 @@
 
                 @include flex(flex-start, center, nowrap);
 
+                @include setResponsiveDesign(890px) {
+                    margin-bottom: 40px;
+                    @include flex2;
+                }
+
                 span {
                     display: inline-block;
                     padding: 4px 10px;
@@ -74,12 +123,21 @@
                 margin-bottom: 40px;
 
                 @include flex1;
+
+                @include setResponsiveDesign(890px) {
+                    @include flex2;
+                    text-align: right;
+                }
             }
 
             &_action {
                 @include flex1;
                 @include flex(flex-start, center, nowrap);
-                column-gap: 20px;
+                gap: 20px;
+
+                @include setResponsiveDesign(890px) {
+                    flex-wrap: wrap;
+                }
 
                 &_qt {             
                     @include flex3;
@@ -90,6 +148,10 @@
 
                     background-color: $color-light-grayish-blue;
                     color: $color-very-dark-blue;
+
+                    @include setResponsiveDesign(890px) {
+                        @include flex1;
+                    }
 
                     &:hover {
                         background-color: $color-light-grayish-blue;
@@ -121,6 +183,10 @@
                 &_purchase {
                     @include flexBasis(66.66%);
                     @include flex;
+
+                    @include setResponsiveDesign(890px) {
+                        @include flex1;
+                    }
 
                     a {
                         @include flex1;
