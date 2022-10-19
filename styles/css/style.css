@@ -209,7 +209,7 @@ p {
   transform: translateY(-50%);
   font-size: 1.4em;
   z-index: 12;
-  height: 100px;
+  transition: background-color 0.3s ease 0.1s;
   display: none;
 }
 @media screen and (max-width: 890px) {
@@ -227,6 +227,7 @@ p {
   top: 0;
   transform: unset;
   padding-left: 20px;
+  position: fixed;
 }
 .main_header_content .hamb_icon i {
   cursor: pointer;
@@ -254,6 +255,7 @@ p {
 }
 .main_header_content_menu {
   flex-basis: calc(100% - 480px);
+  transition: opacity 0.3s ease 0s;
 }
 @media screen and (max-width: 1200px) {
   .main_header_content_menu {
@@ -270,6 +272,7 @@ p {
     background-color: hsla(0deg, 0%, 0%, 0.75);
     z-index: 10;
     display: none;
+    opacity: 0;
   }
 }
 .main_header_content_menu .menu {
@@ -277,7 +280,8 @@ p {
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  transition: left 0.3s ease 0s;
+  overflow-y: auto;
 }
 @media screen and (max-width: 890px) {
   .main_header_content_menu .menu {
@@ -289,7 +293,9 @@ p {
     height: 100%;
     width: 75%;
     background-color: hsl(0deg, 0%, 100%);
+    left: -75%;
     padding-top: 120px;
+    padding-bottom: 40px;
   }
 }
 .main_header_content_menu .menu li {
@@ -299,10 +305,21 @@ p {
 .main_header_content_menu .menu li:hover .submenu {
   display: block;
 }
+@media screen and (max-width: 890px) {
+  .main_header_content_menu .menu li:hover .submenu {
+    display: none;
+  }
+}
 .main_header_content_menu .menu li.menu_item {
   border-bottom: 5px solid transparent;
   margin: 0 20px;
   transition: all 0.3s ease 0s;
+}
+@media screen and (max-width: 890px) {
+  .main_header_content_menu .menu li.menu_item {
+    border-bottom: none;
+    border-right: 5px solid transparent;
+  }
 }
 .main_header_content_menu .menu li.menu_item:hover {
   border-color: hsl(26deg, 100%, 55%);
@@ -339,6 +356,7 @@ p {
   box-shadow: 0 10px 20px 0 hsla(0deg, 0%, 0%, 0.4);
   transition: all 0.3s ease 0s;
   top: calc(100% + 5px);
+  transition: all 0.3s ease 0s;
   border-top-left-radius: 0;
   -moz-border-top-left-radius: 0;
   -webkit-border-top-left-radius: 0;
@@ -348,14 +366,22 @@ p {
     position: static;
     display: block;
     box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    height: 0;
+    display: none;
   }
-}
-.main_header_content_menu .menu li .submenu li {
-  padding: 10px 0;
 }
 .main_header_content_menu .menu li .submenu li a {
   font-size: 1.2em;
   padding: 12px 0;
+}
+@media screen and (max-width: 890px) {
+  .main_header_content_menu .menu li .submenu li a {
+    font-size: 1em;
+    font-weight: 400;
+  }
 }
 .main_header_content_menu .menu li .submenu li a:hover {
   text-decoration: underline;

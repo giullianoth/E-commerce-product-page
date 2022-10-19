@@ -22,7 +22,7 @@
             transform: translateY(-50%);
             font-size: 1.4em;
             z-index: 12;
-            height: 100px;
+            @include transition(background-color, 0.3s, ease, 0.1s);
 
             display: none;
 
@@ -37,6 +37,7 @@
                 top: 0;
                 transform: unset;
                 padding-left: 20px;
+                position: fixed;
             }
 
             i {
@@ -68,6 +69,7 @@
 
         &_menu {
             @include flexBasis(100%, calc(80px + 400px));
+            @include transition(opacity);
 
             @include setResponsiveDesign(1200px) {
                 @include flexBasis(100%, calc(80px + 380px));
@@ -78,18 +80,25 @@
                 background-color: $color-black-lightbox;
                 z-index: 10;
                 display: none;
+                opacity: 0;
             }
 
             .menu {
                 @include flex(flex-start, stretch, nowrap);
-                overflow-x: auto;
+                @include transition(left);
+                overflow-y: auto;
 
                 @include setResponsiveDesign(890px) {
                     flex-direction: column;
                     @include fixed;
                     width: 75%;
                     background-color: $color-white;
-                    padding-top: 120px;
+                    left: -75%;
+
+                    padding: {
+                        top: 120px;
+                        bottom: 40px
+                    };
                 }
 
                 li {
@@ -99,6 +108,10 @@
 
                     &:hover .submenu {
                         display: block;
+
+                        @include setResponsiveDesign(890px) {
+                            display: none;
+                        }
                     }
 
                     &.menu_item {
@@ -106,6 +119,11 @@
                         margin: 0 20px;
 
                         @include transition;
+
+                        @include setResponsiveDesign(890px) {
+                            border-bottom: none;
+                            border-right: 5px solid transparent;
+                        }
 
                         &:hover {
                             border-color: $color-orange;
@@ -133,7 +151,8 @@
 
                     .submenu {
                         @include dropDown;
-                        top: calc(100% + 5px);
+                        top: calc(100% + 5px);                        
+                        @include transition;
 
                         @include setBrowsers(border-top-left-radius, 0);
 
@@ -141,14 +160,24 @@
                             position: static;
                             display: block;
                             box-shadow: none;
+                            padding: {
+                                top: 0;
+                                bottom: 0;
+                            };
+                            overflow: hidden;
+                            height: 0;
+                            display: none;
                         }
 
                         li {
-                            padding: 10px 0;
-
                             a {
                                 font-size: 1.2em;
                                 padding: 12px 0;
+
+                                @include setResponsiveDesign(890px) {
+                                    font-size: 1em;
+                                    font-weight: 400;
+                                }
 
                                 &:hover {
                                     text-decoration: underline;
