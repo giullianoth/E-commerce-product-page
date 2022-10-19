@@ -22,11 +22,25 @@
             transform: translateY(-50%);
             font-size: 1.4em;
             z-index: 12;
-            cursor: pointer;
+            height: 100px;
+
             display: none;
 
             @include setResponsiveDesign(890px) {
-                display: block;
+                @include flex(flex-start, center);
+            }
+
+            &.active {                
+                background-color: $color-white;
+                width: 75%;
+                left: 0;
+                top: 0;
+                transform: unset;
+                padding-left: 20px;
+            }
+
+            i {
+                cursor: pointer;
             }
         }
 

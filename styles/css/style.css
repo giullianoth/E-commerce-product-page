@@ -209,13 +209,27 @@ p {
   transform: translateY(-50%);
   font-size: 1.4em;
   z-index: 12;
-  cursor: pointer;
+  height: 100px;
   display: none;
 }
 @media screen and (max-width: 890px) {
   .main_header_content .hamb_icon {
-    display: block;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
   }
+}
+.main_header_content .hamb_icon.active {
+  background-color: hsl(0deg, 0%, 100%);
+  width: 75%;
+  left: 0;
+  top: 0;
+  transform: unset;
+  padding-left: 20px;
+}
+.main_header_content .hamb_icon i {
+  cursor: pointer;
 }
 .main_header_content_logo {
   flex-basis: 160px;
