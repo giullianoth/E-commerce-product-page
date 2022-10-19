@@ -99,6 +99,7 @@
     width: 400px;
     background-color: $color-white;
     padding: 20px;
+    z-index: 2;
 
     @include absolute(100%);
     @include borderRadius;

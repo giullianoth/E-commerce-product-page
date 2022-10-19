@@ -329,6 +329,7 @@ p {
   width: 400px;
   background-color: hsl(0deg, 0%, 100%);
   padding: 20px;
+  z-index: 2;
   position: absolute;
   top: 100%;
   left: 0;
@@ -384,6 +385,16 @@ p {
   color: hsl(220deg, 13%, 13%);
   cursor: pointer;
 }
+@media screen and (max-width: 500px) {
+  .main_header_content_basket_cart i {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 390px) {
+  .main_header_content_basket_cart i {
+    font-size: 0.8em;
+  }
+}
 .main_header_content_basket_cart span {
   position: absolute;
   top: 0;
@@ -405,6 +416,7 @@ p {
   width: 400px;
   background-color: hsl(0deg, 0%, 100%);
   padding: 20px;
+  z-index: 2;
   position: absolute;
   top: 100%;
   left: 0;
@@ -520,6 +532,11 @@ p {
 }
 .main_header_content_account {
   flex-basis: 60px;
+}
+@media screen and (max-width: 500px) {
+  .main_header_content_account {
+    flex-basis: 40px;
+  }
 }
 .main_header_content_account .avatar img {
   border: 2px solid transparent;

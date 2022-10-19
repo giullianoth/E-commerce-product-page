@@ -182,6 +182,14 @@
                     font-size: 1.4em;
                     color: $color-very-dark-blue;
                     cursor: pointer;
+
+                    @include setResponsiveDesign(500px) {
+                        font-size: 1em;
+                    }
+
+                    @include setResponsiveDesign(390px) {
+                        font-size: 0.8em;
+                    }
                 }
 
                 span {
@@ -296,6 +304,10 @@
         
         &_account {
             @include flexBasis(100px, 40px);
+
+            @include setResponsiveDesign(500px) {
+                @include flexBasis(80px, 40px);
+            }
 
             .avatar {
                 img {
