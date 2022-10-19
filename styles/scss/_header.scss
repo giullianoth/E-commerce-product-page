@@ -86,8 +86,6 @@
             .menu {
                 @include flex(flex-start, stretch, nowrap);
                 @include transition(left);
-                overflow-y: auto;
-                overflow-x: hidden;
 
                 @include setResponsiveDesign(890px) {
                     flex-direction: column;
@@ -95,6 +93,8 @@
                     width: 75%;
                     background-color: $color-white;
                     left: -75%;
+                    overflow-y: auto;
+                    overflow-x: hidden;
 
                     padding: {
                         top: 120px;
@@ -152,8 +152,7 @@
 
                     .submenu {
                         @include dropDown;
-                        top: calc(100% + 5px);                        
-                        @include transition;
+                        top: calc(100% + 5px);
 
                         @include setBrowsers(border-top-left-radius, 0);
 

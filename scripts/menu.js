@@ -27,24 +27,6 @@ const mobileMenu = () => {
         }
     })
 
-    if (window.innerWidth <= 890) {
-        menuDropDown.forEach((item) => {
-            item.addEventListener("click", (event) => {
-                event.preventDefault();
-
-                let submenu = item.querySelector(".submenu");
-
-                if (window.getComputedStyle(submenu).height === "0px") {
-                    submenu.style.display = "block";
-                    submenu.style.height = "auto";
-                } else {
-                    submenu.style.height = "";
-                    submenu.style.display = "";
-                }
-            })
-        })
-    }
-
     window.onresize = () => {
         if (window.innerWidth > 890) {
             menuArea.style.display = "block";
@@ -57,6 +39,24 @@ const mobileMenu = () => {
                 menuArea.style.display = "";
                 menuArea.style.opacity = "";
             }
+        }
+
+        if (window.innerWidth <= 890) {
+            menuDropDown.forEach((item) => {
+                item.addEventListener("click", (event) => {
+                    event.preventDefault();
+    
+                    let submenu = item.querySelector(".submenu");
+    
+                    if (window.getComputedStyle(submenu).height === "0px") {
+                        submenu.style.display = "block";
+                        submenu.style.height = "auto";
+                    } else {
+                        submenu.style.height = "";
+                        submenu.style.display = "";
+                    }
+                })
+            })
         }
     }
 }

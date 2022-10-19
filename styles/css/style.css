@@ -281,8 +281,6 @@ p {
   align-items: stretch;
   flex-wrap: nowrap;
   transition: left 0.3s ease 0s;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 @media screen and (max-width: 890px) {
   .main_header_content_menu .menu {
@@ -295,6 +293,8 @@ p {
     width: 75%;
     background-color: hsl(0deg, 0%, 100%);
     left: -75%;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-top: 120px;
     padding-bottom: 40px;
   }
@@ -357,7 +357,6 @@ p {
   box-shadow: 0 10px 20px 0 hsla(0deg, 0%, 0%, 0.4);
   transition: all 0.3s ease 0s;
   top: calc(100% + 5px);
-  transition: all 0.3s ease 0s;
   border-top-left-radius: 0;
   -moz-border-top-left-radius: 0;
   -webkit-border-top-left-radius: 0;
