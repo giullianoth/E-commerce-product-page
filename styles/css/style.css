@@ -157,11 +157,25 @@ p {
   flex-wrap: nowrap;
   gap: 40px;
   border-bottom: 1px solid hsl(220deg, 14%, 75%);
+  position: relative;
 }
 @media screen and (max-width: 1200px) {
   .main_header_content {
     gap: 20px;
   }
+}
+@media screen and (max-width: 890px) {
+  .main_header_content {
+    gap: 0;
+  }
+}
+.main_header_content .hamb_icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 1.4em;
+  z-index: 12;
 }
 .main_header_content_logo {
   flex-basis: 160px;
@@ -171,8 +185,18 @@ p {
     flex-basis: 180px;
   }
 }
+@media screen and (max-width: 890px) {
+  .main_header_content_logo {
+    flex-basis: calc(100% - 120px);
+    padding-left: 40px;
+  }
+}
 .main_header_content_logo h1 {
   display: none;
+}
+.main_header_content_logo a {
+  width: 140px;
+  display: inline-block;
 }
 .main_header_content_menu {
   flex-basis: calc(100% - 480px);
@@ -182,11 +206,36 @@ p {
     flex-basis: calc(100% - 460px);
   }
 }
+@media screen and (max-width: 890px) {
+  .main_header_content_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0deg, 0%, 0%, 0.75);
+    z-index: 10;
+    display: none;
+  }
+}
 .main_header_content_menu .menu {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
+}
+@media screen and (max-width: 890px) {
+  .main_header_content_menu .menu {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    width: 75%;
+    background-color: hsl(0deg, 0%, 100%);
+    padding-top: 120px;
+  }
 }
 .main_header_content_menu .menu li {
   position: relative;
@@ -209,6 +258,13 @@ p {
   color: hsl(219deg, 9%, 45%);
   padding: 40px 0;
   transition: all 0.3s ease 0s;
+}
+@media screen and (max-width: 890px) {
+  .main_header_content_menu .menu li a {
+    padding: 10px 0;
+    font-weight: 700;
+    color: hsl(220deg, 13%, 13%);
+  }
 }
 .main_header_content_menu .menu li a:hover {
   color: hsl(220deg, 13%, 13%);
@@ -661,6 +717,7 @@ p {
 .attribution {
   font-size: 11px;
   text-align: center;
+  padding: 20px 0;
 }
 .attribution a {
   color: hsl(220deg, 13%, 13%);

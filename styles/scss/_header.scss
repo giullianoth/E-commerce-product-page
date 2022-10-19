@@ -7,9 +7,21 @@
         gap: 40px;
 
         border-bottom: 1px solid $color-grayish-blue;
+        @include relative;
 
         @include setResponsiveDesign(1200px) {
             gap: 20px;
+        }
+
+        @include setResponsiveDesign(890px) {
+            gap: 0;
+        }
+
+        .hamb_icon {
+            @include absolute(50%, 20px);
+            transform: translateY(-50%);
+            font-size: 1.4em;
+            z-index: 12;
         }
 
         &_logo {
@@ -19,8 +31,18 @@
                 @include flexBasis(200px, 20px);
             }
 
+            @include setResponsiveDesign(890px) {
+                @include flexBasis(calc(100% - 120px));
+                padding-left: 40px;
+            }
+
             h1 {
                 display: none;
+            }
+
+            a {
+                width: 140px;
+                display: inline-block;
             }
         }
 
@@ -31,8 +53,23 @@
                 @include flexBasis(100%, calc(80px + 380px));
             }
 
+            @include setResponsiveDesign(890px) {
+                @include fixed;
+                background-color: $color-black-lightbox;
+                z-index: 10;
+                display: none;
+            }
+
             .menu {
                 @include flex(flex-start, stretch, nowrap);
+
+                @include setResponsiveDesign(890px) {
+                    flex-direction: column;
+                    @include fixed;
+                    width: 75%;
+                    background-color: $color-white;
+                    padding-top: 120px;
+                }
 
                 li {
                     @include relative;
@@ -61,6 +98,12 @@
                         padding: 40px 0;
 
                         @include transition;
+
+                        @include setResponsiveDesign(890px) {
+                            padding: 10px 0;
+                            font-weight: 700;
+                            color: $color-very-dark-blue;
+                        }
 
                         &:hover {
                             color: $color-very-dark-blue;
