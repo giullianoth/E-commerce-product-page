@@ -139,6 +139,10 @@
                 
             padding: 40px 0;
 
+            @include setResponsiveDesign(500px) {
+                position: static;
+            }
+
             &:hover &_list {
                 display: block;
             }
@@ -181,6 +185,13 @@
                     right: 0;
                 }
 
+                @include setResponsiveDesign(500px) {
+                    width: calc(100% - 40px);
+                    left: 20px;
+                    right: 20px;
+                    top: calc(100% + 10px);
+                }
+
                 &_title {
                     padding: 0 20px 20px 20px;
                     font-weight: 700;
@@ -197,6 +208,10 @@
                         @include flexBasis(60px);
                         cursor: pointer;
 
+                        @include setResponsiveDesign(390px) {
+                            @include flexBasis(40px);
+                        }
+
                         img {
                             @include borderRadius($radius-small);
                         }
@@ -205,6 +220,12 @@
                     &_desc {
                         cursor: pointer;
                         line-height: 1.8em;
+
+                        p {
+                            @include setResponsiveDesign(390px) {
+                                font-size: 14px;
+                            }
+                        }
 
                         strong {
                             color: $color-very-dark-blue;
@@ -226,6 +247,13 @@
                     a {
                         @include btn;
                         @include flex1;
+
+                        @include setResponsiveDesign(390px) {
+                            padding: {
+                                top: 14px;
+                                bottom: 14px;
+                            }
+                        }
                     }
                 }
             }

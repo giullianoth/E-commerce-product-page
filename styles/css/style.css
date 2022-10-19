@@ -302,6 +302,11 @@ p {
   position: relative;
   padding: 40px 0;
 }
+@media screen and (max-width: 500px) {
+  .main_header_content_basket {
+    position: static;
+  }
+}
 .main_header_content_basket:hover .main_header_content_basket_list {
   display: block;
 }
@@ -352,6 +357,14 @@ p {
   padding-left: 0;
   padding-right: 0;
 }
+@media screen and (max-width: 500px) {
+  .main_header_content_basket_list {
+    width: calc(100% - 40px);
+    left: 20px;
+    right: 20px;
+    top: calc(100% + 10px);
+  }
+}
 .main_header_content_basket_list_title {
   padding: 0 20px 20px 20px;
   font-weight: 700;
@@ -369,6 +382,11 @@ p {
   flex-basis: 60px;
   cursor: pointer;
 }
+@media screen and (max-width: 390px) {
+  .main_header_content_basket_list_product_img {
+    flex-basis: 40px;
+  }
+}
 .main_header_content_basket_list_product_img img {
   border-radius: 6px;
   -moz-border-radius: 6px;
@@ -377,6 +395,11 @@ p {
 .main_header_content_basket_list_product_desc {
   cursor: pointer;
   line-height: 1.8em;
+}
+@media screen and (max-width: 390px) {
+  .main_header_content_basket_list_product_desc p {
+    font-size: 14px;
+  }
 }
 .main_header_content_basket_list_product_desc strong {
   color: hsl(220deg, 13%, 13%);
@@ -416,6 +439,12 @@ p {
 }
 .main_header_content_basket_list_checkout a i {
   margin-right: 10px;
+}
+@media screen and (max-width: 390px) {
+  .main_header_content_basket_list_checkout a {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
 }
 .main_header_content_account {
   flex-basis: 60px;
@@ -570,6 +599,11 @@ p {
   font-size: 3em;
   color: hsl(220deg, 13%, 13%);
 }
+@media screen and (max-width: 500px) {
+  .main_product_content_info_title h2 {
+    font-size: 2em;
+  }
+}
 .main_product_content_info_desc {
   line-height: 1.6em;
   margin-bottom: 40px;
@@ -590,6 +624,11 @@ p {
   .main_product_content_info_discount_price {
     margin-bottom: 40px;
     flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main_product_content_info_discount_price {
+    flex-basis: 70%;
   }
 }
 .main_product_content_info_discount_price span {
@@ -614,6 +653,11 @@ p {
   .main_product_content_info_current_price {
     flex-basis: 50%;
     text-align: right;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main_product_content_info_current_price {
+    flex-basis: 30%;
   }
 }
 .main_product_content_info_action {

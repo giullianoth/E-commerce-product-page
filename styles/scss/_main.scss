@@ -78,6 +78,10 @@
                 h2 {
                     font-size: 3em;
                     color: $color-very-dark-blue;
+
+                    @include setResponsiveDesign(500px) {
+                        font-size: 2em;
+                    }
                 }
             }
 
@@ -104,6 +108,10 @@
                     @include flex2;
                 }
 
+                @include setResponsiveDesign(400px) {
+                    @include flexBasis(70%);
+                }
+
                 span {
                     display: inline-block;
                     padding: 4px 10px;
@@ -127,6 +135,10 @@
                 @include setResponsiveDesign(890px) {
                     @include flex2;
                     text-align: right;
+                }
+
+                @include setResponsiveDesign(400px) {
+                    @include flexBasis(30%);
                 }
             }
 
