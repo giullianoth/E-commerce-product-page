@@ -96,14 +96,12 @@ const lightboxGallery = (galleryElement) => {
     lightbox.append(galleryElement);
 
     document.querySelector("body").prepend(lightbox);
+    fadeIn(lightbox, "flex");
 
     thumbsImageLightbox.forEach((item, index, arr) => {
         imageNav(item, index, arr, featuredImageLightbox);
+        checkNavBtn(thumbsImageLightbox, lightboxPrev, lightboxNext);
     })
-
-    setTimeout(() => {
-        fadeIn(lightbox, "flex");
-    }, 100);
 
     checkNavBtn(thumbsImageLightbox, lightboxPrev, lightboxNext);
 
@@ -124,9 +122,11 @@ const lightboxGallery = (galleryElement) => {
                 showImage(thumbsImage[index], thumbsImage, featuredImage, featuredImageLightbox.src);
             }
         })
-        
-        fadeOut(lightbox);        
-        lightbox.remove();
+
+        fadeOut(lightbox);
+        setTimeout(() => {
+            lightbox.remove();
+        }, 300);
     })
 }
 
