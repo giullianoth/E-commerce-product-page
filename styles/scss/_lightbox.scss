@@ -7,6 +7,8 @@
     @include flex;
     display: none;
 
+    @include transition;
+
     &_gallery {
         @include flexBasis(600px);
         @include container(600px);
@@ -20,19 +22,26 @@
 
         .close {
             @include absolute(-50px, unset);
-            right: 0;
+            right: 20px;
             font-size: 1.8em;
             color: $color-white;
             cursor: pointer;
+            z-index: 21;
 
             @include transition;
 
-            @include setResponsiveDesign(600px) {
-                right: 20px;
-            }
-
             &:hover {
                 color: $color-orange;
+            }
+        }
+
+        .featured {
+            @include flex;
+            @include borderRadius($radius-big);
+            background-color: $color-white;
+
+            img {
+                @include transition;
             }
         }
 

@@ -40,6 +40,7 @@ p {
   align-items: center;
   flex-wrap: wrap;
   display: none;
+  transition: all 0.3s ease 0s;
 }
 .main_lightbox_gallery {
   flex-basis: 600px;
@@ -157,19 +158,28 @@ p {
   position: absolute;
   top: -50px;
   left: unset;
-  right: 0;
+  right: 20px;
   font-size: 1.8em;
   color: hsl(0deg, 0%, 100%);
   cursor: pointer;
+  z-index: 21;
   transition: all 0.3s ease 0s;
-}
-@media screen and (max-width: 600px) {
-  .main_lightbox_gallery .close {
-    right: 20px;
-  }
 }
 .main_lightbox_gallery .close:hover {
   color: hsl(26deg, 100%, 55%);
+}
+.main_lightbox_gallery .featured {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 14px;
+  -moz-border-radius: 14px;
+  -webkit-border-radius: 14px;
+  background-color: hsl(0deg, 0%, 100%);
+}
+.main_lightbox_gallery .featured img {
+  transition: all 0.3s ease 0s;
 }
 @media screen and (max-width: 600px) {
   .main_lightbox_gallery .thumbs {
