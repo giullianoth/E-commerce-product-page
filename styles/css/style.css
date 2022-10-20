@@ -739,6 +739,9 @@ p {
 .main_product_content_images .featured .navigation .nav.next {
   transform: translateX(-20px);
 }
+.main_product_content_images .featured img {
+  transition: all 0.3s ease 0s;
+}
 @media screen and (max-width: 890px) {
   .main_product_content_images .featured img {
     border-radius: 0;

@@ -7,25 +7,30 @@ const menuDropDown = document.querySelectorAll(".j_dropdown");
 let headerHeight = document.querySelector(".j_main_header").offsetHeight;
 
 const toggleMobileMenu = () => {
+
+    let icon = menuHambIcon.querySelector("i");
+    let menu = menuArea.querySelector(".menu");
+
     menuHambIcon.style.height = `${headerHeight}px`;
     menuHambIcon.classList.toggle("active");
 
     if (menuHambIcon.classList.contains("active")) {
-        menuHambIcon.querySelector("i").classList.add("fa-xmark");
-        menuHambIcon.querySelector("i").classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+        icon.classList.remove("fa-bars");
 
         fadeIn(menuArea);
-        menuArea.querySelector(".menu").style.left = "0";
+        menu.style.left = "0";
     } else {
-        menuHambIcon.querySelector("i").classList.remove("fa-xmark");
-        menuHambIcon.querySelector("i").classList.add("fa-bars");
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
 
         fadeOut(menuArea);
-        menuArea.querySelector(".menu").style.left = "";
+        menu.style.left = "";
     }
 }
 
 const dropDownMobile = () => {
+    
     menuDropDown.forEach((item) => {
         item.addEventListener("click", (event) => {
             event.preventDefault();
