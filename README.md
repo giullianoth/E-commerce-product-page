@@ -6,7 +6,7 @@ Nesta página consta informações do produto, como imagens navegáveis, descri�
 
 Além disso, a página apresenta elementos de cabeçalho, como área do logo, menu e links que direcionam para área de perfil e de compras.
 
-## Layout do projeto construído
+## Layout do projeto construído (Capturas de tela)
 
 ![Captura de tela em 1440px](images/screenshots/Screenshot-1440px.png)
 
