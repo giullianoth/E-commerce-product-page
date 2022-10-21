@@ -64,7 +64,7 @@ const createCheckout = () => {
     let buttonArea = document.createElement("div");
     let button = document.createElement("button");
 
-    buttonArea.className = "main_header_content_basket_list_checkout";
+    buttonArea.className = "main_header_content_basket_list_checkout j_basket_checkout";
     button.innerText = "Checkout";
 
     buttonArea.append(button);
@@ -90,6 +90,25 @@ const generateProducts = () => {
     }
 }
 
+const removeProduct = (item) => {
+    let emptyCartElement = document.createElement("div");
+    let emptyCartTextElement = document.createElement("p");
+
+    let checkoutBtn = basketList.querySelector(".j_basket_checkout");
+    let qtTag = basketCart.querySelector(".j_basket_count");
+
+    emptyCartElement.className = "main_header_content_basket_list_empty j_basket_list_empty";
+    emptyCartTextElement.innerText = "Your cart is empty.";
+
+    emptyCartElement.append(emptyCartTextElement);
+
+    item.remove();
+    checkoutBtn.remove();
+    qtTag.remove();
+
+    basketList.append(emptyCartElement);
+}
+
 const cart = () => {
     generateProducts();
 
@@ -97,10 +116,9 @@ const cart = () => {
     
     basketListProducts.forEach((item) => {
         let deleteProduct = item.querySelector(".j_basket_delete");
-        console.log(item.querySelector(".j_basket_product_qt"));
 
         deleteProduct.addEventListener("click", () => {
-            // item.remove();
+            removeProduct(item);
         })
     })
 }
