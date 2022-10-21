@@ -1,4 +1,4 @@
-# Frontend Mentor - E-commerce product page
+# E-commerce product page - Página de produto de e-commerce
 
 Este projeto é um desafio da plataforma [Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6), que consiste na simulação de uma página de apresentação de produtos de um e-commerce. A página é responsiva: se adapta a diferenres tamanhos de tela conforme o dispositivo em que é visualizado.
 
