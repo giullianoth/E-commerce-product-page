@@ -264,6 +264,15 @@
                     border-bottom: 1px solid $color-grayish-blue;
                 }
 
+                &_empty {
+                    padding: 60px 20px;
+                    text-align: center;
+
+                    p {
+                        font-weight: 700;
+                    }
+                }
+
                 &_product {
                     @include flex(space-between, center, nowrap);
 
@@ -300,8 +309,9 @@
                             }
                         }
 
-                        strong {
+                        &_total {
                             color: $color-very-dark-blue;
+                            font-weight: 700;
                         }
                     }
 
@@ -317,7 +327,7 @@
                     padding: 20px 20px 0 20px;
                     @include flex;
 
-                    a {
+                    button {
                         @include btn;
                         @include flex1;
 

@@ -482,6 +482,13 @@ p {
   color: hsl(220deg, 13%, 13%);
   border-bottom: 1px solid hsl(220deg, 14%, 75%);
 }
+.main_header_content_basket_list_empty {
+  padding: 60px 20px;
+  text-align: center;
+}
+.main_header_content_basket_list_empty p {
+  font-weight: 700;
+}
 .main_header_content_basket_list_product {
   display: flex;
   justify-content: space-between;
@@ -522,8 +529,9 @@ p {
     font-size: 14px;
   }
 }
-.main_header_content_basket_list_product_desc strong {
+.main_header_content_basket_list_product_desc_total {
   color: hsl(220deg, 13%, 13%);
+  font-weight: 700;
 }
 .main_header_content_basket_list_product_delete {
   flex-basis: 20px;
@@ -541,7 +549,7 @@ p {
   align-items: center;
   flex-wrap: wrap;
 }
-.main_header_content_basket_list_checkout a {
+.main_header_content_basket_list_checkout button {
   display: inline-block;
   background-color: hsl(26deg, 100%, 55%);
   color: hsl(0deg, 0%, 100%);
@@ -549,20 +557,21 @@ p {
   text-align: center;
   font-weight: 700;
   padding: 20px 46px;
+  cursor: pointer;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   transition: all 0.3s ease 0s;
   flex-basis: 100%;
 }
-.main_header_content_basket_list_checkout a:hover {
+.main_header_content_basket_list_checkout button:hover {
   background-color: hsl(27deg, 100%, 71%);
 }
-.main_header_content_basket_list_checkout a i {
+.main_header_content_basket_list_checkout button i {
   margin-right: 10px;
 }
 @media screen and (max-width: 390px) {
-  .main_header_content_basket_list_checkout a {
+  .main_header_content_basket_list_checkout button {
     padding-top: 14px;
     padding-bottom: 14px;
   }
@@ -883,6 +892,7 @@ p {
   text-align: center;
   font-weight: 700;
   padding: 20px 46px;
+  cursor: pointer;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -947,6 +957,7 @@ p {
   text-align: center;
   font-weight: 700;
   padding: 20px 46px;
+  cursor: pointer;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -970,3 +981,5 @@ p {
 .attribution a:hover {
   text-decoration: underline;
 }
+
+/*# sourceMappingURL=style.css.map */
