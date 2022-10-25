@@ -841,7 +841,7 @@ p {
     flex-basis: 70%;
   }
 }
-.main_product_content_info_discount_price span {
+.main_product_content_info_discount_price .discount {
   display: inline-block;
   padding: 4px 10px;
   background-color: hsl(25deg, 100%, 94%);

@@ -1,12 +1,75 @@
 const basketList = document.querySelector(".j_basket_list");
 const basketCart = document.querySelector(".j_basket_cart");
+const btnQuantity = document.querySelectorAll(".j_btn_qt");
+const productQuantityElement = document.querySelector(".j_product_qt");
+const purchase = document.querySelector(".j_add_product");
+const productImage = document.querySelector(".j_product_image");
 
-let qtProducts = 0;
+let productQuantity = parseInt(productQuantityElement.innerText);
+
+const products = [];
+
+const setQuantity = (btn) => {
+    if (btn.classList.contains("j_minus") && parseInt(productQuantityElement.innerText) > 1) {
+        productQuantity -= 1;
+    } else if (btn.classList.contains("j_plus")) {
+        productQuantity += 1;
+    }
+
+    productQuantityElement.innerText = productQuantity;
+}
+
+const setProductList = (product) => {
+    let pdtName = document.createElement("p");
+    let pdtPrice = document.createElement("span");
+    let pdtQuant = document.createElement("span");
+    let pdtTotal = document.createElement("strong");
+    let pdtImage = document.createElement("img");
+    let pdtDelete = document.createElement("i");
+
+    let pdtImgArea = document.createElement("div");
+    let pdtDesc = document.createElement("div");
+    let pdtDeleteArea = document.createElement("div");
+    let pdtPriceArea = document.createElement("p");
+
+    let pdtList = document.createElement("div");
+
+    pdtName.innerText = product.name;
+    pdtPrice.innerText = `$${product.price}.00`;
+    pdtQuant.innerText = product.quantity;
+    pdtTotal.innerText = `$${product.total}.00`;
+    pdtImage.src = product.image;
+    pdtImage.setAttribute("alt", product.name);
+    pdtDelete.className = "fa-solid fa-trash-can";
+    pdtDelete.setAttribute = ("title", "Delete this item");
+    pdtPriceArea.innerHTML = `${pdtPrice.outerHTML} x ${pdtQuant.outerHTML} ${pdtTotal.outerHTML}`; 
+
+    pdtImgArea.className = "main_header_content_basket_list_product_img";
+    pdtDesc.className = "main_header_content_basket_list_product_desc";
+    pdtDeleteArea.className = "main_header_content_basket_list_product_delete";
+
+    pdtList.className = "main_header_content_basket_list_product";
+
+    pdtImgArea.innerHTML = pdtImage.outerHTML;
+    pdtDesc.innerHTML = pdtName.outerHTML + pdtPriceArea.outerHTML;
+    pdtDeleteArea.innerHTML = pdtDelete.outerHTML;
+
+    pdtList.innerHTML = pdtImgArea.outerHTML + pdtDesc.outerHTML + pdtDeleteArea.outerHTML;
+
+    basketList.append(pdtList);
+
+    console.log(pdtList);
+}
 
 const quantityTag = () => {
+    let qtProducts = 0;
     let qtTag = document.createElement("span");
     qtTag.className = "j_basket_count";
-    
+
+    products.forEach((item) => {
+        qtProducts += item.quantity;
+    })
+
     if (qtProducts === 0) {
         return null;
     }
@@ -15,49 +78,30 @@ const quantityTag = () => {
     return qtTag;
 }
 
-const createProduct = (product, quantity, total) => {
-    let productElement = document.createElement("div");
-    let productImgElement = document.createElement("div");
-    let productImg = document.createElement("img");
-    let productDescElement = document.createElement("div");
-    let productDescName = document.createElement("p");
-    let productPriceInfo = document.createElement("p");
-    let productPrice = document.createElement("span");
-    let productQt = document.createElement("span");
-    let productTotal = document.createElement("span");
-    let productDelete = document.createElement("div");
-    let productDeleteIcon = document.createElement("i");
+const addProduct = () => {
+    let productAdded = {
+        image: productImage.src,
+        name: document.querySelector(".j_product_name").innerText,
+        price: parseFloat(document.querySelector(".j_product_price").innerText),
+        quantity: parseInt(productQuantityElement.innerText),
+        total: null
+    }
+
+    productAdded.total = productAdded.price * productAdded.quantity;
+    products.push(productAdded);
+
+    if (basketCart.firstElementChild.classList.contains("j_basket_count")) {
+        basketCart.firstElementChild.remove();
+    }
+
+    basketCart.prepend(quantityTag());
+
+    basketList.innerHTML = "";
+    products.forEach((product) => {
+        setProductList(product);
+    })
     
-    productElement.className = "main_header_content_basket_list_product j_basket_product";
-    productImgElement.className = "main_header_content_basket_list_product_img";
-    productImg.src = product.img;
-    productImg.setAttribute("alt", product.name);
-    productDescElement.className = "main_header_content_basket_list_product_desc";
-    productDescName.innerText = product.name;
-    productPrice.className = "j_basket_product_price";
-    productPrice.innerText = product.price;
-    productQt.className = "j_basket_product_qt";
-    productQt.innerText = quantity;
-    productTotal.className = "main_header_content_basket_list_product_desc_total j_basket_product_total";
-    productTotal.innerText = total;
-    productDelete.className = "main_header_content_basket_list_product_delete j_basket_delete";
-    productDeleteIcon.className = "fa-solid fa-trash-can";
-    productDeleteIcon.setAttribute("title", "Delete this item");
-
-    productPriceInfo.append(`$${productPrice.innerHTML}.00 x ${productQt.innerHTML} $${productTotal.innerHTML}.00`);
-    productDelete.append(productDeleteIcon);
-
-    productImgElement.append(productImg);
-    productDescElement.append(productDescName);
-    productDescElement.append(productPriceInfo);
-
-    productElement.append(productImgElement);
-    productElement.append(productDescElement);
-    productElement.append(productDelete);
-
-    qtProducts = quantity;
-
-    return productElement;
+    basketList.append(createCheckout());
 }
 
 const createCheckout = () => {
@@ -70,24 +114,6 @@ const createCheckout = () => {
     buttonArea.append(button);
 
     return buttonArea;
-}
-
-const generateProducts = () => {
-    let product = {
-        img: "images/image-product-1-thumbnail.jpg",
-        name: "Fall Limited Edition Sneakers",
-        price: 125
-    }
-    let qt = 3;
-    let total = product.price * qt;
-
-    basketList.querySelector(".j_basket_list_empty").remove();
-    basketList.append(createProduct(product, qt, total));
-    basketList.append(createCheckout());
-
-    if (qtProducts > 0) {
-        basketCart.append(quantityTag());
-    }
 }
 
 const removeProduct = (item) => {
@@ -110,15 +136,12 @@ const removeProduct = (item) => {
 }
 
 const cart = () => {
-    generateProducts();
+    purchase.addEventListener("click", addProduct);
 
-    let basketListProducts = basketList.querySelectorAll(".j_basket_product");
-    
-    basketListProducts.forEach((item) => {
-        let deleteProduct = item.querySelector(".j_basket_delete");
-
-        deleteProduct.addEventListener("click", () => {
-            removeProduct(item);
+    btnQuantity.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+            event.preventDefault();
+            setQuantity(btn);
         })
     })
 }
