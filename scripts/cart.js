@@ -34,6 +34,10 @@ const setProductList = (product) => {
 
     let pdtList = document.createElement("div");
 
+    pdtPrice.className = "price";
+    pdtQuant.className = "quantity";
+    pdtTotal.className = "total";
+
     pdtName.innerText = product.name;
     pdtPrice.innerText = `$${product.price}.00`;
     pdtQuant.innerText = product.quantity;
@@ -41,12 +45,12 @@ const setProductList = (product) => {
     pdtImage.src = product.image;
     pdtImage.setAttribute("alt", product.name);
     pdtDelete.className = "fa-solid fa-trash-can";
-    pdtDelete.setAttribute = ("title", "Delete this item");
+    pdtDelete.setAttribute("title", "Delete this item");
     pdtPriceArea.innerHTML = `${pdtPrice.outerHTML} x ${pdtQuant.outerHTML} ${pdtTotal.outerHTML}`; 
 
     pdtImgArea.className = "main_header_content_basket_list_product_img";
     pdtDesc.className = "main_header_content_basket_list_product_desc";
-    pdtDeleteArea.className = "main_header_content_basket_list_product_delete";
+    pdtDeleteArea.className = "main_header_content_basket_list_product_delete j_product_delete";
 
     pdtList.className = "main_header_content_basket_list_product";
 
@@ -57,8 +61,6 @@ const setProductList = (product) => {
     pdtList.innerHTML = pdtImgArea.outerHTML + pdtDesc.outerHTML + pdtDeleteArea.outerHTML;
 
     basketList.append(pdtList);
-
-    console.log(pdtList);
 }
 
 const quantityTag = () => {
@@ -76,6 +78,18 @@ const quantityTag = () => {
 
     qtTag.innerText = qtProducts;
     return qtTag;
+}
+
+const createCheckout = () => {
+    let buttonArea = document.createElement("div");
+    let button = document.createElement("button");
+
+    buttonArea.className = "main_header_content_basket_list_checkout j_basket_checkout";
+    button.innerText = "Checkout";
+
+    buttonArea.append(button);
+
+    return buttonArea;
 }
 
 const addProduct = () => {
@@ -104,39 +118,45 @@ const addProduct = () => {
     basketList.append(createCheckout());
 }
 
-const createCheckout = () => {
-    let buttonArea = document.createElement("div");
-    let button = document.createElement("button");
-
-    buttonArea.className = "main_header_content_basket_list_checkout j_basket_checkout";
-    button.innerText = "Checkout";
-
-    buttonArea.append(button);
-
-    return buttonArea;
-}
-
-const removeProduct = (item) => {
+const removeProduct = (item, index) => {
     let emptyCartElement = document.createElement("div");
     let emptyCartTextElement = document.createElement("p");
-
-    let checkoutBtn = basketList.querySelector(".j_basket_checkout");
-    let qtTag = basketCart.querySelector(".j_basket_count");
+    let pdtQuant = parseInt(item.querySelector(".quantity").innerText);
 
     emptyCartElement.className = "main_header_content_basket_list_empty j_basket_list_empty";
     emptyCartTextElement.innerText = "Your cart is empty.";
 
     emptyCartElement.append(emptyCartTextElement);
 
-    item.remove();
-    checkoutBtn.remove();
-    qtTag.remove();
+    let checkoutBtn = basketList.querySelector(".j_basket_checkout");
+    let qtTag = basketCart.querySelector(".j_basket_count");
+    let qt = parseInt(qtTag.innerText) - pdtQuant;
+    qtTag.innerText = qt;
 
-    basketList.append(emptyCartElement);
+    item.remove();
+    products.splice(index, 1);
+
+    if (qt === 0) {
+        qtTag.remove();
+        checkoutBtn.remove();
+        basketList.append(emptyCartElement);
+    }
 }
 
 const cart = () => {
-    purchase.addEventListener("click", addProduct);
+    purchase.addEventListener("click", () => {
+        addProduct();
+
+        if (products.length) {
+            let deleteBtn = basketList.querySelectorAll(".j_product_delete");
+            
+            deleteBtn.forEach((btn, index) => {
+                btn.addEventListener("click", () => {
+                    removeProduct(btn.parentElement, index);
+                })
+            })
+        }
+    });
 
     btnQuantity.forEach((btn) => {
         btn.addEventListener("click", (event) => {
