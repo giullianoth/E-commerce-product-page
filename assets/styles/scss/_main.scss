@@ -11,6 +11,8 @@
             column-gap: 120px;
 
             &_gallery {
+                @include flex1;
+
                 &_featured {
                     @include relative;
 
@@ -47,6 +49,108 @@
 
                 &_thumbs {
                     display: none;
+                }
+            }
+
+            &_info {
+                @include flex1;
+                @include containerWidth($breakpoint-mobile-landscape);
+                @include flex(space-between);
+
+                &_title {
+                    @include flex1;
+                    margin-bottom: 40px;
+
+                    p {
+                        text-transform: uppercase;
+                        color: $color-orange;
+                        font-size: 0.9em;
+                        font-weight: 700;
+                        letter-spacing: 0.2em;
+                        margin-bottom: 20px;
+                    }
+
+                    h1 {
+                        font-size: 2em;
+                    }
+                }
+
+                &_desc {
+                    @include flex1;
+                    line-height: 1.6em;
+                    margin-bottom: 40px;
+                }
+
+                &_discountprice {
+                    font-size: 1.8em;
+                    font-weight: 700;
+                    color: $color-very-dark-blue;
+                    margin-bottom: 40px;
+
+                    @include flex(flex-start);
+
+                    .discount {
+                        display: inline-block;
+                        padding: 4px 10px;
+                        background-color: $color-pale-orange;
+                        color: $color-orange;
+                        font-size: 0.6em;
+                        margin-left: 20px;
+                        @include borderRadius($radius-small);
+                    }
+                }
+
+                &_currentprice {
+                    color: $color-grayish-blue;
+                    font-weight: 700;
+                    text-decoration: line-through;
+                    margin-bottom: 40px;
+                }
+
+                &_action {
+                    @include flex1;
+                    @include flex;
+                    gap: 20px;
+
+                    &_qt {
+                        @include flex1;
+                        @include flex;
+                        display: flex !important;
+
+                        cursor: default !important;
+                        background-color: $color-light-grayish-blue !important;
+                        color: $color-very-dark-blue !important;
+                        padding: 0 !important;
+                        overflow: hidden;
+
+                        &_changeqt {
+                            @include flex3;
+                            color: $color-orange;
+                            text-align: center;
+
+                            padding: {
+                                top: 20px;
+                                bottom: 20px;
+                            }
+
+                            cursor: pointer;
+                            @include transition;
+
+                            &:hover {
+                                color: $color-orange-hover;
+                            }
+                        }
+
+                        &_value {
+                            @include flex3;
+                            text-align: center;
+                        }
+                    }
+
+                    &_purchase {
+                        @include flex1;
+                        text-align: center;
+                    }
                 }
             }
         }

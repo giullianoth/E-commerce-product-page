@@ -35,7 +35,7 @@ body .sneakers_button {
   background-color: hsl(26, 100%, 55%);
   color: hsl(0, 0%, 100%);
   font-weight: 700;
-  padding: 14px 46px;
+  padding: 20px 46px;
   cursor: pointer;
   border: none;
   border-radius: 10px;
@@ -45,6 +45,9 @@ body .sneakers_button {
 }
 body .sneakers_button:hover {
   background-color: hsl(27, 100%, 71%);
+}
+body .sneakers_button * {
+  color: inherit;
 }
 
 .sneakers_header {
@@ -273,6 +276,9 @@ body .sneakers_button:hover {
   row-gap: 40px;
   column-gap: 120px;
 }
+.sneakers_product_content_gallery {
+  flex-basis: 100%;
+}
 .sneakers_product_content_gallery_featured {
   position: relative;
 }
@@ -307,4 +313,102 @@ body .sneakers_button:hover {
 }
 .sneakers_product_content_gallery_thumbs {
   display: none;
+}
+.sneakers_product_content_info {
+  flex-basis: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sneakers_product_content_info_title {
+  flex-basis: 100%;
+  margin-bottom: 40px;
+}
+.sneakers_product_content_info_title p {
+  text-transform: uppercase;
+  color: hsl(26, 100%, 55%);
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+}
+.sneakers_product_content_info_title h1 {
+  font-size: 2em;
+}
+.sneakers_product_content_info_desc {
+  flex-basis: 100%;
+  line-height: 1.6em;
+  margin-bottom: 40px;
+}
+.sneakers_product_content_info_discountprice {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: hsl(220, 13%, 13%);
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sneakers_product_content_info_discountprice .discount {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+  font-size: 0.6em;
+  margin-left: 20px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+.sneakers_product_content_info_currentprice {
+  color: hsl(220, 14%, 75%);
+  font-weight: 700;
+  text-decoration: line-through;
+  margin-bottom: 40px;
+}
+.sneakers_product_content_info_action {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.sneakers_product_content_info_action_qt {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex !important;
+  cursor: default !important;
+  background-color: hsl(223, 64%, 98%) !important;
+  color: hsl(220, 13%, 13%) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+.sneakers_product_content_info_action_qt_changeqt {
+  flex-basis: 33.3333333333%;
+  color: hsl(26, 100%, 55%);
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+  transition: all 300ms ease 0s;
+}
+.sneakers_product_content_info_action_qt_changeqt:hover {
+  color: hsl(27, 100%, 71%);
+}
+.sneakers_product_content_info_action_qt_value {
+  flex-basis: 33.3333333333%;
+  text-align: center;
+}
+.sneakers_product_content_info_action_purchase {
+  flex-basis: 100%;
+  text-align: center;
 }
