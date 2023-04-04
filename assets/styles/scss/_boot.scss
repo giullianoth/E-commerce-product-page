@@ -33,4 +33,23 @@ body {
     p {
         font-size: $font-size-paragraph;
     }
+
+    @include theme() {
+        &_button {
+            display: inline-block;
+            background-color: $color-orange;
+            color: $color-white;
+            font-weight: 700;
+            padding: 14px 46px;
+            cursor: pointer;
+            border: none;
+
+            @include borderRadius;
+            @include transition;
+
+            &:hover {
+                background-color: $color-orange-hover;
+            }
+        }
+    }
 }

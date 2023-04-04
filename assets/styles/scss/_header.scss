@@ -118,8 +118,26 @@
                     // @include relative;
 
                     &_cart {
+                        @include relative;
+
                         i {
                             color: $color-very-dark-blue;
+                            cursor: pointer;
+                        }
+
+                        .notification_count {
+                            height: 14px;
+                            line-height: 14px;
+                            background-color: $color-orange;
+                            color: $color-white;
+                            font-size: 0.6em;
+
+                            display: inline-block;
+                            padding: 0 8px;
+                            @include borderRadius(14px);
+
+                            @include absolute(-5px, unset);
+                            right: -60%;
                             cursor: pointer;
                         }
                     }
@@ -131,6 +149,7 @@
 
                         background-color: $color-white;
                         @include borderRadius;
+                        overflow: hidden;
                         
                         // display: none;
 
@@ -141,11 +160,61 @@
 
                         &_info {
                             padding: 20px;
-                            height: 160px;
                             @include flex;
+                            gap: 20px;
 
                             .empty {
                                 font-weight: 700;
+                            }
+
+                            &_items {
+                                max-height: 160px;
+                                overflow: auto;
+                                @include flex1;
+                                @include flex;
+                                gap: 20px;
+                            }
+
+                            &_item {
+                                @include flex1;
+                                @include flex(space-between);
+
+                                &_image {
+                                    @include flexBasis(40px);
+
+                                    img {
+                                        @include borderRadius($radius-small);
+                                    }
+                                }
+
+                                &_title {
+                                    @include flexBasis(calc(100% - 40px - 20px - 40px));
+                                    font-size: 0.8em;
+
+                                    h3 {
+                                        font-weight: 400;
+                                        color: $color-dark-grayish-blue;
+                                    }
+
+                                    p {
+                                        font-size: inherit;
+
+                                        .total {
+                                            font-weight: 700;
+                                        }
+                                    }
+                                }
+
+                                &_action {
+                                    @include flexBasis(20px);
+                                    color: $color-grayish-blue;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            &_checkout {
+                                @include flex1;
+                                text-align: center;
                             }
                         }
                     }
