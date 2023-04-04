@@ -54,6 +54,7 @@ body .sneakers_button:hover {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 .sneakers_header_content {
   max-width: 1300px;
@@ -185,6 +186,7 @@ body .sneakers_button:hover {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   overflow: hidden;
+  display: none;
 }
 .sneakers_header_content_profilenav_basket_list_title {
   padding: 20px;
@@ -244,6 +246,10 @@ body .sneakers_button:hover {
   flex-basis: 20px;
   color: hsl(220, 14%, 75%);
   cursor: pointer;
+  transition: all 300ms ease 0s;
+}
+.sneakers_header_content_profilenav_basket_list_info_item_action:hover {
+  color: hsl(219, 9%, 45%);
 }
 .sneakers_header_content_profilenav_basket_list_info_checkout {
   flex-basis: 100%;
@@ -251,4 +257,54 @@ body .sneakers_button:hover {
 }
 .sneakers_header_content_profilenav_account_avatar img {
   width: 40px;
+}
+
+/* PRODUCT SECTION */
+.sneakers_product {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.sneakers_product_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  column-gap: 120px;
+}
+.sneakers_product_content_gallery_featured {
+  position: relative;
+}
+.sneakers_product_content_gallery_featured_navigation .nav {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: unset;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: hsl(0, 0%, 100%);
+  font-size: 1.6em;
+  cursor: pointer;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: all 300ms ease 0s;
+}
+.sneakers_product_content_gallery_featured_navigation .nav:hover {
+  color: hsl(26, 100%, 55%);
+}
+.sneakers_product_content_gallery_featured_navigation .nav.prev {
+  left: 20px;
+}
+.sneakers_product_content_gallery_featured_navigation .nav.next {
+  right: 20px;
+}
+.sneakers_product_content_gallery_thumbs {
+  display: none;
 }

@@ -1,0 +1,54 @@
+/* PRODUCT SECTION */
+@include theme() {
+    &_product {
+        @include fullWidth;
+        @include relative;
+        z-index: 1;
+
+        &_content {
+            @include flex;
+            row-gap: 40px;
+            column-gap: 120px;
+
+            &_gallery {
+                &_featured {
+                    @include relative;
+
+                    &_navigation {
+                        .nav {
+                            display: block;
+                            @include absolute(50%, unset);
+                            transform: translateY(-50%);
+
+                            width: 40px;
+                            height: 40px;
+                            background-color: $color-white;
+                            font-size: 1.6em;
+                            cursor: pointer;
+
+                            @include rounded;
+                            @include flex;
+                            @include transition;
+
+                            &:hover {
+                                color: $color-orange;
+                            }
+
+                            &.prev {
+                                left: 20px;
+                            }
+
+                            &.next {
+                                right: 20px;
+                            }
+                        }
+                    }
+                }
+
+                &_thumbs {
+                    display: none;
+                }
+            }
+        }
+    }
+}

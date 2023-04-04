@@ -4,6 +4,7 @@
         padding: 30px 0;
         background-color: $color-white;
         @include fixed;
+        z-index: 10;
 
         &_content {
             @include containerWidth;
@@ -151,7 +152,7 @@
                         @include borderRadius;
                         overflow: hidden;
                         
-                        // display: none;
+                        display: none;
 
                         &_title {
                             padding: 20px;
@@ -209,6 +210,11 @@
                                     @include flexBasis(20px);
                                     color: $color-grayish-blue;
                                     cursor: pointer;
+                                    @include transition;
+
+                                    &:hover {
+                                        color: $color-dark-grayish-blue;
+                                    }
                                 }
                             }
 
