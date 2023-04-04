@@ -1,161 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
-.main_lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* BOOT CONFIG */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  color: hsl(219, 9%, 45%);
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  color: hsl(220, 13%, 13%);
+}
+body a {
+  text-decoration: none;
+  transition: all 300ms ease 0s;
+}
+body img {
+  display: block;
   width: 100%;
-  height: 100%;
-  z-index: 20;
-  background-color: hsla(0, 0%, 0%, 0.75);
-  overflow-x: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  display: none;
-  transition: all 0.3s ease 0s;
 }
-.main_lightbox_gallery {
-  flex-basis: 600px;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  position: relative;
+body ul li {
+  list-style: none;
 }
-.main_lightbox_gallery .featured {
-  flex-basis: 100%;
-  cursor: pointer;
-  position: relative;
-}
-.main_lightbox_gallery .featured img {
-  border-radius: 14px;
-  -moz-border-radius: 14px;
-  -webkit-border-radius: 14px;
-}
-.main_lightbox_gallery .featured .navigation {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  transform: translateY(-50%);
-}
-.main_lightbox_gallery .featured .navigation .nav {
-  width: 60px;
-  height: 60px;
-  background-color: hsl(0, 0%, 100%);
-  font-size: 1.6em;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  transition: all 0.3s ease 0s;
-}
-@media screen and (max-width: 600px) {
-  .main_lightbox_gallery .featured .navigation .nav {
-    width: 40px;
-    height: 40px;
-  }
-}
-.main_lightbox_gallery .featured .navigation .nav:hover {
-  color: hsl(26, 100%, 55%);
-}
-.main_lightbox_gallery .featured .navigation .nav.prev {
-  transform: translateX(-50%);
-}
-@media screen and (max-width: 600px) {
-  .main_lightbox_gallery .featured .navigation .nav.prev {
-    transform: translateX(10px);
-  }
-}
-.main_lightbox_gallery .featured .navigation .nav.next {
-  transform: translateX(50%);
-}
-@media screen and (max-width: 600px) {
-  .main_lightbox_gallery .featured .navigation .nav.next {
-    transform: translateX(-10px);
-  }
-}
-.main_lightbox_gallery .thumbs {
-  flex-basis: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 40px;
-}
-.main_lightbox_gallery .thumbs .thumb {
-  flex-basis: 25%;
-  cursor: pointer;
-  border: 2px solid transparent;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  transition: all 0.3s ease 0s;
-}
-.main_lightbox_gallery .thumbs .thumb:hover, .main_lightbox_gallery .thumbs .thumb.active {
-  background-color: hsl(0, 0%, 100%);
-}
-.main_lightbox_gallery .thumbs .thumb:hover img, .main_lightbox_gallery .thumbs .thumb.active img {
-  opacity: 0.3;
-}
-.main_lightbox_gallery .thumbs .thumb.active {
-  border-color: hsl(26, 100%, 55%);
-}
-.main_lightbox_gallery .thumbs .thumb img {
-  transition: all 0.3s ease 0s;
-}
-@media screen and (max-width: 600px) {
-  .main_lightbox_gallery {
-    gap: 20px;
-  }
-}
-.main_lightbox_gallery .close {
-  position: absolute;
-  top: -50px;
-  left: unset;
-  right: 20px;
-  font-size: 1.8em;
-  color: hsl(0, 0%, 100%);
-  cursor: pointer;
-  z-index: 21;
-  transition: all 0.3s ease 0s;
-}
-.main_lightbox_gallery .close:hover {
-  color: hsl(26, 100%, 55%);
-}
-.main_lightbox_gallery .featured {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  border-radius: 14px;
-  -moz-border-radius: 14px;
-  -webkit-border-radius: 14px;
-  background-color: hsl(0, 0%, 100%);
-}
-.main_lightbox_gallery .featured img {
-  transition: all 0.3s ease 0s;
-}
-@media screen and (max-width: 600px) {
-  .main_lightbox_gallery .thumbs {
-    gap: 20px;
-  }
+body p {
+  font-size: 16px;
 }

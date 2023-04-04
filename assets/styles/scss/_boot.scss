@@ -1,0 +1,36 @@
+/* BOOT CONFIG */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    @include setBrowsersCore(box-sizing, border-box);
+}
+
+body {
+    font-family: $font-kumbh-sans;
+    color: $color-dark-grayish-blue;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $color-very-dark-blue;
+    }
+
+    a {
+        text-decoration: none;
+        @include transition;
+    }
+
+    img {
+        display: block;
+        @include fullWidth;
+    }
+
+    ul {
+        li {
+            list-style: none;
+        }
+    }
+
+    p {
+        font-size: $font-size-paragraph;
+    }
+}
