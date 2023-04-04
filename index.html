@@ -11,7 +11,7 @@
   <title>E-commerce product page</title>
 
   <script src="https://kit.fontawesome.com/fe0ca3f893.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="assets/styles/css/style.css">
+  <link rel="stylesheet" href="assets/styles/css/style.min.css">
 </head>
 
 <body>
@@ -29,44 +29,42 @@
           <i class="fa-solid fa-bars"></i>
         </div>
 
-        <ul class="sneakers_header_content_mainnav_menu">
-          <li class="sneakers_header_content_mainnav_menu_item sneakers_dropdown">
-            <a href="#">Collections</a>
-            <ul class="sneakers_header_content_mainnav_menu_item_submenu">
-              <li><a href="#">Collections Category 1</a></li>
-              <li><a href="#">Collections Category 2</a></li>
-              <li><a href="#">Collections Category 3</a></li>
-              <li><a href="#">Collections Category 4</a></li>
-              <li><a href="#">Collections Category 5</a></li>
-            </ul>
-          </li>
-
-          <li class="sneakers_header_content_mainnav_menu_item sneakers_dropdown">
-            <a href="#">Men</a>
-            <ul class="sneakers_header_content_mainnav_menu_item_submenu">
-              <li><a href="#">Men Category 1</a></li>
-              <li><a href="#">Men Category 2</a></li>
-              <li><a href="#">Men Category 3</a></li>
-              <li><a href="#">Men Category 4</a></li>
-              <li><a href="#">Men Category 5</a></li>
-            </ul>
-          </li>
-
-          <li class="sneakers_header_content_mainnav_menu_item sneakers_dropdown">
-            <a href="#">Women</a>
-            <ul class="sneakers_header_content_mainnav_menu_item_submenu">
-              <li><a href="#">Women Category 1</a></li>
-              <li><a href="#">Women Category 2</a></li>
-              <li><a href="#">Women Category 3</a></li>
-              <li><a href="#">Women Category 4</a></li>
-              <li><a href="#">Women Category 5</a></li>
-            </ul>
-          </li>
-
-          <li class="sneakers_header_content_mainnav_menu_item"><a href="#">About</a></li>
-
-          <li class="sneakers_header_content_mainnav_menu_item"><a href="#">Contact</a></li>
-        </ul>
+        <div class="sneakers_header_content_mainnav_menulightbox">
+          <ul class="sneakers_header_content_mainnav_menu">
+            <li class="sneakers_header_content_mainnav_menu_item sneakers_dropdown">
+              <a href="#">Collections</a>
+              <ul class="sneakers_header_content_mainnav_menu_item_submenu">
+                <li><a href="#">Collections Category 1</a></li>
+                <li><a href="#">Collections Category 2</a></li>
+                <li><a href="#">Collections Category 3</a></li>
+                <li><a href="#">Collections Category 4</a></li>
+                <li><a href="#">Collections Category 5</a></li>
+              </ul>
+            </li>
+            <li class="sneakers_header_content_mainnav_menu_item sneakers_dropdown">
+              <a href="#">Men</a>
+              <ul class="sneakers_header_content_mainnav_menu_item_submenu">
+                <li><a href="#">Men Category 1</a></li>
+                <li><a href="#">Men Category 2</a></li>
+                <li><a href="#">Men Category 3</a></li>
+                <li><a href="#">Men Category 4</a></li>
+                <li><a href="#">Men Category 5</a></li>
+              </ul>
+            </li>
+            <li class="sneakers_header_content_mainnav_menu_item sneakers_dropdown">
+              <a href="#">Women</a>
+              <ul class="sneakers_header_content_mainnav_menu_item_submenu">
+                <li><a href="#">Women Category 1</a></li>
+                <li><a href="#">Women Category 2</a></li>
+                <li><a href="#">Women Category 3</a></li>
+                <li><a href="#">Women Category 4</a></li>
+                <li><a href="#">Women Category 5</a></li>
+              </ul>
+            </li>
+            <li class="sneakers_header_content_mainnav_menu_item"><a href="#">About</a></li>
+            <li class="sneakers_header_content_mainnav_menu_item"><a href="#">Contact</a></li>
+          </ul>
+        </div>
       </nav>
 
       <div class="sneakers_header_content_profilenav">
@@ -75,17 +73,19 @@
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
   
-          <div class="sneakers_header_content_profilenav_basket_list">
-            <p class="sneakers_header_content_profilenav_basket_list_title">Cart</p>
+          <section class="sneakers_header_content_profilenav_basket_list">
+            <header class="sneakers_header_content_profilenav_basket_list_title">
+              <h2>Cart</h2>
+            </header>
   
             <div class="sneakers_header_content_profilenav_basket_list_info">
-              <p>Your cart is empty.</p>
+              <p class="empty">Your cart is empty.</p>
             </div>
-          </div>
+          </section>
         </div>
   
         <div class="sneakers_header_content_profilenav_account">
-          <a href="#" class="sneakers_header_content_profilenav_avatar">
+          <a href="#" class="sneakers_header_content_profilenav_account_avatar">
             <img src="assets/images/image-avatar.png" alt="Avatar">
           </a>
         </div>

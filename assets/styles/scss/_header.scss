@@ -1,0 +1,164 @@
+@include theme() {
+    &_header {
+        @include fullWidth;
+        padding: 30px 0;
+        background-color: $color-white;
+        @include fixed;
+
+        &_content {
+            @include containerWidth;
+            @include flex(flex-start);
+            gap: 20px;
+
+            &_logo {
+                order: 2;
+
+                h1 {
+                    display: none;
+                }
+
+                img {
+                    width: 140px;
+                    margin-bottom: 4px;
+                }
+            }
+
+            &_mainnav {
+                &_menuicon {
+                    font-size: 1.4em;
+                    cursor: pointer;
+                    @include relative;
+                    z-index: 20;
+                }
+
+                &_menulightbox {
+                    background-color: $color-black-lightbox;
+                    @include fixedFull(0, 0, true);
+                    min-height: 100vh;
+                    overflow: auto;
+                    z-index: 10;
+
+                    display: none;
+                }
+
+                &_menu {
+                    width: 75%;
+                    min-height: 100%;
+                    background-color: $color-white;
+
+                    padding: {
+                        top: 140px;
+                        right: 20px;
+                        bottom: 20px;
+                        left: 20px;
+                    }
+
+                    @include flex(flex-start, flex-start, nowrap);
+                    flex-direction: column;
+                    row-gap: 10px;
+
+                    @include relative;
+                    // left: -100%;
+
+                    li {
+                        @include fullWidth;
+                        border-right: 5px solid transparent;
+
+                        @include transition;
+
+                        &:hover {
+                            border-color: $color-orange;
+                        }
+
+                        a {
+                            display: block;
+                            @include fullWidth;
+
+                            padding: 10px 0;
+
+                            font-weight: 700;
+                            color: $color-very-dark-blue;
+                        }
+                    }
+
+                    &_item {
+
+                        & > a {
+                            font-size: 1.1em;
+                        }
+
+                        &_submenu {
+                            margin-left: 20px;
+                            max-height: 0;
+                            overflow: hidden;
+
+                            li {
+                                border: none;
+
+                                a {
+                                    font-weight: 400;
+
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &_profilenav {
+                order: 3;
+                margin-left: auto;
+                @include flex;
+                gap: 30px;
+
+                &_basket {
+                    // @include relative;
+
+                    &_cart {
+                        i {
+                            color: $color-very-dark-blue;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &_list {
+                        @include absolute(calc(100% + 10px));
+                        width: calc(100vw - 40px);
+                        margin: 0 20px;
+
+                        background-color: $color-white;
+                        @include borderRadius;
+                        
+                        // display: none;
+
+                        &_title {
+                            padding: 20px;
+                            border-bottom: 1px solid $color-grayish-blue;
+                        }
+
+                        &_info {
+                            padding: 20px;
+                            height: 160px;
+                            @include flex;
+
+                            .empty {
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+
+                &_account {
+                    &_avatar {
+                        img {
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
