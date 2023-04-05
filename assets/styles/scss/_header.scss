@@ -19,6 +19,7 @@
             @include setResponsiveDesign($breakpoint-tablet-landscape) {
                 justify-content: space-between;
                 border-bottom: 1px solid $color-grayish-blue;
+                @include relative;
             }
 
             &_logo {
@@ -116,6 +117,8 @@
                         @include setResponsiveDesign($breakpoint-tablet-landscape) {
                             width: auto;
                             margin: 0 20px;
+                            border-right: none;
+                            border-bottom: 5px solid transparent;
                         }
 
                         &:hover {
@@ -191,6 +194,11 @@
                 }
 
                 &_basket {
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        // @include relative;
+                    }
+
                     &_cart {
                         @include relative;
 
@@ -226,15 +234,24 @@
                     }
 
                     &_list {
-                        @include absolute(calc(100% + 10px));
+                        @include absolute(calc(100% + 10px), unset);
+                        right: 0;
+                        z-index: 10;
                         width: calc(100vw - 40px);
+                        max-width: 400px;
                         margin: 0 20px;
 
                         background-color: $color-white;
                         @include borderRadius;
                         overflow: hidden;
+
+                        box-shadow: 0 0 30px $color-black-shadow;
                         
                         display: none;
+
+                        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                            top: calc(100% - 10px);
+                        }
 
                         &_title {
                             padding: 20px;

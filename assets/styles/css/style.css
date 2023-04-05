@@ -79,6 +79,7 @@ body .sneakers_button * {
   .sneakers_header_content {
     justify-content: space-between;
     border-bottom: 1px solid hsl(220, 14%, 75%);
+    position: relative;
   }
 }
 .sneakers_header_content_logo {
@@ -176,6 +177,8 @@ body .sneakers_button * {
   .sneakers_header_content_mainnav_menu li {
     width: auto;
     margin: 0 20px;
+    border-right: none;
+    border-bottom: 5px solid transparent;
   }
 }
 .sneakers_header_content_mainnav_menu li:hover {
@@ -284,15 +287,24 @@ body .sneakers_button * {
 .sneakers_header_content_profilenav_basket_list {
   position: absolute;
   top: calc(100% + 10px);
-  left: 0;
+  left: unset;
+  right: 0;
+  z-index: 10;
   width: calc(100vw - 40px);
+  max-width: 400px;
   margin: 0 20px;
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 0 30px hsla(0, 0%, 0%, 0.4);
   display: none;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_profilenav_basket_list {
+    top: calc(100% - 10px);
+  }
 }
 .sneakers_header_content_profilenav_basket_list_title {
   padding: 20px;
