@@ -69,7 +69,6 @@
                 &_menulightbox {
                     background-color: $color-black-lightbox;
                     @include fixedFull(0, 0, true);
-                    min-height: 100vh;
                     overflow: auto;
                     z-index: 10;
 
@@ -87,13 +86,12 @@
 
                 &_menu {
                     width: 75%;
-                    min-height: 100%;
                     background-color: $color-white;
 
                     padding: {
-                        top: 140px;
+                        top: 120px;
                         right: 20px;
-                        bottom: 20px;
+                        bottom: 40px;
                         left: 20px;
                     }
 
@@ -101,19 +99,22 @@
                     flex-direction: column;
                     row-gap: 10px;
 
-                    @include relative;
-                    left: -100%;
+                    @include fixed(0, -100%);
+                    height: 100%;
+                    overflow-y: auto;
 
                     @include transition;
 
                     @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        position: static;
                         left: 0;
                         width: auto;
-                        min-height: auto;
+                        height: auto;
                         padding: 0;
                         flex-direction: row;
                         align-items: stretch;
                         background: none;
+                        overflow: visible;
                     }
 
                     li {
@@ -161,21 +162,34 @@
 
                         &_submenu {
                             margin-left: 20px;
-                            max-height: 0;
-                            overflow: hidden;
 
                             @include setResponsiveDesign($breakpoint-tablet-landscape) {
-                                max-height: auto;
-                                @include absolute;
-                                overflow: visible;
-                                display: none;
+                                @include absolute(calc(100% + 5px));
+                                margin: 0;
+                                z-index: 20;
+
+                                width: 400px;
+                                padding: 20px;
+                                background-color: $color-white;
+
+                                @include borderRadius(0 $radius-default $radius-default $radius-default);
+                                box-shadow: 0 0 30px $color-black-shadow;
                             }
 
                             li {
                                 border: none;
 
+                                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                    margin: 0;
+                                }
+
                                 a {
                                     font-weight: 400;
+
+                                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                        padding: 12px 0;
+                                        font-size: 1.2em;
+                                    }
 
                                     &:hover {
                                         text-decoration: underline;

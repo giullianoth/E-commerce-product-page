@@ -238,7 +238,6 @@ body .sneakers_button * {
   left: 0;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
   overflow: auto;
   z-index: 10;
   display: none;
@@ -255,11 +254,10 @@ body .sneakers_button * {
 }
 .sneakers_header_content_mainnav_menu {
   width: 75%;
-  min-height: 100%;
   background-color: hsl(0, 0%, 100%);
-  padding-top: 140px;
+  padding-top: 120px;
   padding-right: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   padding-left: 20px;
   display: flex;
   justify-content: flex-start;
@@ -267,19 +265,24 @@ body .sneakers_button * {
   flex-wrap: nowrap;
   flex-direction: column;
   row-gap: 10px;
-  position: relative;
+  position: fixed;
+  top: 0;
   left: -100%;
+  height: 100%;
+  overflow-y: auto;
   transition: all 300ms ease 0s;
 }
 @media screen and (min-width: 899px) {
   .sneakers_header_content_mainnav_menu {
+    position: static;
     left: 0;
     width: auto;
-    min-height: auto;
+    height: auto;
     padding: 0;
     flex-direction: row;
     align-items: stretch;
     background: none;
+    overflow: visible;
   }
 }
 .sneakers_header_content_mainnav_menu li {
@@ -322,24 +325,39 @@ body .sneakers_button * {
 }
 .sneakers_header_content_mainnav_menu_item_submenu {
   margin-left: 20px;
-  max-height: 0;
-  overflow: hidden;
 }
 @media screen and (min-width: 899px) {
   .sneakers_header_content_mainnav_menu_item_submenu {
-    max-height: auto;
     position: absolute;
-    top: 0;
+    top: calc(100% + 5px);
     left: 0;
-    overflow: visible;
-    display: none;
+    margin: 0;
+    z-index: 20;
+    width: 400px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0 10px 10px 10px;
+    -moz-border-radius: 0 10px 10px 10px;
+    -webkit-border-radius: 0 10px 10px 10px;
+    box-shadow: 0 0 30px hsla(0, 0%, 0%, 0.4);
   }
 }
 .sneakers_header_content_mainnav_menu_item_submenu li {
   border: none;
 }
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_mainnav_menu_item_submenu li {
+    margin: 0;
+  }
+}
 .sneakers_header_content_mainnav_menu_item_submenu li a {
   font-weight: 400;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_mainnav_menu_item_submenu li a {
+    padding: 12px 0;
+    font-size: 1.2em;
+  }
 }
 .sneakers_header_content_mainnav_menu_item_submenu li a:hover {
   text-decoration: underline;

@@ -25,7 +25,10 @@ const fadeInToDown = (element, setDisplay = false, displayElement = "block") => 
     setTimeout(() => {
         element.style.opacity = "";
         element.style.transform = "";
-        element.style.transition = "";
+
+        setTimeout(() => {
+            element.style.transition = "";
+        }, transitionDuration);
     }, transitionGap);
 }
 

@@ -15,13 +15,13 @@ export const Header = () => {
     })
 
     menuIcon.addEventListener("click", () => {
-        fadeOutToUp(menuIcon);
         !menuLightbox.classList.contains("active") && fadeIn(menuLightbox, "flex");
-        menuLightbox.classList.contains("active") && fadeOut(menuLightbox, "flex");
+        menuLightbox.classList.contains("active") && fadeOut(menuLightbox);
+        menuLightbox.classList.toggle("active");
 
         mobileMenu.style.left = "";
-
-        menuLightbox.classList.toggle("active");
+                
+        fadeOutToUp(menuIcon);
 
         setTimeout(() => {
             menuIcon.classList.toggle("fa-bars");
