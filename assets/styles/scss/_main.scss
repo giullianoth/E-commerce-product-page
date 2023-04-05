@@ -5,6 +5,8 @@
         @include relative;
         z-index: 1;
 
+        margin-bottom: 80px;
+
         &_content {
             @include flex;
             row-gap: 40px;

@@ -59,6 +59,12 @@ body .sneakers_button * {
   left: 0;
   z-index: 10;
 }
+@media screen and (min-width: 899px) {
+  .sneakers_header {
+    position: static;
+    padding: 0;
+  }
+}
 .sneakers_header_content {
   max-width: 1300px;
   margin: 0 auto;
@@ -69,8 +75,19 @@ body .sneakers_button * {
   flex-wrap: wrap;
   gap: 20px;
 }
+@media screen and (min-width: 899px) {
+  .sneakers_header_content {
+    justify-content: space-between;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+  }
+}
 .sneakers_header_content_logo {
   order: 2;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_logo {
+    order: 1;
+  }
 }
 .sneakers_header_content_logo h1 {
   display: none;
@@ -79,11 +96,26 @@ body .sneakers_button * {
   width: 140px;
   margin-bottom: 4px;
 }
+@media screen and (max-width: 340px) {
+  .sneakers_header_content_logo img {
+    width: 100px;
+  }
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_mainnav {
+    order: 2;
+  }
+}
 .sneakers_header_content_mainnav_menuicon {
   font-size: 1.4em;
   cursor: pointer;
   position: relative;
   z-index: 20;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_mainnav_menuicon {
+    display: none;
+  }
 }
 .sneakers_header_content_mainnav_menulightbox {
   background-color: hsla(0, 0%, 0%, 0.75);
@@ -96,6 +128,16 @@ body .sneakers_button * {
   overflow: auto;
   z-index: 10;
   display: none;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_mainnav_menulightbox {
+    display: block;
+    position: static;
+    width: auto;
+    min-height: auto;
+    background: none;
+    overflow: visible;
+  }
 }
 .sneakers_header_content_mainnav_menu {
   width: 75%;
@@ -112,11 +154,29 @@ body .sneakers_button * {
   flex-direction: column;
   row-gap: 10px;
   position: relative;
+  left: -100%;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_mainnav_menu {
+    left: 0;
+    width: auto;
+    min-height: auto;
+    padding: 0;
+    flex-direction: row;
+    align-items: stretch;
+    background: none;
+  }
 }
 .sneakers_header_content_mainnav_menu li {
   width: 100%;
   border-right: 5px solid transparent;
   transition: all 300ms ease 0s;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_mainnav_menu li {
+    width: auto;
+    margin: 0 20px;
+  }
 }
 .sneakers_header_content_mainnav_menu li:hover {
   border-color: hsl(26, 100%, 55%);
@@ -128,6 +188,18 @@ body .sneakers_button * {
   font-weight: 700;
   color: hsl(220, 13%, 13%);
 }
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_mainnav_menu li a {
+    width: auto;
+    padding: 40px 0;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: hsl(219, 9%, 45%);
+  }
+}
+.sneakers_header_content_mainnav_menu_item {
+  position: relative;
+}
 .sneakers_header_content_mainnav_menu_item > a {
   font-size: 1.1em;
 }
@@ -135,6 +207,16 @@ body .sneakers_button * {
   margin-left: 20px;
   max-height: 0;
   overflow: hidden;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_mainnav_menu_item_submenu {
+    max-height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+    display: none;
+  }
 }
 .sneakers_header_content_mainnav_menu_item_submenu li {
   border: none;
@@ -154,12 +236,27 @@ body .sneakers_button * {
   flex-wrap: wrap;
   gap: 30px;
 }
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_profilenav {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .sneakers_header_content_profilenav {
+    gap: 90px;
+  }
+}
 .sneakers_header_content_profilenav_basket_cart {
   position: relative;
 }
 .sneakers_header_content_profilenav_basket_cart i {
   color: hsl(220, 13%, 13%);
   cursor: pointer;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_profilenav_basket_cart i {
+    font-size: 1.8em;
+  }
 }
 .sneakers_header_content_profilenav_basket_cart .notification_count {
   height: 14px;
@@ -177,6 +274,12 @@ body .sneakers_button * {
   left: unset;
   right: -60%;
   cursor: pointer;
+}
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_profilenav_basket_cart .notification_count {
+    top: -10px;
+    right: -40%;
+  }
 }
 .sneakers_header_content_profilenav_basket_list {
   position: absolute;
@@ -261,12 +364,18 @@ body .sneakers_button * {
 .sneakers_header_content_profilenav_account_avatar img {
   width: 40px;
 }
+@media screen and (min-width: 899px) {
+  .sneakers_header_content_profilenav_account_avatar img {
+    width: 60px;
+  }
+}
 
 /* PRODUCT SECTION */
 .sneakers_product {
   width: 100%;
   position: relative;
   z-index: 1;
+  margin-bottom: 80px;
 }
 .sneakers_product_content {
   display: flex;
@@ -411,4 +520,16 @@ body .sneakers_button * {
 .sneakers_product_content_info_action_purchase {
   flex-basis: 100%;
   text-align: center;
+}
+
+.sneakers_attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 20px 0;
+}
+.sneakers_attribution a {
+  color: hsl(26, 100%, 55%);
+}
+.sneakers_attribution a:hover {
+  text-decoration: underline;
 }

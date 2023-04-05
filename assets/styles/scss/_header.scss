@@ -6,13 +6,27 @@
         @include fixed;
         z-index: 10;
 
+        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+            position: static;
+            padding: 0;
+        }
+
         &_content {
             @include containerWidth;
             @include flex(flex-start);
             gap: 20px;
 
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                justify-content: space-between;
+                border-bottom: 1px solid $color-grayish-blue;
+            }
+
             &_logo {
                 order: 2;
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    order: 1;
+                }
 
                 h1 {
                     display: none;
@@ -21,15 +35,28 @@
                 img {
                     width: 140px;
                     margin-bottom: 4px;
+
+                    @include setResponsiveDesign(340px, true) {
+                        width: 100px;
+                    }
                 }
             }
 
             &_mainnav {
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    order: 2;
+                }
+
                 &_menuicon {
                     font-size: 1.4em;
                     cursor: pointer;
                     @include relative;
                     z-index: 20;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        display: none;
+                    }
                 }
 
                 &_menulightbox {
@@ -40,6 +67,15 @@
                     z-index: 10;
 
                     display: none;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        display: block;
+                        position: static;
+                        width: auto;
+                        min-height: auto;
+                        background: none;
+                        overflow: visible;
+                    }
                 }
 
                 &_menu {
@@ -59,13 +95,28 @@
                     row-gap: 10px;
 
                     @include relative;
-                    // left: -100%;
+                    left: -100%;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        left: 0;
+                        width: auto;
+                        min-height: auto;
+                        padding: 0;
+                        flex-direction: row;
+                        align-items: stretch;
+                        background: none;
+                    }
 
                     li {
                         @include fullWidth;
                         border-right: 5px solid transparent;
 
                         @include transition;
+
+                        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                            width: auto;
+                            margin: 0 20px;
+                        }
 
                         &:hover {
                             border-color: $color-orange;
@@ -79,10 +130,19 @@
 
                             font-weight: 700;
                             color: $color-very-dark-blue;
+
+                            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                width: auto;
+                                padding: 40px 0;
+                                font-size: 1.1em;
+                                font-weight: 400;
+                                color: $color-dark-grayish-blue;
+                            }
                         }
                     }
 
                     &_item {
+                        @include relative;
 
                         & > a {
                             font-size: 1.1em;
@@ -92,6 +152,13 @@
                             margin-left: 20px;
                             max-height: 0;
                             overflow: hidden;
+
+                            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                max-height: auto;
+                                @include absolute;
+                                overflow: visible;
+                                display: none;
+                            }
 
                             li {
                                 border: none;
@@ -115,15 +182,25 @@
                 @include flex;
                 gap: 30px;
 
-                &_basket {
-                    // @include relative;
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    margin: 0;
+                }
 
+                @include setResponsiveDesign($breakpoint-desktop-sd) {
+                    gap: 90px;
+                }
+
+                &_basket {
                     &_cart {
                         @include relative;
 
                         i {
                             color: $color-very-dark-blue;
                             cursor: pointer;
+
+                            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                font-size: 1.8em;
+                            }
                         }
 
                         .notification_count {
@@ -140,6 +217,11 @@
                             @include absolute(-5px, unset);
                             right: -60%;
                             cursor: pointer;
+
+                            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                top: -10px;
+                                right: -40%;
+                            }
                         }
                     }
 
@@ -230,6 +312,10 @@
                     &_avatar {
                         img {
                             width: 40px;
+
+                            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                width: 60px;
+                            }
                         }
                     }
                 }

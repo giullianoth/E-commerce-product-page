@@ -108,10 +108,18 @@
 }
 
 // RESPONSIVE DESIGN
-@mixin setResponsiveDesign($screenWidth) {    
+@mixin setResponsiveDesign($screenWidth, $isMaxWidth: false) {    
     $width: calc($screenWidth - 1px);
 
-    @media screen and (min-width: $width) {
-        @content;
+    @if $isMaxWidth == true {
+        @media screen and (max-width: $screenWidth) {
+            @content;
+        }
+    }
+
+    @else {
+        @media screen and (min-width: $width) {
+            @content;
+        }
     }
 }
