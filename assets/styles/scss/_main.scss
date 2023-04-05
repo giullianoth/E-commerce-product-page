@@ -10,13 +10,30 @@
         &_content {
             @include flex;
             row-gap: 40px;
-            column-gap: 120px;
+            column-gap: 20px;
+
+            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                @include containerWidth;
+            }
+
+            @include setResponsiveDesign($breakpoint-desktop-hd1) {
+                gap: 60px;
+            }
 
             &_gallery {
                 @include flex1;
 
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    @include flex2(20px);
+                }
+
+                @include setResponsiveDesign($breakpoint-desktop-hd1) {
+                    @include flex2(60px);
+                }
+
                 &_featured {
                     @include relative;
+                    margin-bottom: 40px;
 
                     &_navigation {
                         .nav {
@@ -34,6 +51,10 @@
                             @include flex;
                             @include transition;
 
+                            @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                                display: none;
+                            }
+
                             &:hover {
                                 color: $color-orange;
                             }
@@ -47,10 +68,43 @@
                             }
                         }
                     }
+
+                    img {
+                        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                            @include borderRadius($radius-big);
+                        }
+                    }
                 }
 
                 &_thumbs {
                     display: none;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        @include flex(space-between);
+                        column-gap: 40px;
+                    }
+
+                    .thumb {
+                        @include flex4(40px);
+                        @include borderRadius;
+                        overflow: hidden;
+                        cursor: pointer;
+                        @include transition;
+
+                        border: 2px solid transparent;
+
+                        &:hover, &.active {
+                            border-color: orange;
+
+                            img {
+                                opacity: 0.3;
+                            }
+                        }
+
+                        img {
+                            @include transition;
+                        }
+                    }
                 }
             }
 
@@ -58,6 +112,15 @@
                 @include flex1;
                 @include containerWidth($breakpoint-mobile-landscape);
                 @include flex(space-between);
+
+                @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                    @include flex2(20px);
+                    max-width: auto;
+                }
+
+                @include setResponsiveDesign($breakpoint-desktop-hd1) {
+                    @include flex2(60px);
+                }
 
                 &_title {
                     @include flex1;
@@ -74,6 +137,10 @@
 
                     h1 {
                         font-size: 2em;
+
+                        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                            font-size: 3em;
+                        } 
                     }
                 }
 
@@ -91,6 +158,11 @@
 
                     @include flex(flex-start);
 
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        @include flex1;
+                        margin-bottom: 10px;
+                    }
+
                     .discount {
                         display: inline-block;
                         padding: 4px 10px;
@@ -107,6 +179,10 @@
                     font-weight: 700;
                     text-decoration: line-through;
                     margin-bottom: 40px;
+
+                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
+                        @include flex1;
+                    }
                 }
 
                 &_action {
@@ -124,6 +200,10 @@
                         color: $color-very-dark-blue !important;
                         padding: 0 !important;
                         overflow: hidden;
+
+                        @include setResponsiveDesign($breakpoint-desktop-sd) {
+                            @include flex3(20px);
+                        }
 
                         &_changeqt {
                             @include flex3;
@@ -152,6 +232,10 @@
                     &_purchase {
                         @include flex1;
                         text-align: center;
+
+                        @include setResponsiveDesign($breakpoint-desktop-sd) {
+                            @include flexBasis(calc((100% / 3) * 2), 20px);
+                        }
                     }
                 }
             }
