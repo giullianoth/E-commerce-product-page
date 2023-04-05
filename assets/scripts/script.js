@@ -1,6 +1,3 @@
-const header = document.querySelector(".j_header");
-const mainContent = document.querySelector(".j_main_content");
+import { Header } from "./theme/header.js";
 
-mainContent.style.marginTop = `${header.offsetHeight}px`;
-
-console.log(header.offsetHeight);
+Header();

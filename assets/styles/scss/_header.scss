@@ -6,6 +6,8 @@
         @include fixed;
         z-index: 10;
 
+        @include transition;
+
         @include setResponsiveDesign($breakpoint-tablet-landscape) {
             position: static;
             padding: 0;
@@ -58,6 +60,10 @@
                     @include setResponsiveDesign($breakpoint-tablet-landscape) {
                         display: none;
                     }
+
+                    i {
+                        @include transition;
+                    }
                 }
 
                 &_menulightbox {
@@ -97,6 +103,8 @@
 
                     @include relative;
                     left: -100%;
+
+                    @include transition;
 
                     @include setResponsiveDesign($breakpoint-tablet-landscape) {
                         left: 0;
