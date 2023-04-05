@@ -70,6 +70,8 @@
                     }
 
                     img {
+                        cursor: pointer;
+
                         @include setResponsiveDesign($breakpoint-tablet-landscape) {
                             @include borderRadius($radius-big);
                         }
@@ -187,8 +189,8 @@
 
                 &_action {
                     @include flex1;
-                    @include flex;
-                    gap: 20px;
+                    @include flex(space-between);
+                    gap: 10px;
 
                     &_qt {
                         @include flex1;
@@ -202,7 +204,7 @@
                         overflow: hidden;
 
                         @include setResponsiveDesign($breakpoint-desktop-sd) {
-                            @include flex3(20px);
+                            @include flex3(10px);
                         }
 
                         &_changeqt {
@@ -234,7 +236,7 @@
                         text-align: center;
 
                         @include setResponsiveDesign($breakpoint-desktop-sd) {
-                            @include flexBasis(calc((100% / 3) * 2), 20px);
+                            @include flexBasis(calc((100% / 3) * 2), 10px);
                         }
                     }
                 }
