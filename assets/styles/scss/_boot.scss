@@ -34,6 +34,12 @@ body {
         font-size: $font-size-paragraph;
     }
 
+    main {
+        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+            margin-top: 60px !important;
+        }
+    }
+
     @include theme() {
         &_button {
             display: inline-block;
@@ -49,10 +55,6 @@ body {
 
             &:hover {
                 background-color: $color-orange-hover;
-            }
-
-            & * {
-                color: inherit;
             }
         }
     }

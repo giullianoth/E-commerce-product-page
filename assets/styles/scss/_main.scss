@@ -5,7 +5,7 @@
         @include relative;
         z-index: 1;
 
-        margin-bottom: 80px;
+        margin-bottom: 40px;
 
         &_content {
             @include flex;
@@ -234,6 +234,10 @@
                     &_purchase {
                         @include flex1;
                         text-align: center;
+
+                        a {
+                            display: block;
+                        }
 
                         @include setResponsiveDesign($breakpoint-desktop-sd) {
                             @include flexBasis(calc((100% / 3) * 2), 10px);

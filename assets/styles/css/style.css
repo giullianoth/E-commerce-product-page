@@ -30,6 +30,11 @@ body ul li {
 body p {
   font-size: 16px;
 }
+@media screen and (min-width: 899px) {
+  body main {
+    margin-top: 60px !important;
+  }
+}
 body .sneakers_button {
   display: inline-block;
   background-color: hsl(26, 100%, 55%);
@@ -45,9 +50,6 @@ body .sneakers_button {
 }
 body .sneakers_button:hover {
   background-color: hsl(27, 100%, 71%);
-}
-body .sneakers_button * {
-  color: inherit;
 }
 
 .sneakers_lightbox {
@@ -530,7 +532,7 @@ body .sneakers_button * {
   width: 100%;
   position: relative;
   z-index: 1;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .sneakers_product_content {
   display: flex;
@@ -773,6 +775,9 @@ body .sneakers_button * {
 .sneakers_product_content_info_action_purchase {
   flex-basis: 100%;
   text-align: center;
+}
+.sneakers_product_content_info_action_purchase a {
+  display: block;
 }
 @media screen and (min-width: 1023px) {
   .sneakers_product_content_info_action_purchase {

@@ -81,7 +81,7 @@ const setProductprice = (price) => productPrice = productPrice ? productPrice : 
 const showQuantity = () => qtArea.innerText = productQt;
 
 const cartList = [];
-const listItems = document.querySelector(".j_list_items");
+const listItems = () => document.querySelector(".j_list_items");
 const listEmpty = document.querySelector(".j_empty_list");
 const cartInfo = document.querySelector(".j_cart_info");
 
