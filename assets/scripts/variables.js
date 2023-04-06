@@ -40,7 +40,7 @@ const isMobileSubmenu = (element) => window.getComputedStyle(element).position =
 
 // CART SECTION
 const cartIcon = document.querySelector(".j_cart_icon");
-const cartList = document.querySelector(".j_cart_list");
+const cartListArea = document.querySelector(".j_cart_list");
 
 // GALLERY
 const galleryArea = () => document.querySelector(".j_gallery");
@@ -64,6 +64,32 @@ const galleryNavNext = () => galleryArea().querySelector(".j_nav.next");
 const getFeaturedImageByElement = () => galleryFeaturedImage().src.substring(galleryFeaturedImage().src.length - 19).replace(".jpg", "");
 const getImageIndex = () => galleryImagesList.indexOf(getFeaturedImageByElement());
 
+// CART FEATURES
+const buttonQtMinus = document.querySelector(".j_qt_minus");
+const buttonQtPlus = document.querySelector(".j_qt_plus");
+const qtArea = document.querySelector(".j_qt");
+const btnPurchase = document.querySelector(".j_purchase");
+
+const productNameElement = document.querySelector(".j_product_name");
+const productPriceElement = document.querySelector(".j_product_price");
+
+const addProductQt = (qt) => productQt += qt;
+const substractProductQt = (qt) => productQt -= qt;
+const setProductName = (name) => productName = productName ? productName : name;
+const setProductprice = (price) => productPrice = productPrice ? productPrice : price;
+
+const showQuantity = () => qtArea.innerText = productQt;
+
+const cartList = [];
+const listItems = document.querySelector(".j_list_items");
+const listEmpty = document.querySelector(".j_empty_list");
+const cartInfo = document.querySelector(".j_cart_info");
+
+var productQt = 0;
+var productPrice = 0;
+var productTotal = () => productPrice * productQt;
+var productName = "";
+
 export {
     isVisible, elementsCloseClickingOut,
 
@@ -80,7 +106,9 @@ export {
 
     menuIcon, menuLightbox, mobileMenu, btnDropdown, submenu, isMobileSubmenu,
 
-    cartIcon, cartList,
+    cartIcon, cartListArea,
 
     galleryArea, desactivateGalery, resetGallery, galleryLightboxArea, galleryImagesExtension, galleryImagesList, galleryThumbsList, galleryImagePath, galleryFeaturedImage, galleryThumbs, galleryNavPrev, galleryNavNext, getFeaturedImageByElement, getImageIndex,
+
+    buttonQtMinus, buttonQtPlus, qtArea, btnPurchase, productNameElement, productPriceElement, addProductQt, substractProductQt, setProductName, setProductprice, showQuantity, cartList, listItems, listEmpty, cartInfo, productQt, productPrice, productTotal, productName,
 }

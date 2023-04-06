@@ -1,6 +1,5 @@
-import { CloseByClickingOut } from "../close-by-clicking-out.js";
 import { fadeIn, fadeInToDown, fadeOut, fadeOutToUp, slideDown, slideUp } from "../effects.js";
-import { breakpointTabletLandscape, btnDropdown, cartIcon, cartList, headerElement, headerHeight, isMobileSubmenu, isVisible, mainContentElement, menuIcon, menuLightbox, mobileMenu, submenu, transitionDuration, windowScrollPosition, windowWidth } from "../variables.js";
+import { breakpointTabletLandscape, btnDropdown, cartIcon, cartListArea, headerElement, headerHeight, isMobileSubmenu, mainContentElement, menuIcon, menuLightbox, mobileMenu, submenu, transitionDuration, windowScrollPosition, windowWidth } from "../variables.js";
 
 export const Header = () => {
     mainContentElement().style.marginTop = `${headerHeight()}px`;
@@ -35,10 +34,10 @@ export const Header = () => {
     })
 
     cartIcon.addEventListener("click", () => {
-        !cartList.classList.contains("active") && fadeInToDown(cartList, true);
-        cartList.classList.contains("active") && fadeOutToUp(cartList);
+        !cartListArea.classList.contains("active") && fadeInToDown(cartListArea, true);
+        cartListArea.classList.contains("active") && fadeOutToUp(cartListArea);
 
-        cartList.classList.toggle("active");
+        cartListArea.classList.toggle("active");
     })
 
     btnDropdown.forEach((btn, i, arr) => {

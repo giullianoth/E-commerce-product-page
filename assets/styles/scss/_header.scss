@@ -284,6 +284,8 @@
 
                             .empty {
                                 font-weight: 700;
+                                height: 160px;
+                                @include flex;
                             }
 
                             &_items {

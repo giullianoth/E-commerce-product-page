@@ -458,6 +458,11 @@ body .sneakers_button * {
 }
 .sneakers_header_content_profilenav_basket_list_info .empty {
   font-weight: 700;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .sneakers_header_content_profilenav_basket_list_info_items {
   max-height: 160px;

@@ -1,5 +1,5 @@
 import { fadeIn, fadeOut } from "../effects.js";
-import { desactivateGalery, galleryArea, galleryFeaturedImage, galleryLightboxArea, galleryNavNext, galleryNavPrev, galleryThumbs, getImageIndex, resetGallery, transitionDuration } from "../variables.js"
+import { desactivateGalery, galleryFeaturedImage, galleryLightboxArea, resetGallery, transitionDuration } from "../variables.js"
 import { Gallery } from "./gallery.js";
 
 const createLightbox = () => {

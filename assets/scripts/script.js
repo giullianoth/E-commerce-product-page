@@ -1,3 +1,4 @@
+import { AddToCart } from "./app/add-to-cart.js";
 import { CloseByClickingOut } from "./close-by-clicking-out.js";
 import { GalleryLightbox } from "./theme/gallery-lightbox.js";
 import { Gallery } from "./theme/gallery.js";
@@ -7,3 +8,5 @@ CloseByClickingOut();
 Header();
 Gallery();
 GalleryLightbox();
+
+AddToCart();
