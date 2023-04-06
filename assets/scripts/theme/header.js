@@ -1,5 +1,5 @@
 import { CloseByClickingOut } from "../close-by-clicking-out.js";
-import { fadeIn, fadeInToDown, fadeOut, fadeOutToUp } from "../effects.js";
+import { fadeIn, fadeInToDown, fadeOut, fadeOutToUp, slideDown, slideUp } from "../effects.js";
 import { breakpointTabletLandscape, btnDropdown, cartIcon, cartList, headerElement, headerHeight, isMobileSubmenu, isVisible, mainContentElement, menuIcon, menuLightbox, mobileMenu, submenu, transitionDuration, windowScrollPosition, windowWidth } from "../variables.js";
 
 export const Header = () => {
@@ -50,10 +50,12 @@ export const Header = () => {
                 if (element !== btn) {
                     element.classList.remove("active");
                     submenu(element.parentNode).classList.remove("active");
-                    fadeOutToUp(submenu(element.parentNode));
+                    !isMobileSubmenu(submenu(element.parentNode)) && fadeOutToUp(submenu(element.parentNode));
+                    isMobileSubmenu(submenu(element.parentNode)) && slideUp(submenu(element.parentNode));
                 } else {
                     if (isMobileSubmenu(submenuElement)) {
-                        console.log("Menu mobile");
+                        !submenuElement.classList.contains("active") && slideDown(submenuElement);
+                        submenuElement.classList.contains("active") && slideUp(submenuElement);
                     } else {
                         !submenuElement.classList.contains("active") && fadeInToDown(submenuElement, true);
                         submenuElement.classList.contains("active") && fadeOutToUp(submenuElement);

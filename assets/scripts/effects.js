@@ -56,4 +56,41 @@ const fadeOutToUp = (element) => {
     }, transitionDuration);
 }
 
-export { fadeIn, fadeInToDown, fadeOut, fadeOutToUp };
+const slideDown = (element, displayElement = "block") => {
+    element.style.transition = transitionProperties();
+    element.style.display = displayElement;
+    let maxHeight = element.offsetHeight;
+
+    element.style.overflow = "hidden";
+    element.style.maxHeight = 0;
+    element.style.paddingTop = 0;
+    element.style.paddingBottom = 0;
+
+    setTimeout(() => {
+        element.style.maxHeight = `${maxHeight}px`;
+        element.style.paddingTop = "";
+        element.style.paddingBottom = "";
+
+        setTimeout(() => {
+            element.style.transition = "";
+        }, transitionDuration);
+    }, transitionGap);
+}
+
+const slideUp = (element) => {
+    element.style.transition = transitionProperties();
+    element.style.overflow = "hidden";
+    element.style.maxHeight = 0;
+    element.style.paddingTop = 0;
+    element.style.paddingBottom = 0;
+
+    setTimeout(() => {
+        element.style.display = "";
+        element.style.transition = "";
+        element.style.maxHeight = "";
+        element.style.paddingTop = "";
+        element.style.paddingBottom = "";
+    }, transitionDuration);
+}
+
+export { fadeIn, fadeInToDown, fadeOut, fadeOutToUp, slideDown, slideUp };
