@@ -1,3 +1,4 @@
+// VIEWPORT
 const isVisible = (element) => window.getComputedStyle(element).display !== "none";
 const elementsCloseClickingOut = () => document.querySelectorAll(".j_closebyclickingout");
 
@@ -13,19 +14,23 @@ const breakpointDesktopHD1 = 1366;
 const breakpointDesktopHD2 = layoutDesktop;
 const breakpointDesktopFHD = 1920;
 
+// TRANSITION
 const transitionDuration = 300;
 const transitionGap = 10;
 const transitionProperties = (property = "all", duration = `${transitionDuration}ms`, timingFunction = "ease", delay = "0s") => `${property} ${duration} ${timingFunction} ${delay}`;
 
+// WINDOW
 const windowWidth = () => window.innerWidth;
 const windowHeight = () => window.innerHeight;
 const windowScrollPosition = () => window.scrollY;
 
+// HEADER VIEWPORT
 const headerElement = () => document.querySelector(".j_header");
 const mainContentElement = () => document.querySelector(".j_main_content");
 
 const headerHeight = () => headerElement().offsetHeight;
 
+// MENU
 const menuIcon = document.querySelector(".j_menuicon");
 const menuLightbox = document.querySelector(".j_menu_lightbox");
 const mobileMenu = document.querySelector(".j_mobile_menu");
@@ -33,16 +38,39 @@ const btnDropdown = document.querySelectorAll(".j_dropdown");
 const submenu = (item) => item.querySelector(".j_submenu");
 const isMobileSubmenu = (element) => window.getComputedStyle(element).position === "static";
 
+// CART SECTION
 const cartIcon = document.querySelector(".j_cart_icon");
 const cartList = document.querySelector(".j_cart_list");
 
+// GALLERY
+const galleryArea = () => document.querySelector(".j_gallery");
+const desactivateGalery = () => galleryArea().classList.remove("j_gallery");
+const resetGallery = () => document.querySelector(".j_reset_gallery").classList.add("j_gallery");
+
+const galleryLightboxArea = () => document.querySelector(".j_lightbox");
+
+const galleryImagesExtension = "jpg";
+const galleryImagesList = ["image-product-1", "image-product-2", "image-product-3", "image-product-4"];
+const galleryThumbsList = galleryImagesList.map((image) => image.split("-").concat(["thumbnail"]).join("-"));
+const galleryImagePath = "assets/images";
+
+const galleryFeaturedImage = () => galleryArea().querySelector(".j_featured");
+
+const galleryThumbs = () => galleryArea().querySelectorAll(".j_thumb");
+
+const galleryNavPrev = () => galleryArea().querySelector(".j_nav.prev");
+const galleryNavNext = () => galleryArea().querySelector(".j_nav.next");
+
+const getFeaturedImageByElement = () => galleryFeaturedImage().src.substring(galleryFeaturedImage().src.length - 19).replace(".jpg", "");
+const getImageIndex = () => galleryImagesList.indexOf(getFeaturedImageByElement());
+
 export {
     isVisible, elementsCloseClickingOut,
-    
+
     layoutMobile, layoutDesktop, breakpointMobile, breakpointMobileLandscape, breakpointTablet, breakpointTabletLandscape, breakpointDesktopSD, breakpointDesktopHD1, breakpointDesktopHD2, breakpointDesktopFHD,
-    
+
     transitionDuration, transitionGap, transitionProperties,
-    
+
     windowWidth, windowHeight,
 
     windowScrollPosition,
@@ -53,4 +81,6 @@ export {
     menuIcon, menuLightbox, mobileMenu, btnDropdown, submenu, isMobileSubmenu,
 
     cartIcon, cartList,
+
+    galleryArea, desactivateGalery, resetGallery, galleryLightboxArea, galleryImagesExtension, galleryImagesList, galleryThumbsList, galleryImagePath, galleryFeaturedImage, galleryThumbs, galleryNavPrev, galleryNavNext, getFeaturedImageByElement, getImageIndex,
 }

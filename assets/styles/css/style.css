@@ -62,6 +62,7 @@ body .sneakers_button * {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  display: none;
 }
 .sneakers_lightbox_content {
   max-width: 600px;
@@ -71,6 +72,10 @@ body .sneakers_button * {
 .sneakers_lightbox_content_gallery_featured {
   position: relative;
   margin-bottom: 10px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 @media screen and (min-width: 599px) {
   .sneakers_lightbox_content_gallery_featured {

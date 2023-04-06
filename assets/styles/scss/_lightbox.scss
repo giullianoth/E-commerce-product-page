@@ -5,6 +5,8 @@
         z-index: 30;
         @include flex;
 
+        display: none;
+
         &_content {
             @include containerWidth($breakpoint-mobile-landscape);
 
@@ -12,6 +14,10 @@
                 &_featured {
                     @include relative;
                     margin-bottom: 10px;
+
+                    background-color: $color-white;
+                    
+                    @include borderRadius;
 
                     @include setResponsiveDesign($breakpoint-mobile-landscape) {
                         margin-bottom: 40px;

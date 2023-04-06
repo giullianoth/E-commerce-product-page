@@ -32,7 +32,7 @@ const fadeInToDown = (element, setDisplay = false, displayElement = "block") => 
     }, transitionGap);
 }
 
-const fadeOut = (element) => {
+const fadeOut = (element, removeElement = false) => {
 
     element.style.transition = transitionProperties();
     element.style.opacity = 0;
@@ -41,6 +41,7 @@ const fadeOut = (element) => {
         element.style.display = "";
         element.style.opacity = "";
         element.style.transition = "";
+        removeElement && element.remove();
     }, transitionDuration);
 }
 
@@ -52,6 +53,7 @@ const fadeOutToUp = (element) => {
     setTimeout(() => {
         element.style.transition = "";
         element.style.transform = "";
+        element.style.opacity = "";
         element.style.display = "";
     }, transitionDuration);
 }
@@ -90,6 +92,7 @@ const slideUp = (element) => {
         element.style.maxHeight = "";
         element.style.paddingTop = "";
         element.style.paddingBottom = "";
+        element.style.overflow = "";
     }, transitionDuration);
 }
 
