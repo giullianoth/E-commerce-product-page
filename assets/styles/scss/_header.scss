@@ -253,7 +253,7 @@
                     }
 
                     &_list {
-                        @include absolute(calc(100% + 20px), unset);
+                        @include absolute(calc(100% + 10px), unset);
                         right: 0;
                         z-index: 10;
                         width: calc(100vw - 40px);
@@ -269,8 +269,7 @@
                         display: none;
 
                         @include setResponsiveDesign($breakpoint-tablet-landscape) {
-                            top: 150%;
-                            margin: 0;
+                            top: 75%;
                         }
 
                         &_title {

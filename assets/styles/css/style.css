@@ -419,7 +419,7 @@ body .sneakers_button * {
 }
 .sneakers_header_content_profilenav_basket_list {
   position: absolute;
-  top: calc(100% + 20px);
+  top: calc(100% + 10px);
   left: unset;
   right: 0;
   z-index: 10;
@@ -436,8 +436,7 @@ body .sneakers_button * {
 }
 @media screen and (min-width: 899px) {
   .sneakers_header_content_profilenav_basket_list {
-    top: 150%;
-    margin: 0;
+    top: 75%;
   }
 }
 .sneakers_header_content_profilenav_basket_list_title {
