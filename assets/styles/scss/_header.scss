@@ -162,6 +162,7 @@
 
                         &_submenu {
                             margin-left: 20px;
+                            display: none;
 
                             @include setResponsiveDesign($breakpoint-tablet-landscape) {
                                 @include absolute(calc(100% + 5px));
@@ -217,10 +218,6 @@
 
                 &_basket {
 
-                    @include setResponsiveDesign($breakpoint-tablet-landscape) {
-                        // @include relative;
-                    }
-
                     &_cart {
                         @include relative;
 
@@ -256,7 +253,7 @@
                     }
 
                     &_list {
-                        @include absolute(calc(100% + 10px), unset);
+                        @include absolute(calc(100% + 20px), unset);
                         right: 0;
                         z-index: 10;
                         width: calc(100vw - 40px);
@@ -272,7 +269,8 @@
                         display: none;
 
                         @include setResponsiveDesign($breakpoint-tablet-landscape) {
-                            top: calc(100% - 10px);
+                            top: 150%;
+                            margin: 0;
                         }
 
                         &_title {

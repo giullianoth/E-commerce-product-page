@@ -38,12 +38,13 @@ const fadeOut = (element) => {
     element.style.opacity = 0;
 
     setTimeout(() => {
-        element.style.display = "none";
+        element.style.display = "";
+        element.style.opacity = "";
         element.style.transition = "";
     }, transitionDuration);
 }
 
-const fadeOutToUp = (element, removeElement = false) => {
+const fadeOutToUp = (element) => {
     element.style.transition = transitionProperties();
     element.style.opacity = 0;
     element.style.transform = "translateY(-20px)";
@@ -51,7 +52,7 @@ const fadeOutToUp = (element, removeElement = false) => {
     setTimeout(() => {
         element.style.transition = "";
         element.style.transform = "";
-        element.style.display = removeElement ? "none" : "";
+        element.style.display = "";
     }, transitionDuration);
 }
 

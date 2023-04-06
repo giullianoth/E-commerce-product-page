@@ -1,5 +1,6 @@
+import { CloseByClickingOut } from "../close-by-clicking-out.js";
 import { fadeIn, fadeInToDown, fadeOut, fadeOutToUp } from "../effects.js";
-import { breakpointTabletLandscape, cartIcon, cartList, headerElement, headerHeight, mainContentElement, menuIcon, menuLightbox, mobileMenu, transitionDuration, windowScrollPosition, windowWidth } from "../variables.js"
+import { breakpointTabletLandscape, btnDropdown, cartIcon, cartList, headerElement, headerHeight, isMobileSubmenu, isVisible, mainContentElement, menuIcon, menuLightbox, mobileMenu, submenu, transitionDuration, windowScrollPosition, windowWidth } from "../variables.js";
 
 export const Header = () => {
     mainContentElement().style.marginTop = `${headerHeight()}px`;
@@ -35,8 +36,33 @@ export const Header = () => {
 
     cartIcon.addEventListener("click", () => {
         !cartList.classList.contains("active") && fadeInToDown(cartList, true);
-        cartList.classList.contains("active") && fadeOutToUp(cartList, true);
+        cartList.classList.contains("active") && fadeOutToUp(cartList);
 
         cartList.classList.toggle("active");
+    })
+
+    btnDropdown.forEach((btn, i, arr) => {
+        btn.addEventListener("click", (event) => {
+            event.preventDefault();
+            let submenuElement = submenu(btn.parentNode);
+            
+            arr.forEach((element) => {
+                if (element !== btn) {
+                    element.classList.remove("active");
+                    submenu(element.parentNode).classList.remove("active");
+                    fadeOutToUp(submenu(element.parentNode));
+                } else {
+                    if (isMobileSubmenu(submenuElement)) {
+                        console.log("Menu mobile");
+                    } else {
+                        !submenuElement.classList.contains("active") && fadeInToDown(submenuElement, true);
+                        submenuElement.classList.contains("active") && fadeOutToUp(submenuElement);
+                    }
+
+                    submenuElement.classList.toggle("active");
+                    btn.classList.toggle("active");
+                }
+            })
+        })
     })
 }

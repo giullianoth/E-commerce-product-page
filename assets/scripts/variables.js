@@ -1,3 +1,6 @@
+const isVisible = (element) => window.getComputedStyle(element).display !== "none";
+const elementsCloseClickingOut = () => document.querySelectorAll(".j_closebyclickingout");
+
 const layoutMobile = 375;
 const layoutDesktop = 1440;
 
@@ -26,11 +29,16 @@ const headerHeight = () => headerElement().offsetHeight;
 const menuIcon = document.querySelector(".j_menuicon");
 const menuLightbox = document.querySelector(".j_menu_lightbox");
 const mobileMenu = document.querySelector(".j_mobile_menu");
+const btnDropdown = document.querySelectorAll(".j_dropdown");
+const submenu = (item) => item.querySelector(".j_submenu");
+const isMobileSubmenu = (element) => window.getComputedStyle(element).position === "static";
 
 const cartIcon = document.querySelector(".j_cart_icon");
 const cartList = document.querySelector(".j_cart_list");
 
 export {
+    isVisible, elementsCloseClickingOut,
+    
     layoutMobile, layoutDesktop, breakpointMobile, breakpointMobileLandscape, breakpointTablet, breakpointTabletLandscape, breakpointDesktopSD, breakpointDesktopHD1, breakpointDesktopHD2, breakpointDesktopFHD,
     
     transitionDuration, transitionGap, transitionProperties,
@@ -42,7 +50,7 @@ export {
     headerElement, mainContentElement,
     headerHeight,
 
-    menuIcon, menuLightbox, mobileMenu,
+    menuIcon, menuLightbox, mobileMenu, btnDropdown, submenu, isMobileSubmenu,
 
     cartIcon, cartList,
 }
