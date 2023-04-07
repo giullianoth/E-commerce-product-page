@@ -1,11 +1,5 @@
 import { addProductQt, btnPurchase, buttonQtMinus, buttonQtPlus, cartInfo, cartList, listItems, productName, productNameElement, productPrice, productPriceElement, productQt, productTotal, qtArea, setProductName, setProductprice, showQuantity, substractProductQt } from "../variables.js"
-
-const emptyCartElement = () => {
-    let empty = document.createElement("p");
-    empty.className = "empty j_empty_list";
-    empty.innerText = "Your cart is empty.";
-    return empty;
-}
+import { RemoveFromCart } from "./remove-from-cart.js";
 
 const checkOutElement = () => {
     let checkout = document.createElement("a");
@@ -31,7 +25,7 @@ const cartListItemsElement = (itemToInsert) => {
         <p><span class="price">${itemToInsert.price}</span> x <span class="quantity">${itemToInsert.quantity}</span> <span class="total">${itemToInsert.total}</span></p>
         </header>
 
-        <div class="sneakers_header_content_profilenav_basket_list_info_item_action" title="Delete this item">
+        <div class="sneakers_header_content_profilenav_basket_list_info_item_action j_delete" title="Delete this item">
         <i class="fa-solid fa-trash-can"></i>
         </div>
     `;
@@ -69,8 +63,8 @@ export const AddToCart = () => {
 
         cartList.push(newItem);
         cartInfo.innerHTML = cartListItemsElement(newItem).outerHTML;
-
         cartList.length > 0 && cartInfo.append(checkOutElement());
-        console.log(cartList.length);
+
+        RemoveFromCart();
     })
 }

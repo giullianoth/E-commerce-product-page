@@ -82,8 +82,10 @@ const showQuantity = () => qtArea.innerText = productQt;
 
 const cartList = [];
 const listItems = () => document.querySelector(".j_list_items");
+const listItem = () => listItems().querySelectorAll(".j_list_item");
 const listEmpty = document.querySelector(".j_empty_list");
 const cartInfo = document.querySelector(".j_cart_info");
+const deleteItemList = () => document.querySelectorAll(".j_delete");
 
 var productQt = 0;
 var productPrice = 0;
@@ -110,5 +112,5 @@ export {
 
     galleryArea, desactivateGalery, resetGallery, galleryLightboxArea, galleryImagesExtension, galleryImagesList, galleryThumbsList, galleryImagePath, galleryFeaturedImage, galleryThumbs, galleryNavPrev, galleryNavNext, getFeaturedImageByElement, getImageIndex,
 
-    buttonQtMinus, buttonQtPlus, qtArea, btnPurchase, productNameElement, productPriceElement, addProductQt, substractProductQt, setProductName, setProductprice, showQuantity, cartList, listItems, listEmpty, cartInfo, productQt, productPrice, productTotal, productName,
+    buttonQtMinus, buttonQtPlus, qtArea, btnPurchase, productNameElement, productPriceElement, addProductQt, substractProductQt, setProductName, setProductprice, showQuantity, cartList, listItems, listItem, listEmpty, cartInfo, deleteItemList, productQt, productPrice, productTotal, productName,
 }
