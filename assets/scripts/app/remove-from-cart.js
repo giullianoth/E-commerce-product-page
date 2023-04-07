@@ -1,4 +1,4 @@
-import { cartInfo, deleteItemList, listItem, listItems } from "../variables.js"
+import { cartInfo, count, countElement, deleteItemList, listItem, listItems, substractCount } from "../variables.js"
 
 const emptyCartElement = () => {
     let empty = document.createElement("p");
@@ -10,14 +10,16 @@ const emptyCartElement = () => {
 export const RemoveFromCart = () => {
     deleteItemList().forEach((item, index) => {
         item.addEventListener("click", (event) => {
-            
-            console.log(listItem(), listItems());
-            listItem()[index].remove();
+            listItem().forEach((i) => parseInt(i.dataset.id) === parseInt(item.dataset.id) && i.remove());
+
+            substractCount();
+            countElement().innerText = count;
 
             if (listItem().length === 0) {
                 listItems().remove();
                 document.querySelector(".j_checkout").remove();
                 cartInfo.innerHTML = emptyCartElement().outerHTML;
+                countElement().remove();
             }
         })
     })

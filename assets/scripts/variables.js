@@ -87,10 +87,17 @@ const listEmpty = document.querySelector(".j_empty_list");
 const cartInfo = document.querySelector(".j_cart_info");
 const deleteItemList = () => document.querySelectorAll(".j_delete");
 
+const addedElement = () => document.querySelector(".j_added");
+
+const countElement = () => document.querySelector(".j_count");
+const addCount = () => count += 1;
+const substractCount = () => count -= 1;
+
 var productQt = 0;
 var productPrice = 0;
 var productTotal = () => productPrice * productQt;
 var productName = "";
+var count = 0;
 
 export {
     isVisible, elementsCloseClickingOut,
@@ -112,5 +119,5 @@ export {
 
     galleryArea, desactivateGalery, resetGallery, galleryLightboxArea, galleryImagesExtension, galleryImagesList, galleryThumbsList, galleryImagePath, galleryFeaturedImage, galleryThumbs, galleryNavPrev, galleryNavNext, getFeaturedImageByElement, getImageIndex,
 
-    buttonQtMinus, buttonQtPlus, qtArea, btnPurchase, productNameElement, productPriceElement, addProductQt, substractProductQt, setProductName, setProductprice, showQuantity, cartList, listItems, listItem, listEmpty, cartInfo, deleteItemList, productQt, productPrice, productTotal, productName,
+    buttonQtMinus, buttonQtPlus, qtArea, btnPurchase, productNameElement, productPriceElement, addProductQt, substractProductQt, setProductName, setProductprice, showQuantity, cartList, listItems, listItem, listEmpty, cartInfo, deleteItemList, addedElement, countElement, addCount, substractCount, productQt, productPrice, productTotal, productName, count,
 }

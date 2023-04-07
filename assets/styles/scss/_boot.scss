@@ -57,5 +57,33 @@ body {
                 background-color: $color-orange-hover;
             }
         }
+
+        &_added {
+            @include fixed(40px, unset);
+            right: 0;
+            z-index: 40;
+            font-size: 2em;
+            text-transform: uppercase;
+            text-align: center;
+
+            padding: {
+                top: 60px;
+                bottom: 60px;
+            }
+            margin: 0 40px;
+
+            max-width: 480px;
+            background-color: $color-white;
+            color: $color-orange;
+            box-shadow: 0 0 30px $color-black-shadow;
+            @include transition;
+            cursor: default;
+
+            display: none;
+
+            &:hover {                
+                background-color: $color-white;
+            }
+        }
     }
 }

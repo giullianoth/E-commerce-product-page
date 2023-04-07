@@ -51,6 +51,29 @@ body .sneakers_button {
 body .sneakers_button:hover {
   background-color: hsl(27, 100%, 71%);
 }
+body .sneakers_added {
+  position: fixed;
+  top: 40px;
+  left: unset;
+  right: 0;
+  z-index: 40;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin: 0 40px;
+  max-width: 480px;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(26, 100%, 55%);
+  box-shadow: 0 0 30px hsla(0, 0%, 0%, 0.4);
+  transition: all 300ms ease 0s;
+  cursor: default;
+  display: none;
+}
+body .sneakers_added:hover {
+  background-color: hsl(0, 0%, 100%);
+}
 
 .sneakers_lightbox {
   position: fixed;
@@ -551,7 +574,7 @@ body .sneakers_button:hover {
 }
 @media screen and (min-width: 1365px) {
   .sneakers_product_content {
-    gap: 60px;
+    gap: 120px;
   }
 }
 .sneakers_product_content_gallery {
