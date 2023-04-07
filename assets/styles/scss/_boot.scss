@@ -1,0 +1,89 @@
+/* BOOT CONFIG */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    @include setBrowsersCore(box-sizing, border-box);
+}
+
+body {
+    font-family: $font-kumbh-sans;
+    color: $color-dark-grayish-blue;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $color-very-dark-blue;
+    }
+
+    a {
+        text-decoration: none;
+        @include transition;
+    }
+
+    img {
+        display: block;
+        @include fullWidth;
+    }
+
+    ul {
+        li {
+            list-style: none;
+        }
+    }
+
+    p {
+        font-size: $font-size-paragraph;
+    }
+
+    main {
+        @include setResponsiveDesign($breakpoint-tablet-landscape) {
+            margin-top: 60px !important;
+        }
+    }
+
+    @include theme() {
+        &_button {
+            display: inline-block;
+            background-color: $color-orange;
+            color: $color-white;
+            font-weight: 700;
+            padding: 20px 46px;
+            cursor: pointer;
+            border: none;
+
+            @include borderRadius;
+            @include transition;
+
+            &:hover {
+                background-color: $color-orange-hover;
+            }
+        }
+
+        &_added {
+            @include fixed(40px, unset);
+            right: 0;
+            z-index: 40;
+            font-size: 2em;
+            text-transform: uppercase;
+            text-align: center;
+
+            padding: {
+                top: 60px;
+                bottom: 60px;
+            }
+            margin: 0 40px;
+
+            max-width: 480px;
+            background-color: $color-white;
+            color: $color-orange;
+            box-shadow: 0 0 30px $color-black-shadow;
+            @include transition;
+            cursor: default;
+
+            display: none;
+
+            &:hover {                
+                background-color: $color-white;
+            }
+        }
+    }
+}

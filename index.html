@@ -6,142 +6,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
   <title>E-commerce product page</title>
 
   <script src="https://kit.fontawesome.com/fe0ca3f893.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles/css/style.css">
+  <link rel="stylesheet" href="assets/styles/css/style.min.css">
 </head>
 
 <body>
-  <header class="main_header j_main_header">
-    <div class="main_header_content">
-      <div class="main_header_content_logo">
+  <header class="sneakers_header j_header">
+    <div class="sneakers_header_content">
+      <div class="sneakers_header_content_logo">
         <a href="#">
           <h1>Sneakers</h1>
-          <img src="images/logo.svg" alt="Sneakers">
+          <img src="assets/images/logo.svg" alt="Sneakers">
         </a>
       </div>
-      
-      <div class="hamb_icon j_hamb_icon"><i class="fa-solid fa-bars"></i></div>
 
-      <nav class="main_header_content_menu j_menu_area">
-        <ul class="menu">
-          <li class="menu_item j_dropdown">
-            <a href="#">Collections</a>
-            <ul class="submenu">
-              <li><a href="#">Collections Category 1</a></li>
-              <li><a href="#">Collections Category 2</a></li>
-              <li><a href="#">Collections Category 3</a></li>
-              <li><a href="#">Collections Category 4</a></li>
-              <li><a href="#">Collections Category 5</a></li>
-            </ul>
-          </li>
+      <nav class="sneakers_header_content_mainnav">
+        <div class="sneakers_header_content_mainnav_menuicon">
+          <i class="fa-solid fa-bars j_menuicon"></i>
+        </div>
 
-          <li class="menu_item j_dropdown">
-            <a href="#">Men</a>
-            <ul class="submenu">
-              <li><a href="#">Men Category 1</a></li>
-              <li><a href="#">Men Category 2</a></li>
-              <li><a href="#">Men Category 3</a></li>
-              <li><a href="#">Men Category 4</a></li>
-              <li><a href="#">Men Category 5</a></li>
-            </ul>
-          </li>
-
-          <li class="menu_item j_dropdown">
-            <a href="#">Women</a>
-            <ul class="submenu">
-              <li><a href="#">Women Category 1</a></li>
-              <li><a href="#">Women Category 2</a></li>
-              <li><a href="#">Women Category 3</a></li>
-              <li><a href="#">Women Category 4</a></li>
-              <li><a href="#">Women Category 5</a></li>
-            </ul>
-          </li>
-
-          <li class="menu_item"><a href="#">About</a></li>
-
-          <li class="menu_item"><a href="#">Contact</a></li>
-        </ul>
+        <div class="sneakers_header_content_mainnav_menulightbox j_menu_lightbox">
+          <ul class="sneakers_header_content_mainnav_menu j_mobile_menu">
+            <li class="sneakers_header_content_mainnav_menu_item">
+              <a href="#" class="j_dropdown">Collections</a>
+              <ul class="sneakers_header_content_mainnav_menu_item_submenu j_submenu j_closebyclickingout">
+                <li class="submenu_item"><a href="#" class="submenu_item">Collections Category 1</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Collections Category 2</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Collections Category 3</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Collections Category 4</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Collections Category 5</a></li>
+              </ul>
+            </li>
+            <li class="sneakers_header_content_mainnav_menu_item">
+              <a href="#" class="j_dropdown">Men</a>
+              <ul class="sneakers_header_content_mainnav_menu_item_submenu j_submenu j_closebyclickingout">
+                <li class="submenu_item"><a href="#" class="submenu_item">Men Category 1</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Men Category 2</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Men Category 3</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Men Category 4</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Men Category 5</a></li>
+              </ul>
+            </li>
+            <li class="sneakers_header_content_mainnav_menu_item">
+              <a href="#" class="j_dropdown">Women</a>
+              <ul class="sneakers_header_content_mainnav_menu_item_submenu j_submenu j_closebyclickingout">
+                <li class="submenu_item"><a href="#" class="submenu_item">Women Category 1</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Women Category 2</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Women Category 3</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Women Category 4</a></li>
+                <li class="submenu_item"><a href="#" class="submenu_item">Women Category 5</a></li>
+              </ul>
+            </li>
+            <li class="sneakers_header_content_mainnav_menu_item"><a href="#">About</a></li>
+            <li class="sneakers_header_content_mainnav_menu_item"><a href="#">Contact</a></li>
+          </ul>
+        </div>
       </nav>
 
-      <div class="main_header_content_basket">
-        <div title="Your cart" class="main_header_content_basket_cart j_basket_cart">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </div>
-
-        <div class="main_header_content_basket_list j_basket_list">
-          <p class="main_header_content_basket_list_title">Cart</p>
-
-          <div class="main_header_content_basket_list_empty j_basket_list_empty">
-            <p>Your cart is empty.</p>
+      <div class="sneakers_header_content_profilenav">
+        <div class="sneakers_header_content_profilenav_basket">
+          <div title="Your cart" class="sneakers_header_content_profilenav_basket_cart j_cart_icon">
+            <i class="fa-solid fa-cart-shopping"></i>
           </div>
+  
+          <section class="sneakers_header_content_profilenav_basket_list j_cart_list">
+            <header class="sneakers_header_content_profilenav_basket_list_title">
+              <h2>Cart</h2>
+            </header>
+  
+            <div class="sneakers_header_content_profilenav_basket_list_info j_cart_info">
+              <p class="empty j_empty_list">Your cart is empty.</p>
+            </div>
+          </section>
         </div>
-      </div>
-
-      <div class="main_header_content_account">
-        <a href="#" class="avatar">
-          <img src="images/image-avatar.png" alt="Avatar">
-        </a>
+  
+        <div class="sneakers_header_content_profilenav_account">
+          <a href="#" class="sneakers_header_content_profilenav_account_avatar">
+            <img src="assets/images/image-avatar.png" alt="Avatar">
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="main_product">
-    <section class="main_product_content">
-      <div class="main_product_content_images j_gallery">
-        <div class="featured">
-          <div class="navigation j_navigation">
-            <span class="nav prev"><i class="fa-solid fa-angle-left"></i></span>
-            <span class="nav next"><i class="fa-solid fa-angle-right"></i></span>
+  <main class="j_main_content">
+    <section class="sneakers_product">
+      <div class="sneakers_product_content">
+        <div class="sneakers_product_content_gallery j_gallery j_reset_gallery">
+          <div class="sneakers_product_content_gallery_featured j_gallery_featured">
+            <div class="sneakers_product_content_gallery_featured_navigation">
+              <span class="nav prev j_nav"><i class="fa-solid fa-angle-left"></i></span>
+              <span class="nav next j_nav"><i class="fa-solid fa-angle-right"></i></span>
+            </div>
+  
+            <img src="assets/images/image-product-1.jpg" alt="Fall Limited Edition Sneakers" title="Click to view picture" class="j_featured">
           </div>
-
-          <img src="images/image-product-1.jpg" alt="Fall Limited Edition Sneakers">
-        </div>
-
-        <div class="thumbs">
-          <div class="thumb active"><img src="images/image-product-1-thumbnail.jpg" alt="Thumbnail 1" class="j_product_image"></div>
-          <div class="thumb"><img src="images/image-product-2-thumbnail.jpg" alt="Thumbnail 2"></div>
-          <div class="thumb"><img src="images/image-product-3-thumbnail.jpg" alt="Thumbnail 3"></div>
-          <div class="thumb"><img src="images/image-product-4-thumbnail.jpg" alt="Thumbnail 4"></div>
-        </div>
-      </div>
-
-      <div class="main_product_content_info">
-        <header class="main_product_content_info_title">
-          <p>Sneaker Company</p>
-          <h2 class="j_product_name">Fall Limited Edition Sneakers</h2>
-        </header>
-
-        <p class="main_product_content_info_desc">These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
-
-        <p class="main_product_content_info_discount_price">$<span class="j_product_price">125.00</span> <span class="discount">50%</span></p>
-        <p class="main_product_content_info_current_price">$250.00</p>
-
-        <div class="main_product_content_info_action">
-          <div class="main_product_content_info_action_qt">
-            <div class="main_product_content_info_action_qt_minus j_btn_qt j_minus"><i class="fa-solid fa-minus"></i></div>
-            <div class="main_product_content_info_action_qt_value j_product_qt">1</div>
-            <div class="main_product_content_info_action_qt_plus j_btn_qt j_plus"><i class="fa-solid fa-plus"></i></div>
+  
+          <div class="sneakers_product_content_gallery_thumbs">
+            <div class="thumb j_thumb active"><img src="assets/images/image-product-1-thumbnail.jpg" alt="Thumbnail"></div>
+            <div class="thumb j_thumb"><img src="assets/images/image-product-2-thumbnail.jpg" alt="Thumbnail"></div>
+            <div class="thumb j_thumb"><img src="assets/images/image-product-3-thumbnail.jpg" alt="Thumbnail"></div>
+            <div class="thumb j_thumb"><img src="assets/images/image-product-4-thumbnail.jpg" alt="Thumbnail"></div>
           </div>
-
-          <div class="main_product_content_info_action_purchase">
-            <a href="#" class="j_add_product"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+        </div>
+  
+        <div class="sneakers_product_content_info">
+          <header class="sneakers_product_content_info_title">
+            <p>Sneaker Company</p>
+            <h1 class="j_product_name">Fall Limited Edition Sneakers</h1>
+          </header>
+  
+          <p class="sneakers_product_content_info_desc">These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+  
+          <p class="sneakers_product_content_info_discountprice">$<span class="j_product_price">125.00</span> <span class="discount">50%</span></p>
+          <p class="sneakers_product_content_info_currentprice">$250.00</p>
+  
+          <div class="sneakers_product_content_info_action">
+            <div class="sneakers_product_content_info_action_qt sneakers_button">
+              <div class="sneakers_product_content_info_action_qt_changeqt minus j_qt_minus"><i class="fa-solid fa-minus"></i></div>
+              <div class="sneakers_product_content_info_action_qt_value j_qt">1</div>
+              <div class="sneakers_product_content_info_action_qt_changeqt plus j_qt_plus"><i class="fa-solid fa-plus"></i></div>
+            </div>
+  
+            <div class="sneakers_product_content_info_action_purchase">
+              <a href="#" class="j_purchase sneakers_button"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="attribution">
+  <footer class="sneakers_attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://github.com/giullianoth">Giulliano Guimarães</a>.
   </footer>
 
-  <script src="scripts/script.js" type="module"></script>
+  <script src="assets/scripts/script.js" type="module"></script>
 </body>
 
 </html>

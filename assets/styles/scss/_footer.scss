@@ -1,0 +1,15 @@
+@include theme() {
+    &_attribution {
+        font-size: 11px;
+        text-align: center;
+        padding: 20px 0;
+    
+        a {
+            color: $color-orange;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+          }
+      }
+}
