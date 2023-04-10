@@ -1,14 +1,26 @@
 import { fadeOutToUp, slideUp } from "./effects.js";
-import { elementsCloseClickingOut, isMobileSubmenu, isVisible } from "./variables.js"
+import { elementsCloseClickingOut, elementsCloseClickingOutChildren, isMobileSubmenu, isVisible } from "./variables.js"
 
 export const CloseByClickingOut = () => {
     document.body.addEventListener("click", (event) => {
-        elementsCloseClickingOut().forEach((element) => {
-            if (isVisible(element) && element.classList.contains("active") && element.parentNode !== event.target.parentNode && !event.target.classList.contains("submenu_item")) {
-                element.classList.remove("active");
-                !isMobileSubmenu(element) && fadeOutToUp(element);
-                isMobileSubmenu(element) && slideUp(element);
-            }
-        })
+        if (!event.target.classList.contains("j_closebyclickingout") && !event.target.classList.contains("j_dropdown")) {
+            elementsCloseClickingOut().forEach((element) => {
+
+                if (isVisible(element)) {
+                    let children = [];
+                    elementsCloseClickingOutChildren(element).forEach((child) => children.push(child));
+
+                    if (!children.some((child) => child === event.target)) {
+                        element.classList.remove("active");
+
+                        if (isMobileSubmenu(element)) {
+
+                        } else {
+                            isVisible(element) && fadeOutToUp(element);
+                        }
+                    }
+                }
+            })
+        }
     })
 }
