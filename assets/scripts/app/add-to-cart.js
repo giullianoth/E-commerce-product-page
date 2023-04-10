@@ -62,7 +62,7 @@ const cartListItemsElement = (itemToInsert) => {
 
         <header class="sneakers_header_content_profilenav_basket_list_info_item_title">
         <h3>${itemToInsert.name}</h3>
-        <p><span class="price">${itemToInsert.price}</span> x <span class="quantity">${itemToInsert.quantity}</span> <span class="total">${itemToInsert.total}</span></p>
+        <p><span class="price">$${itemToInsert.price}</span> x <span class="quantity">${itemToInsert.quantity}</span> <span class="total">$${itemToInsert.total}</span></p>
         </header>
 
         <div class="sneakers_header_content_profilenav_basket_list_info_item_action j_delete" title="Delete this item" data-id="${cartList.length}">
