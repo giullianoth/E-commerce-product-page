@@ -1,5 +1,5 @@
 import { fadeIn, slideDown } from "../effects.js";
-import { addCount, addProductQt, addedElement, btnPurchase, buttonQtMinus, buttonQtPlus, cartIcon, cartInfo, cartList, count, countElement, listItem, listItems, productName, productNameElement, productPrice, productPriceElement, productQt, productTotal, qtArea, setProductName, setProductprice, showQuantity, substractProductQt, transitionProperties } from "../variables.js"
+import { addCount, addProductQt, addedElement, btnPurchase, buttonQtMinus, buttonQtPlus, cartIcon, cartInfo, cartList, count, countElement, isVisible, listItem, listItems, productName, productNameElement, productPrice, productPriceElement, productQt, productTotal, qtArea, setProductName, setProductprice, showQuantity, substractProductQt, transitionProperties } from "../variables.js"
 import { RemoveFromCart } from "./remove-from-cart.js";
 
 const addCountElement = () => {
@@ -44,7 +44,7 @@ const confirmMessage = () => {
         setTimeout(() => {
             confirm.remove();
         }, 1000);
-    }, 2000);
+    }, 1000);
 }
 
 const cartListItemsElement = (itemToInsert) => {
@@ -106,7 +106,9 @@ export const AddToCart = () => {
         cartInfo.innerHTML = cartListItemsElement(newItem).outerHTML;
         cartList.length > 0 && cartInfo.append(checkOutElement());
 
-        slideDown(listItem()[listItem().length - 1], "flex");
+        if (isVisible(((listItem()[listItem().length - 1].parentNode).parentNode).parentNode)) {            
+            slideDown(listItem()[listItem().length - 1], "flex");
+        }
 
         addCount();
         cartIcon.append(addCountElement());
