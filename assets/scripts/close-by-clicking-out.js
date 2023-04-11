@@ -3,7 +3,7 @@ import { elementsCloseClickingOut, elementsCloseClickingOutChildren, isMobileSub
 
 export const CloseByClickingOut = () => {
     document.body.addEventListener("click", (event) => {
-        if (!event.target.classList.contains("j_closebyclickingout") && !event.target.classList.contains("j_dropdown")) {
+        if (!event.target.classList.contains("j_closebyclickingout") && !event.target.classList.contains("j_dropdown") && !event.target.classList.contains("j_noclosebyclicking")) {
             elementsCloseClickingOut().forEach((element) => {
 
                 if (isVisible(element)) {
