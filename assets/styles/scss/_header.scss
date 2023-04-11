@@ -246,7 +246,7 @@
                             cursor: pointer;
 
                             @include setResponsiveDesign($breakpoint-tablet-landscape) {
-                                top: -10px;
+                                top: -15px;
                                 right: -40%;
                             }
                         }
@@ -293,12 +293,12 @@
                                 overflow: auto;
                                 @include flex1;
                                 @include flex;
-                                gap: 20px;
                             }
 
                             &_item {
                                 @include flex1;
                                 @include flex(space-between);
+                                padding: 10px 0;
 
                                 &_image {
                                     @include flexBasis(40px);

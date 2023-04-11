@@ -53,9 +53,10 @@ body .sneakers_button:hover {
 }
 body .sneakers_added {
   position: fixed;
-  top: 40px;
+  top: unset;
   left: unset;
   right: 0;
+  bottom: 40px;
   z-index: 40;
   font-size: 2em;
   text-transform: uppercase;
@@ -443,7 +444,7 @@ body .sneakers_added:hover {
 }
 @media screen and (min-width: 899px) {
   .sneakers_header_content_profilenav_basket_cart .notification_count {
-    top: -10px;
+    top: -15px;
     right: -40%;
   }
 }
@@ -497,7 +498,6 @@ body .sneakers_added:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
 }
 .sneakers_header_content_profilenav_basket_list_info_item {
   flex-basis: 100%;
@@ -505,6 +505,7 @@ body .sneakers_added:hover {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding: 10px 0;
 }
 .sneakers_header_content_profilenav_basket_list_info_item_image {
   flex-basis: 40px;

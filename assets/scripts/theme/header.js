@@ -1,5 +1,5 @@
 import { fadeIn, fadeInToDown, fadeOut, fadeOutToUp, slideDown, slideUp } from "../effects.js";
-import { breakpointTabletLandscape, btnDropdown, cartIcon, cartListArea, headerElement, headerHeight, isMobileSubmenu, mainContentElement, menuIcon, menuLightbox, mobileMenu, submenu, transitionDuration, windowScrollPosition, windowWidth } from "../variables.js";
+import { breakpointTabletLandscape, btnDropdown, headerElement, headerHeight, isMobileSubmenu, mainContentElement, menuIcon, menuIsActive, menuLightbox, mobileMenu, submenus, transitionDuration, windowScrollPosition, windowWidth } from "../variables.js";
 
 export const Header = () => {
     mainContentElement().style.marginTop = `${headerHeight()}px`;
@@ -20,7 +20,7 @@ export const Header = () => {
         menuLightbox.classList.toggle("active");
 
         mobileMenu.style.left = "";
-                
+
         fadeOutToUp(menuIcon);
 
         setTimeout(() => {
@@ -33,37 +33,27 @@ export const Header = () => {
         }, transitionDuration);
     })
 
-    cartIcon.addEventListener("click", () => {
-        !cartListArea.classList.contains("active") && fadeInToDown(cartListArea, true);
-        cartListArea.classList.contains("active") && fadeOutToUp(cartListArea);
-
-        cartListArea.classList.toggle("active");
-    })
-
-    btnDropdown.forEach((btn, i, arr) => {
+    btnDropdown.forEach((btn, index) => {
         btn.addEventListener("click", (event) => {
             event.preventDefault();
-            let submenuElement = submenu(btn.parentNode);
-            
-            arr.forEach((element) => {
-                if (element !== btn) {
-                    element.classList.remove("active");
-                    submenu(element.parentNode).classList.remove("active");
-                    !isMobileSubmenu(submenu(element.parentNode)) && fadeOutToUp(submenu(element.parentNode));
-                    isMobileSubmenu(submenu(element.parentNode)) && slideUp(submenu(element.parentNode));
-                } else {
-                    if (isMobileSubmenu(submenuElement)) {
-                        !submenuElement.classList.contains("active") && slideDown(submenuElement);
-                        submenuElement.classList.contains("active") && slideUp(submenuElement);
-                    } else {
-                        !submenuElement.classList.contains("active") && fadeInToDown(submenuElement, true);
-                        submenuElement.classList.contains("active") && fadeOutToUp(submenuElement);
-                    }
 
-                    submenuElement.classList.toggle("active");
-                    btn.classList.toggle("active");
+            submenus.forEach((sub) => {
+                if (submenus[index] !== sub ) {
+                    !isMobileSubmenu(submenus[index]) && fadeOutToUp(sub);
+                    isMobileSubmenu(submenus[index]) && slideUp(sub);
+                    sub.classList.remove("active");
                 }
             })
+
+            submenus[index].classList.toggle("active");
+
+            if (isMobileSubmenu(submenus[index])) {
+                menuIsActive(submenus[index]) && slideDown(submenus[index]);
+                !menuIsActive(submenus[index]) && slideUp(submenus[index]);
+            } else {
+                menuIsActive(submenus[index]) && fadeInToDown(submenus[index],);
+                !menuIsActive(submenus[index]) && fadeOutToUp(submenus[index]);
+            }
         })
     })
 }

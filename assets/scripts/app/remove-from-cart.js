@@ -1,4 +1,5 @@
-import { cartInfo, count, countElement, deleteItemList, listItem, listItems, substractCount } from "../variables.js"
+import { slideUp } from "../effects.js";
+import { cartInfo, count, countElement, deleteItemList, listItem, listItems, substractCount, transitionDuration } from "../variables.js"
 
 const emptyCartElement = () => {
     let empty = document.createElement("p");
@@ -10,17 +11,19 @@ const emptyCartElement = () => {
 export const RemoveFromCart = () => {
     deleteItemList().forEach((item, index) => {
         item.addEventListener("click", (event) => {
-            listItem().forEach((i) => parseInt(i.dataset.id) === parseInt(item.dataset.id) && i.remove());
+            listItem().forEach((i) => parseInt(i.dataset.id) === parseInt(item.dataset.id) && slideUp(i, true));
 
-            substractCount();
-            countElement().innerText = count;
+            setTimeout(() => {
+                substractCount();
+                countElement().innerText = count;
 
-            if (listItem().length === 0) {
-                listItems().remove();
-                document.querySelector(".j_checkout").remove();
-                cartInfo.innerHTML = emptyCartElement().outerHTML;
-                countElement().remove();
-            }
+                if (listItem().length === 0) {
+                    listItems().remove();
+                    document.querySelector(".j_checkout").remove();
+                    cartInfo.innerHTML = emptyCartElement().outerHTML;
+                    countElement().remove();
+                }
+            }, transitionDuration);
         })
     })
 }

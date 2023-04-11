@@ -59,8 +59,9 @@ body {
         }
 
         &_added {
-            @include fixed(40px, unset);
+            @include fixed(unset, unset);
             right: 0;
+            bottom: 40px;
             z-index: 40;
             font-size: 2em;
             text-transform: uppercase;

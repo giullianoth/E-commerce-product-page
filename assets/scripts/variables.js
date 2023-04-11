@@ -1,6 +1,7 @@
 // VIEWPORT
 const isVisible = (element) => window.getComputedStyle(element).display !== "none";
 const elementsCloseClickingOut = () => document.querySelectorAll(".j_closebyclickingout");
+const elementsCloseClickingOutChildren = (element) => element.querySelectorAll("*");
 
 const layoutMobile = 375;
 const layoutDesktop = 1440;
@@ -30,13 +31,16 @@ const mainContentElement = () => document.querySelector(".j_main_content");
 
 const headerHeight = () => headerElement().offsetHeight;
 
-// MENU
+// MENU AND SUBMENU
 const menuIcon = document.querySelector(".j_menuicon");
 const menuLightbox = document.querySelector(".j_menu_lightbox");
 const mobileMenu = document.querySelector(".j_mobile_menu");
+
 const btnDropdown = document.querySelectorAll(".j_dropdown");
-const submenu = (item) => item.querySelector(".j_submenu");
-const isMobileSubmenu = (element) => window.getComputedStyle(element).position === "static";
+const submenus = document.querySelectorAll(".j_submenu");
+
+const isMobileSubmenu = (submenu) => window.getComputedStyle(submenu).position === "static";
+const menuIsActive = (element) => element.classList.contains("active");
 
 // CART SECTION
 const cartIcon = document.querySelector(".j_cart_icon");
@@ -54,6 +58,7 @@ const galleryImagesList = ["image-product-1", "image-product-2", "image-product-
 const galleryThumbsList = galleryImagesList.map((image) => image.split("-").concat(["thumbnail"]).join("-"));
 const galleryImagePath = "assets/images";
 
+const galleryFeaturedImageArea = () => galleryArea().querySelector(".j_gallery_featured");
 const galleryFeaturedImage = () => galleryArea().querySelector(".j_featured");
 
 const galleryThumbs = () => galleryArea().querySelectorAll(".j_thumb");
@@ -100,7 +105,7 @@ var productName = "";
 var count = 0;
 
 export {
-    isVisible, elementsCloseClickingOut,
+    isVisible, elementsCloseClickingOut, elementsCloseClickingOutChildren,
 
     layoutMobile, layoutDesktop, breakpointMobile, breakpointMobileLandscape, breakpointTablet, breakpointTabletLandscape, breakpointDesktopSD, breakpointDesktopHD1, breakpointDesktopHD2, breakpointDesktopFHD,
 
@@ -113,11 +118,11 @@ export {
     headerElement, mainContentElement,
     headerHeight,
 
-    menuIcon, menuLightbox, mobileMenu, btnDropdown, submenu, isMobileSubmenu,
+    menuIcon, menuLightbox, mobileMenu, btnDropdown, submenus, isMobileSubmenu, menuIsActive,
 
     cartIcon, cartListArea,
 
-    galleryArea, desactivateGalery, resetGallery, galleryLightboxArea, galleryImagesExtension, galleryImagesList, galleryThumbsList, galleryImagePath, galleryFeaturedImage, galleryThumbs, galleryNavPrev, galleryNavNext, getFeaturedImageByElement, getImageIndex,
+    galleryArea, desactivateGalery, resetGallery, galleryLightboxArea, galleryImagesExtension, galleryImagesList, galleryThumbsList, galleryImagePath, galleryFeaturedImageArea, galleryFeaturedImage, galleryThumbs, galleryNavPrev, galleryNavNext, getFeaturedImageByElement, getImageIndex,
 
     buttonQtMinus, buttonQtPlus, qtArea, btnPurchase, productNameElement, productPriceElement, addProductQt, substractProductQt, setProductName, setProductprice, showQuantity, cartList, listItems, listItem, listEmpty, cartInfo, deleteItemList, addedElement, countElement, addCount, substractCount, productQt, productPrice, productTotal, productName, count,
 }
