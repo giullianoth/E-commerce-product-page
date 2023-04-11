@@ -1,5 +1,5 @@
 import { fadeIn, slideDown } from "../effects.js";
-import { addCount, addProductQt, addedElement, btnPurchase, buttonQtMinus, buttonQtPlus, cartIcon, cartInfo, cartList, count, countElement, isVisible, listItem, listItems, productName, productNameElement, productPrice, productPriceElement, productQt, productTotal, qtArea, setProductName, setProductprice, showQuantity, substractProductQt, transitionProperties } from "../variables.js"
+import { addCount, addProductQt, addedElement, btnPurchase, buttonQtMinus, buttonQtPlus, cartIcon, cartInfo, cartList, cartListArea, count, countElement, isVisible, listItem, listItems, productName, productNameElement, productPrice, productPriceElement, productQt, productTotal, qtArea, setProductName, setProductprice, showQuantity, substractProductQt, transitionProperties } from "../variables.js"
 import { RemoveFromCart } from "./remove-from-cart.js";
 
 const addCountElement = () => {
@@ -62,7 +62,9 @@ const cartListItemsElement = (itemToInsert) => {
 
         <header class="sneakers_header_content_profilenav_basket_list_info_item_title">
         <h3>${itemToInsert.name}</h3>
-        <p><span class="price">$${itemToInsert.price}</span> x <span class="quantity">${itemToInsert.quantity}</span> <span class="total">$${itemToInsert.total}</span></p>
+        <p>
+        <span class="price">$${itemToInsert.price}</span> x <span class="quantity">${itemToInsert.quantity}</span> <span class="total">$${itemToInsert.total}</span>
+        </p>
         </header>
 
         <div class="sneakers_header_content_profilenav_basket_list_info_item_action j_delete j_noclosebyclicking" title="Delete this item" data-id="${cartList.length}">
@@ -106,7 +108,7 @@ export const AddToCart = () => {
         cartInfo.innerHTML = cartListItemsElement(newItem).outerHTML;
         cartList.length > 0 && cartInfo.append(checkOutElement());
 
-        if (isVisible(((listItem()[listItem().length - 1].parentNode).parentNode).parentNode)) {            
+        if (isVisible(cartListArea)) {            
             slideDown(listItem()[listItem().length - 1], "flex");
         }
 
