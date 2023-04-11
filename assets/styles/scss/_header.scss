@@ -293,6 +293,29 @@
                                 overflow: auto;
                                 @include flex1;
                                 @include flex;
+
+                                scrollbar-width: thin;
+                                scrollbar-color: transparent transparent;
+
+                                @include transition;
+
+                                &:hover {
+                                    scrollbar-color: $color-orange transparent;
+
+                                    &::-webkit-scrollbar-thumb {
+                                        background-color: $color-orange;
+                                    }
+                                }
+
+                                &::-webkit-scrollbar {
+                                    background-color: transparent;
+                                    width: 8px;
+                                    @include transition;
+                                }
+
+                                &::-webkit-scrollbar-thumb {
+                                    background-color: transparent;
+                                }
                             }
 
                             &_item {

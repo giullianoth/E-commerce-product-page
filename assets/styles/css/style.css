@@ -498,6 +498,23 @@ body .sneakers_added:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: all 300ms ease 0s;
+}
+.sneakers_header_content_profilenav_basket_list_info_items:hover {
+  scrollbar-color: hsl(26, 100%, 55%) transparent;
+}
+.sneakers_header_content_profilenav_basket_list_info_items:hover::-webkit-scrollbar-thumb {
+  background-color: hsl(26, 100%, 55%);
+}
+.sneakers_header_content_profilenav_basket_list_info_items::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+  transition: all 300ms ease 0s;
+}
+.sneakers_header_content_profilenav_basket_list_info_items::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 .sneakers_header_content_profilenav_basket_list_info_item {
   flex-basis: 100%;

@@ -16,16 +16,14 @@ const setNewImage = (img) => {
     newFeaturedImage.setAttribute("alt", "Fall Limited Edition Sneakers");
     newFeaturedImage.setAttribute("title", "Click to view picture");
     newFeaturedImage.src = activeImage;
-    
+
     fadeOut(galleryFeaturedImage(), true);
     galleryNavPrev().style.opacity = 0;
     galleryNavNext().style.opacity = 0;
 
     galleryThumbs().forEach((thumb, index) => {
         thumb.classList.remove("active");
-        if (index === thumbIndex) {
-            thumb.classList.add("active");
-        }
+        index === thumbIndex && thumb.classList.add("active");
     })
 
     setTimeout(() => {
@@ -61,12 +59,8 @@ export const Gallery = () => {
 
     galleryThumbs().forEach((thumb, index, arr) => {
         thumb.addEventListener("click", () => {
-            arr.forEach((element) => {
-                element.classList.remove("active");
-            })
-
+            arr.forEach((element) => element.classList.remove("active"));
             thumb.classList.add("active");
-
             setNewImage(galleryImagesList[index]);
         })
     })
