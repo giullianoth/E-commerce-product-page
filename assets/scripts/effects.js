@@ -14,9 +14,9 @@ const fadeIn = (element, displayElement = "block") => {
     }, transitionGap);
 }
 
-const fadeInToDown = (element, setDisplay = false, displayElement = "block") => {
+const fadeInToDown = (element, displayElement = "block") => {
 
-    element.style.display = setDisplay ? displayElement : "";
+    element.style.display = displayElement;
 
     element.style.transition = transitionProperties();
     element.style.opacity = 0;
@@ -79,7 +79,7 @@ const slideDown = (element, displayElement = "block") => {
     }, transitionGap);
 }
 
-const slideUp = (element) => {
+const slideUp = (element, removeElement = false) => {
     element.style.transition = transitionProperties();
     element.style.overflow = "hidden";
     element.style.maxHeight = 0;
@@ -93,6 +93,7 @@ const slideUp = (element) => {
         element.style.paddingTop = "";
         element.style.paddingBottom = "";
         element.style.overflow = "";
+        removeElement && element.remove();
     }, transitionDuration);
 }
 

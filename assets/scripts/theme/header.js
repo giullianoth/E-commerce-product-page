@@ -1,5 +1,5 @@
 import { fadeIn, fadeInToDown, fadeOut, fadeOutToUp, slideDown, slideUp } from "../effects.js";
-import { breakpointTabletLandscape, btnDropdown, cartIcon, cartListArea, headerElement, headerHeight, isMobileSubmenu, isVisible, mainContentElement, menuIcon, menuIsActive, menuLightbox, mobileMenu, submenus, transitionDuration, transitionGap, windowScrollPosition, windowWidth } from "../variables.js";
+import { breakpointTabletLandscape, btnDropdown, headerElement, headerHeight, isMobileSubmenu, mainContentElement, menuIcon, menuIsActive, menuLightbox, mobileMenu, submenus, transitionDuration, windowScrollPosition, windowWidth } from "../variables.js";
 
 export const Header = () => {
     mainContentElement().style.marginTop = `${headerHeight()}px`;
@@ -51,7 +51,7 @@ export const Header = () => {
                 menuIsActive(submenus[index]) && slideDown(submenus[index]);
                 !menuIsActive(submenus[index]) && slideUp(submenus[index]);
             } else {
-                menuIsActive(submenus[index]) && fadeInToDown(submenus[index], true);
+                menuIsActive(submenus[index]) && fadeInToDown(submenus[index],);
                 !menuIsActive(submenus[index]) && fadeOutToUp(submenus[index]);
             }
         })

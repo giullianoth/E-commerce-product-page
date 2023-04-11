@@ -1,8 +1,8 @@
 import { fadeIn, fadeOut } from "../effects.js";
-import { desactivateGalery, galleryFeaturedImage, galleryLightboxArea, resetGallery, transitionDuration } from "../variables.js"
+import { desactivateGalery, galleryFeaturedImage, galleryImagePath, galleryImagesExtension, galleryLightboxArea, galleryThumbs, getFeaturedImageByElement, getImageIndex, resetGallery, transitionDuration } from "../variables.js"
 import { Gallery } from "./gallery.js";
 
-const createLightbox = () => {
+const createLightbox = (img) => {
     let lightbox = document.createElement("section");
     lightbox.className = "sneakers_lightbox j_lightbox";
 
@@ -14,11 +14,11 @@ const createLightbox = () => {
         <span class="nav prev j_nav"><i class="fa-solid fa-angle-left"></i></span>
         <span class="nav next j_nav"><i class="fa-solid fa-angle-right"></i></span>
         </div>
-        <img src="assets/images/image-product-1.jpg" alt="Fall Limited Edition Sneakers" class="j_featured">
+        <img src="${img}" alt="Fall Limited Edition Sneakers" class="j_featured">
         </div>
 
         <div class="sneakers_lightbox_content_gallery_thumbs">
-        <div class="thumb j_thumb active"><img src="assets/images/image-product-1-thumbnail.jpg" alt="Thumbnail"></div>
+        <div class="thumb j_thumb"><img src="assets/images/image-product-1-thumbnail.jpg" alt="Thumbnail"></div>
         <div class="thumb j_thumb"><img src="assets/images/image-product-2-thumbnail.jpg" alt="Thumbnail"></div>
         <div class="thumb j_thumb"><img src="assets/images/image-product-3-thumbnail.jpg" alt="Thumbnail"></div>
         <div class="thumb j_thumb"><img src="assets/images/image-product-4-thumbnail.jpg" alt="Thumbnail"></div>
@@ -26,18 +26,20 @@ const createLightbox = () => {
         </div>
         </div>
     `;
-
+    
     return lightbox;
 }
 
-export const GalleryLightbox = () => {
+export const GalleryLightbox = (img) => {
     !galleryLightboxArea() && galleryFeaturedImage().addEventListener("click", () => {
         desactivateGalery();
 
-        let lightbox = createLightbox();
+        let lightbox = createLightbox(img);
 
         document.body.prepend(lightbox);
         fadeIn(lightbox, "flex");
+
+        galleryThumbs()[getImageIndex()].classList.add("active");
 
         setTimeout(() => {
             Gallery();
@@ -46,6 +48,14 @@ export const GalleryLightbox = () => {
                 if (event.target.classList.contains("j_lightbox")) {
                     fadeOut(galleryLightboxArea(), true);
                     resetGallery();
+
+                    let imageOnClose = `${galleryImagePath}/${getFeaturedImageByElement()}.${galleryImagesExtension}`;
+                    
+                    setTimeout(() => {
+                        galleryFeaturedImage().src = imageOnClose;
+                        galleryThumbs().forEach((thumb) => thumb.classList.remove("active"));
+                        galleryThumbs()[getImageIndex()].classList.add("active");
+                    }, transitionDuration);
                 }
             })
         }, transitionDuration);

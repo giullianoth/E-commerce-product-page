@@ -58,6 +58,7 @@ const galleryImagesList = ["image-product-1", "image-product-2", "image-product-
 const galleryThumbsList = galleryImagesList.map((image) => image.split("-").concat(["thumbnail"]).join("-"));
 const galleryImagePath = "assets/images";
 
+const galleryFeaturedImageArea = () => galleryArea().querySelector(".j_gallery_featured");
 const galleryFeaturedImage = () => galleryArea().querySelector(".j_featured");
 
 const galleryThumbs = () => galleryArea().querySelectorAll(".j_thumb");
@@ -121,7 +122,7 @@ export {
 
     cartIcon, cartListArea,
 
-    galleryArea, desactivateGalery, resetGallery, galleryLightboxArea, galleryImagesExtension, galleryImagesList, galleryThumbsList, galleryImagePath, galleryFeaturedImage, galleryThumbs, galleryNavPrev, galleryNavNext, getFeaturedImageByElement, getImageIndex,
+    galleryArea, desactivateGalery, resetGallery, galleryLightboxArea, galleryImagesExtension, galleryImagesList, galleryThumbsList, galleryImagePath, galleryFeaturedImageArea, galleryFeaturedImage, galleryThumbs, galleryNavPrev, galleryNavNext, getFeaturedImageByElement, getImageIndex,
 
     buttonQtMinus, buttonQtPlus, qtArea, btnPurchase, productNameElement, productPriceElement, addProductQt, substractProductQt, setProductName, setProductprice, showQuantity, cartList, listItems, listItem, listEmpty, cartInfo, deleteItemList, addedElement, countElement, addCount, substractCount, productQt, productPrice, productTotal, productName, count,
 }

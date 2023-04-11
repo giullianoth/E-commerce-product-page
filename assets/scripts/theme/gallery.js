@@ -1,4 +1,6 @@
-import { galleryFeaturedImage, galleryImagePath, galleryImagesExtension, galleryImagesList, galleryNavNext, galleryNavPrev, galleryThumbs, getFeaturedImageByElement, getImageIndex, transitionDuration, transitionProperties } from "../variables.js"
+import { fadeIn, fadeOut } from "../effects.js";
+import { galleryFeaturedImage, galleryFeaturedImageArea, galleryImagePath, galleryImagesExtension, galleryImagesList, galleryNavNext, galleryNavPrev, galleryThumbs, getFeaturedImageByElement, getImageIndex, transitionDuration, } from "../variables.js"
+import { GalleryLightbox } from "./gallery-lightbox.js";
 
 const showNavButtons = () => {
     galleryNavPrev().style.display = galleryImagesList.indexOf(getFeaturedImageByElement()) === 0 ? "none" : "";
@@ -9,8 +11,13 @@ const setNewImage = (img) => {
     let activeImage = `${galleryImagePath}/${img}.${galleryImagesExtension}`
     let thumbIndex = galleryImagesList.indexOf(img);
 
-    galleryFeaturedImage().style.transition = transitionProperties();
-    galleryFeaturedImage().style.opacity = 0;
+    let newFeaturedImage = document.createElement("img");
+    newFeaturedImage.className = "j_featured";
+    newFeaturedImage.setAttribute("alt", "Fall Limited Edition Sneakers");
+    newFeaturedImage.setAttribute("title", "Click to view picture");
+    newFeaturedImage.src = activeImage;
+    
+    fadeOut(galleryFeaturedImage(), true);
     galleryNavPrev().style.opacity = 0;
     galleryNavNext().style.opacity = 0;
 
@@ -22,11 +29,12 @@ const setNewImage = (img) => {
     })
 
     setTimeout(() => {
-        galleryFeaturedImage().src = activeImage;
-        galleryFeaturedImage().style.opacity = "";
+        galleryFeaturedImageArea().append(newFeaturedImage);
+        fadeIn(newFeaturedImage);
         showNavButtons();
         galleryNavPrev().style.opacity = "";
         galleryNavNext().style.opacity = "";
+        GalleryLightbox(galleryFeaturedImage().src);
     }, transitionDuration);
 }
 
@@ -49,7 +57,7 @@ const navThroughImages = (event) => {
 
 export const Gallery = () => {
     showNavButtons();
-    // console.log(galleryNavPrev(), galleryNavNext());
+    GalleryLightbox(galleryFeaturedImage().src);
 
     galleryThumbs().forEach((thumb, index, arr) => {
         thumb.addEventListener("click", () => {
