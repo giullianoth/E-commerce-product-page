@@ -20,6 +20,16 @@ Além disso, a página apresenta elementos de cabeçalho, como área do logo, me
 
 *In addition, the page features header elements such as the logo area, menu and links that lead to the profile and shopping area.*
 
+## Conteúdo | Content
+
+- [Status do projeto | Project status](#status-do-projeto--project-status)
+- [Layout](#layout)
+- [Tecnologias utilizadas | Technologies used](#tecnologias-utilizadas--technologies-used)
+- [Como instalar | How to install](#como-instalar--how-to-install)
+- [Autor | Author](#autor--author)
+
+---
+
 ## Status do projeto | Project status
 
 Projeto finalizado, sendo aberto a propostas de melhorias ou correções.
@@ -57,8 +67,6 @@ Você também pode conferir a página acessando este link: [https://e-commerce-p
 *You can also check the page by accessing this link: [https://e-commerce-product-page-lake.vercel.app/](https://e-commerce-product-page-lake.vercel.app/).*
 
 *__Note:__ As it is a project for academic purposes, the links contained on the page will not work, except for the last two located in the footer and the buttons for a certain action.*
-
-## Ferramentas e tecnologias utilizadas
 
 ## Tecnologias utilizadas | Technologies used
 
