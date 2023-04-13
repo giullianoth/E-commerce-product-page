@@ -24,6 +24,10 @@
                 @include relative;
             }
 
+            @include setResponsiveDesign($container-max-width) {
+                padding: 0;
+            }
+
             &_logo {
                 order: 2;
 

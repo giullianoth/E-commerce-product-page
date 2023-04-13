@@ -223,6 +223,11 @@ body .sneakers_added:hover {
     position: relative;
   }
 }
+@media screen and (min-width: 1299px) {
+  .sneakers_header_content {
+    padding: 0;
+  }
+}
 .sneakers_header_content_logo {
   order: 2;
 }
@@ -593,6 +598,11 @@ body .sneakers_added:hover {
 @media screen and (min-width: 1365px) {
   .sneakers_product_content {
     gap: 120px;
+  }
+}
+@media screen and (min-width: 1299px) {
+  .sneakers_product_content {
+    padding: 0;
   }
 }
 .sneakers_product_content_gallery {

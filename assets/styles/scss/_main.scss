@@ -18,6 +18,10 @@
 
             @include setResponsiveDesign($breakpoint-desktop-hd1) {
                 gap: 120px;
+            }            
+
+            @include setResponsiveDesign($container-max-width) {
+                padding: 0;
             }
 
             &_gallery {
